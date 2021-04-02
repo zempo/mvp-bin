@@ -20,6 +20,6 @@ front_image TEXT,
 inside_message VARCHAR(650) NOT NULL,
 inside_image TEXT,
 date_created TIMESTAMP DEFAULT now() NOT NULL,
-date_modified TIMESTAMP,
+date_modified TIMESTAMP DEFAULT now() NOT NULL,
 public boolean DEFAULT FALSE
 );

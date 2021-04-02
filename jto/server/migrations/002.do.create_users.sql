@@ -6,7 +6,7 @@ full_name TEXT NOT NULL,
 password TEXT NOT NULL,
 email TEXT NOT NULL UNIQUE,
 date_created TIMESTAMP NOT NULL DEFAULT now(),
-date_modified TIMESTAMP
+date_modified TIMESTAMP DEFAULT now() NOT NULL
 );
 
 ALTER TABLE jto_cards ADD COLUMN user_id INTEGER REFERENCES jto_users(id) ON DELETE SET NULL;
