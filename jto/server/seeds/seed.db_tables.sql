@@ -1,7 +1,7 @@
 BEGIN;
 
 TRUNCATE
-  jto_reacts,
+  jto_actions,
   jto_comments,
   jto_cards,
   jto_users
@@ -65,7 +65,7 @@ INSERT INTO jto_comments
     ('Agreed! Quite cute, indeed!', 2, 1);
 
 INSERT INTO jto_actions
-    (card_id, user_id, react_heart, react_saved)
+    (card_id, user_id, react_liked, react_saved)
     VALUES
     (1, 2, TRUE, default),
     (1, 3, default, default),
@@ -83,3 +83,5 @@ INSERT INTO jto_actions
     (20, 1, TRUE, TRUE),
     (20, 2, TRUE, TRUE),
     (20, 3, TRUE, TRUE);
+
+COMMIT;
