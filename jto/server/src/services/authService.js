@@ -2,9 +2,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET, JWT_EXPIRY } = require("../config");
 
-const AuthService = {
+const authService = {
   getUserByEmail(db, email) {
-    return db("db_users").where({ email }).first();
+    return db("jto_users").where({ email }).first();
   },
   parseBasicToken(token) {
     return Buffer.from(token, "base64").toString().split(":");
@@ -26,4 +26,4 @@ const AuthService = {
   },
 };
 
-module.exports = AuthService;
+module.exports = authService;
