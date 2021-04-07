@@ -11,10 +11,16 @@ module.exports = {
   JWT_SECRET: process.env.JWT_SECRET || "test-jwt-secret",
   JWT_EXPIRY: process.env.JWT_EXPIRY || "180d",
   APIS: {
-    SOME_API_KEY: process.env.SOME_API_KEY || "loremipsum202020202",
+    CLOUDINARY: {
+      CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+      CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+      CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+    },
   },
   REGEX: {
     VALID_USERNAME: /(^[A-Za-z0-9\-\_]+$)/,
     VALID_PWD: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/,
+    HAS_SPACES: /^\S*$/,
+    CARD_THEMES: /^\S*\b(cursive|cursive-plus|handwritten-bold|handwritten|indie|kiddo|pen|quill|roboto|sharpie|typed)\b/,
   },
 };

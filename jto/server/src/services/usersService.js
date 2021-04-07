@@ -2,31 +2,33 @@ const xss = require("xss");
 const Treeize = require("treeize");
 const bcrypt = require("bcryptjs");
 const validator = require("email-validator");
+const Filter = require('bad-words'),
+const filter = new Filter();
 // Validation
 const { REGEX } = require("../config");
 const { VALID_USERNAME, VALID_PWD } = REGEX;
 
-const UsersService = {
+const usersService = {
   getUsers(db) {
-    return db.select("*").from("db_users");
+    return db.select("*").from("jto_users");
   },
   getUserById(db, id) {
-    return db.from("db_users").select("*").where("id", id).first();
+    return db.from("jto_users").select("*").where("id", id).first();
   },
   insertUser(db, newUser) {
     return db
       .insert(newUser)
-      .into("db_users")
+      .into("jto_users")
       .returning("*")
       .then(([user]) => {
         return user;
       });
   },
   deleteUser(db, id) {
-    return db("db_users").where({ id }).delete();
+    return db("jto_users").where({ id }).delete();
   },
   uniqueUserName(db, user_name) {
-    return db("db_users")
+    return db("jto_users")
       .where({ user_name })
       .first()
       .then((user) => {
@@ -34,14 +36,14 @@ const UsersService = {
       });
   },
   uniqueEmail(db, email) {
-    return db("db_users")
+    return db("jto_users")
       .where({ email })
       .first()
       .then((user) => {
         return !!user;
       });
   },
-  checkAllFields(user) {
+  hasAllFields(user) {
     for (const [key, value] of Object.entries(user)) {
       if (value == null) {
         return `Missing required '${key}' to create new user`;
@@ -53,6 +55,9 @@ const UsersService = {
   validateUserName(user_name) {
     if (!VALID_USERNAME.test(user_name)) {
       return "Username can only consist of alphanumeric characters, underscores, or hyphens.";
+    }
+    if(filter.isProfane(user_name)) {
+      return "Username cannot contain profanity."
     }
     if (user_name.length < 3) {
       return "Username must be longer than 3 characters.";
@@ -120,4 +125,4 @@ const UsersService = {
   },
 };
 
-module.exports = UsersService;
+module.exports = usersService;
