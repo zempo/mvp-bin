@@ -2,7 +2,7 @@ const xss = require("xss");
 const Treeize = require("treeize");
 
 const actionsService = {
-  getReactions(db) {
+  getActions(db) {
     return db
       .from("jto_cards AS card")
       .select(
@@ -15,46 +15,42 @@ const actionsService = {
         "card.date_created",
         "card.user_id",
         "card.public",
-        db.raw(`count(nullif(actions.react_liked, false)) AS number_of_likes`),
-        db.raw(`count(nullif(actions.react_saved, false)) AS number_of_saves`)
+        db.raw(`count(nullif(actions.action_liked, false)) AS number_of_likes`),
+        db.raw(`count(nullif(actions.action_saved, false)) AS number_of_saves`)
       )
       .leftJoin("jto_actions AS actions", "actions.card_id", "card.id")
       .where("card.public", true)
       .groupBy("card.id")
       .orderBy("card.id");
   },
-  getCardReactions(db, id) {
-    return ReactionsService.getPublicReactions(db).where("card.id", id).first();
+  getCardActions(db, id) {
+    return actionsService.getActions(db).where("card.id", id).first();
   },
-  matchReaction(db, card_id, user_id) {
+  matchAction(db, card_id, user_id) {
     return db
       .from("jto_actions AS actions")
       .select("*")
       .where({ "actions.card_id": card_id, "actions.user_id": user_id });
   },
-  insertReaction(db, newReaction) {
+  insertAction(db, newAction) {
     return db
-      .insert(newReaction)
+      .insert(newAction)
       .into("jto_actions")
       .returning("*")
-      .then(([reaction]) => {
-        return reaction;
+      .then(([action]) => {
+        return action;
       })
-      .then((reaction) => {
-        return ReactionsService.matchReaction(
-          db,
-          reaction.card_id,
-          reaction.user_id
-        );
+      .then((action) => {
+        return actionsService.matchAction(db, action.card_id, action.user_id);
       });
   },
-  updateReactions(db, id, newFields) {
+  updateActions(db, id, newFields) {
     return db.from("jto_actions").where({ id }).update(newFields);
   },
-  serializeReactions(cards) {
-    return cards.map(this.serializeReactionCount);
+  serializeActions(cards) {
+    return cards.map(this.serializeActionCount);
   },
-  serializeReactionCount(card) {
+  serializeActionCount(card) {
     const cardTree = new Treeize();
 
     const cardData = cardTree.grow([card]).getData()[0];
@@ -73,16 +69,16 @@ const actionsService = {
       number_of_saves: Number(cardData.number_of_saves) || 0,
     };
   },
-  serializeQueriedReaction(reaction) {
+  serializeQueriedAction(action) {
     const cardTree = new Treeize();
 
-    const reactionData = cardTree.grow([reaction]).getData()[0];
+    const actionData = cardTree.grow([action]).getData()[0];
 
     return {
-      card_id: reactionData.card_id,
-      user_id: reactionData.user_id,
-      likes: reactionData.likes,
-      saves: reactionData.saves,
+      card_id: actionData.card_id,
+      user_id: actionData.user_id,
+      likes: actionData.likes,
+      saves: actionData.saves,
     };
   },
 };

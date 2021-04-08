@@ -5,6 +5,11 @@ const { requireAuth } = require("../middleware/jwtAuthMW");
 const authRouter = express.Router();
 const bodyParser = express.json();
 
+/**
+ * @desc POST valid user creds to get token
+ * @route POST /api/login
+ * @access Public
+ */
 authRouter.post("/login", bodyParser, (req, res, next) => {
   const { email, password } = req.body;
   const userCreds = { email, password };
@@ -47,6 +52,11 @@ authRouter.post("/login", bodyParser, (req, res, next) => {
     });
 });
 
+/**
+ * @desc POST valid user creds to refresh token
+ * @route POST /api/v1/refresh
+ * @access Private
+ */
 authRouter
   .route("/refresh")
   .all(requireAuth)
