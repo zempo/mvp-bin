@@ -197,6 +197,10 @@ async function checkUserActed(req, res, next) {
   }
 }
 
+/**
+ * ACTIONS ROUTE MIDDLEWARE
+ * ========================================
+ */
 async function checkUserActedOnce(req, res, next) {
   try {
     const card = await actionsService.getCardActions(
@@ -229,6 +233,10 @@ async function checkUserActedOnce(req, res, next) {
   }
 }
 
+/**
+ * ACTIONS ROUTE MIDDLEWARE
+ * ========================================
+ */
 async function matchedActions(req, res, next) {
   try {
     const card = await actionsService.getCardActions(
@@ -254,6 +262,10 @@ async function matchedActions(req, res, next) {
   }
 }
 
+/**
+ * ACTIONS ROUTE MIDDLEWARE
+ * ========================================
+ */
 async function checkCardExists(req, res, next) {
   try {
     const card = await actionsService.getCardActions(

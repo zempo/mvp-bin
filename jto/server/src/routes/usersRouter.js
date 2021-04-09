@@ -207,6 +207,10 @@ async function checkUsersExist(req, res, next) {
   }
 }
 
+/**
+ * USERS ROUTE MIDDLEWARE
+ * ========================================
+ */
 async function checkUserExists(req, res, next) {
   try {
     const user = await usersService.getUserById(

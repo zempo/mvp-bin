@@ -86,25 +86,21 @@ const dashboardService = {
     
         for (const [key, value] of Object.entries(card)) {
           if (value == null && (key === "theme" || key === "inside_message" || key === "front_message")) {
-            return {
-              error: `Missing '${key}' in request body. Images are not required.`
-            };
+            return `Missing '${key}' in request body. Images are not required.`;
           } else if (key === "theme" && (CARD_THEMES.test(value) == false || HAS_SPACES.test(value) == false)) {
             // console.log(CARD_THEMES.test(theme) == false);
-            return {
-              error: `Invalid theme supplied.`
-            };
+            return `Please provide a valid theme for card.`;
+
           } else if ((key === "front_message" && value.length > 100) || (key === "inside_message" && value.length > 650)) {
-            return {
-              error: `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`
-            };
+            return `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`
+            
           } else if (
             (key === "front_image" && value != null && !isWebUri(value)) ||
             (key === "inside_image" && value != null && !isWebUri(value))
           ) {
-            return { error: `If used, card images must be valid URL` };
+            return `Please provide a valid URL for card images`;
           }
-        }
+        } 
     
         return NO_ERRORS;
       },
@@ -112,28 +108,22 @@ const dashboardService = {
         const NO_ERRORS = null;
     
         if (card.theme != null && (CARD_THEMES.test(card.theme) == false || HAS_SPACES.test(card.theme) == false)) {
-          return {
-            error: `Invalid theme supplied.`
-          };
+          return `Please provide a valid theme for card.`;
         } else if ((card.front_message != null)) {
           if (card.front_message.length > 100) {
-            return {
-              error: `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`
-            };
+            return `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`;
           }
         } else if ((card.inside_message != null)) {
           if (card.inside_message.length > 650) {
-            return {
-              error: `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`
-            };
+            return `Front Message cannot exceed 100 characters in length. Inside message cannot exceed 650 characters.`;
           }
         } else if ((card.front_image != null)) {
           if (!isWebUri(card.front_image)) {
-            return { error: `If used, card images must be valid URL` };
+            return `Please make sure card images are a valid URL`;
           }
         } else if ((card.inside_image != null)) {
           if (!isWebUri(card.inside_image)) {
-            return { error: `If used, card images must be valid URL` };
+            return `Please make sure card images are a valid URL`;
           }
         }
         return NO_ERRORS;
@@ -141,9 +131,7 @@ const dashboardService = {
       correctUser(loggedInId, targetId) {
         const NO_ERRORS = null;
         if (loggedInId !== targetId) {
-          return {
-            error: `User does not match card`
-          };
+          return `User does not match card`;
         }
         return NO_ERRORS;
       },
@@ -175,3 +163,5 @@ const dashboardService = {
           return filter.clean(str)
       }
 }
+
+module.exports = dashboardService
