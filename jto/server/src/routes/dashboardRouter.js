@@ -20,7 +20,7 @@ cloudinary.config({
 // -------------------
 
 const dashboardRouter = express.Router();
-dashboardRouter.use(formData);
+// dashboardRouter.use(formData);
 const bodyParser = express.json();
 
 /**

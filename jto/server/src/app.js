@@ -118,12 +118,18 @@ app.get("/", (req, res) => {
               WORKING === "online" ? "on" : "off"
             }"> ${WORKING} </span>
           </li>
-        </ul>
-        <h2>Routes</h2>
+        </ul> 
+        <h2>Public Routes</h2>
         <hr />
         <ul>
           <li>
             <a href="http://localhost:${PORT}">Home</a>
+          </li>
+          <li>
+            <a href="http://localhost:${PORT}/api/gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="http://localhost:${PORT}/api/actions">Actions</a>
           </li>
         </ul>
       </main>

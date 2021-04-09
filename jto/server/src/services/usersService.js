@@ -2,12 +2,12 @@ const xss = require("xss");
 const Treeize = require("treeize");
 const bcrypt = require("bcryptjs");
 const validator = require("email-validator");
-const Filter = require('bad-words'),
+const Filter = require("bad-words");
 const filter = new Filter();
 // Validation
 const { REGEX } = require("../config");
 const { VALID_USERNAME, VALID_PWD } = REGEX;
- 
+
 const usersService = {
   getUsers(db) {
     return db.select("*").from("jto_users");
@@ -56,8 +56,8 @@ const usersService = {
     if (!VALID_USERNAME.test(user_name)) {
       return "Username can only consist of alphanumeric characters, underscores, or hyphens.";
     }
-    if(filter.isProfane(user_name)) {
-      return "Username cannot contain profanity."
+    if (filter.isProfane(user_name)) {
+      return "Username cannot contain profanity.";
     }
     if (user_name.length < 3) {
       return "Username must be longer than 3 characters.";

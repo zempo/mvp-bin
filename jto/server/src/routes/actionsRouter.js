@@ -11,15 +11,15 @@ const bodyParser = express.json();
  * @access Public
  */
 actionsRouter.route("/").get((req, res, next) => {
-  actionsService.getActions(req.app.get("db")).then((cards) => {
-    res
-      .status(200)
-      .json({
+  actionsService
+    .getActions(req.app.get("db"))
+    .then((cards) => {
+      res.status(200).json({
         success: true,
         payload: actionsService.serializeActions(cards),
-      })
-      .catch(next);
-  });
+      });
+    })
+    .catch(next);
 });
 
 /**
