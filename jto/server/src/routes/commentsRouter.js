@@ -1,12 +1,10 @@
 const express = require("express");
 const { requireAuth } = require("../middleware/jwtAuthMW");
 const commentsService = require("../services/commentsService");
-const Filter = require("bad-words");
 const path = require("path");
 
 const commentsRouter = express.Router();
 const bodyParser = express.json();
-const filter = new Filter();
 
 /**
  * @desc POST new comment to a card

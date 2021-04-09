@@ -8,7 +8,7 @@ const bodyParser = express.json();
 
 /**
  * @desc GET all published cards
- * @route GET /api/cards
+ * @route GET /api/gallery
  * @access Public
  */
 cardRouter.route("/").get((req, res, next) => {
@@ -26,7 +26,7 @@ cardRouter.route("/").get((req, res, next) => {
 
 /**
  * @desc GET any particular card (published or otherwise) using its id
- * @route GET /api/cards/any/:card_id
+ * @route GET /api/gallery/any/:card_id
  * @access Public
  */
 cardRouter
@@ -41,7 +41,7 @@ cardRouter
 
 /**
  * @desc GET + DELETE + PATCH any published card (given its id)
- * @route GET + DELETE + PATCH /api/cards/:card_id
+ * @route GET + DELETE + PATCH /api/gallery/:card_id
  * @access Public, Admin, Private
  */
 cardRouter
@@ -138,7 +138,7 @@ cardRouter
 
 /**
  * @desc GET a published card's comments, using card id
- * @route GET /api/cards/comments/:card_id
+ * @route GET /api/gallery/comments/:card_id
  * @access Public
  */
 cardRouter
@@ -158,7 +158,7 @@ cardRouter
 
 /**
  * @desc PATCH a published card's to make it private
- * @route PATCH /api/cards/unpublish/:card_id
+ * @route PATCH /api/gallery/unpublish/:card_id
  * @access Private
  */
 cardRouter
