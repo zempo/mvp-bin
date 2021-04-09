@@ -2,7 +2,7 @@ const express = require("express");
 const { requireAuth } = require("../middleware/jwtAuthMW");
 const commentsService = require("../services/commentsService");
 const path = require("path");
-
+// Set-up
 const commentsRouter = express.Router();
 const bodyParser = express.json();
 
@@ -38,7 +38,7 @@ commentsRouter.route("/").post(requireAuth, bodyParser, (req, res, next) => {
       if (!insertedComment)
         return res.status(409).json({
           success: false,
-          message: "request timeout",
+          message: "Request timeout.",
         });
 
       return res
@@ -46,7 +46,7 @@ commentsRouter.route("/").post(requireAuth, bodyParser, (req, res, next) => {
         .location(path.posix.join(req.originalUrl, `/${insertedComment.id}`))
         .json({
           success: true,
-          message: `Created new comment with id: "${insertedComment.id}".`,
+          message: `Created new comment.`,
           payload: service.serializeComment(insertedComment),
         });
     } catch (error) {
@@ -72,7 +72,7 @@ commentsRouter
     if (req.user.id === res.comment.user.id || req.user.admin) {
       res.json({
         success: true,
-        message: `Showing comment with id: "${req.params.comment_id}"`,
+        message: `Showing comment with id: "${req.params.comment_id}".`,
         payload: commentsService.serializeComment(res.comment),
       });
     } else {
@@ -133,7 +133,7 @@ commentsRouter
         if (!updatedComment) {
           return res.status(409).json({
             success: false,
-            message: "Request Timeout",
+            message: "Request timeout.",
           });
         }
 
@@ -148,8 +148,7 @@ commentsRouter
   });
 
 /**
- * COMMENTS ROUTE MIDDLEWARE
- * ========================================
+ * ### COMMENTS MIDDLEWARE
  */
 async function checkCommentExists(req, res, next) {
   try {
@@ -161,7 +160,7 @@ async function checkCommentExists(req, res, next) {
     if (!comment)
       return res.status(404).json({
         success: false,
-        message: `This comment no longer exists.`,
+        message: `This comment no longer exists. It may have been moved or deleted.`,
       });
 
     res.comment = comment;

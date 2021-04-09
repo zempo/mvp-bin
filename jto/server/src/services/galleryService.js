@@ -1,7 +1,7 @@
 const xss = require("xss");
 const Treeize = require("treeize");
 
-const cardsService = {
+const galleryService = {
   getAllCards(db) {
     return db
       .from("jto_cards AS card")
@@ -58,10 +58,10 @@ const cardsService = {
       .where("comments.card_id", id);
   },
   getAnyById(db, id) {
-    return cardsService.getAllCards(db).where("card.id", id).first();
+    return galleryService.getAllCards(db).where("card.id", id).first();
   },
   getPublicById(db, id) {
-    return cardsService.getPublicCards(db).where("card.id", id).first();
+    return galleryService.getPublicCards(db).where("card.id", id).first();
   },
   serializeCards(cards) {
     return cards.map(this.serializeCard);
@@ -112,4 +112,4 @@ const userFields = [
   "usr.date_modified AS user:date_modified",
 ];
 
-module.exports = cardsService;
+module.exports = galleryService;

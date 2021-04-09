@@ -12,7 +12,7 @@ const dashboardService = {
      * then their id will be used to display their cards.
      * cards can only be public or private
     */
-    getDashCards(db, user_id) {
+    getUserCards(db, user_id) {
         return db
           .from("jto_cards AS card")
           .select(
@@ -34,7 +34,7 @@ const dashboardService = {
           })
           .groupBy("card.id", "usr.id");
       },
-      getDashById(db, user_id, card_id) {
+      getUserCardsById(db, user_id, card_id) {
         return db
           .from("jto_cards AS card")
           .select(
@@ -98,7 +98,7 @@ const dashboardService = {
             (key === "front_image" && value != null && !isWebUri(value)) ||
             (key === "inside_image" && value != null && !isWebUri(value))
           ) {
-            return `Please provide a valid URL for card images`;
+            return `Please provide a valid URL for card images.`;
           }
         } 
     
@@ -119,11 +119,11 @@ const dashboardService = {
           }
         } else if ((card.front_image != null)) {
           if (!isWebUri(card.front_image)) {
-            return `Please make sure card images are a valid URL`;
+            return `Please make sure card images are a valid URL.`;
           }
         } else if ((card.inside_image != null)) {
           if (!isWebUri(card.inside_image)) {
-            return `Please make sure card images are a valid URL`;
+            return `Please make sure card images are a valid URL.`;
           }
         }
         return NO_ERRORS;
@@ -131,7 +131,7 @@ const dashboardService = {
       correctUser(loggedInId, targetId) {
         const NO_ERRORS = null;
         if (loggedInId !== targetId) {
-          return `User does not match card`;
+          return `User does not match card.`;
         }
         return NO_ERRORS;
       },

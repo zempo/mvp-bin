@@ -13,10 +13,10 @@ const cloudService = {
     const { front, inside } = filesToUpload;
 
     if (front && front.size / 1024 / 1024 > 0.5) {
-      return { error: "front image too large" };
+      return `Please choose a smaller front image.`;
     }
     if (inside && inside.size / 1024 / 1024 > 0.5) {
-      return { error: "inside image too large" };
+      return `Please choose a smaller inside image.`;
     }
 
     return NO_ERRORS;

@@ -62,7 +62,7 @@ const commentsService = {
   checkAllFields(comment) {
     for (const [key, value] of Object.entries(comment)) {
       if (value == null) {
-        return `Missing required '${key}' to create new comment`;
+        return `Missing required '${key}' to create new comment.`;
       }
     }
     // if loops through and finds all keys
@@ -74,7 +74,7 @@ const commentsService = {
   correctUser(loggedInId, targetId) {
     const NO_ERRORS = null;
     if (loggedInId !== targetId) {
-      return `User does not match card`;
+      return `User does not match card.`;
     }
     return NO_ERRORS;
   },

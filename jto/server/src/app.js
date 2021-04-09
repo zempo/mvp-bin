@@ -15,6 +15,10 @@ const { NODE_ENV, WORKING, PORT } = require("./config");
 
 // Route imports
 const authRouter = require("./routes/authRouter");
+const actionsRouter = require("./routes/actionsRouter");
+const commentsRouter = require("./routes/commentsRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
+const galleryRouter = require("./routes/galleryRouter");
 const usersRouter = require("./routes/usersRouter");
 
 //----------------------------------------------
@@ -39,6 +43,10 @@ app.use(helmet());
  * ROUTES
  */
 app.use("/api/auth", authRouter);
+app.use("/api/actions", actionsRouter);
+app.use("/api/gallery", galleryRouter);
+app.use("/api/dashboard", dashboardRouter);
+app.use("/api/comments", commentsRouter);
 app.use("/api/users", usersRouter);
 
 app.get("/", (req, res) => {
@@ -99,7 +107,7 @@ app.get("/", (req, res) => {
           color: rgb(233, 32, 75);
         }
       </style>
-      <h1>Server for ''Your App''</h1>
+      <h1>Server for "Just the Occasion"</h1>
       <main>
         <h2>Debug</h2>
         <hr />
@@ -122,8 +130,10 @@ app.get("/", (req, res) => {
     </body>
   </html>`;
 
-  // load app status pg w/ variable checks
+  // load app status pg w/ env variable checks
   res.status(200).send(statusPg);
 });
+
+app.use(errCatch);
 
 module.exports = app;

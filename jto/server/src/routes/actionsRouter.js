@@ -1,13 +1,13 @@
 const express = require("express");
 const { requireAuth } = require("../middleware/jwtAuthMW");
 const actionsService = require("../services/actionsService");
-
+// Setup
 const actionsRouter = express.Router();
 const bodyParser = express.json();
 
 /**
  * @desc GET actions for all cards
- * @route GET /api/actions
+ * @route /api/actions
  * @access Public
  */
 actionsRouter.route("/").get((req, res, next) => {
@@ -24,7 +24,7 @@ actionsRouter.route("/").get((req, res, next) => {
 
 /**
  * @desc GET a card's actions
- * @route GET /api/actions/:card_id
+ * @route /api/actions/:card_id
  * @access Public
  */
 actionsRouter
@@ -39,7 +39,7 @@ actionsRouter
 
 /**
  * @desc GET + PATCH + POST a card's likes
- * @route GET + PATCH + POST /api/actions/likes/:card_id
+ * @route /api/actions/likes/:card_id
  * @access Private
  */
 actionsRouter
@@ -101,7 +101,7 @@ actionsRouter
 
 /**
  * @desc GET + PATCH + POST a card's saves
- * @route GET + PATCH + POST /api/actions/saves/:card_id
+ * @route /api/actions/saves/:card_id
  * @access Private
  */
 actionsRouter
@@ -156,14 +156,20 @@ actionsRouter
     actionsService
       .insertAction(req.app.get("db"), newAction)
       .then((action) => {
-        res.status(201).json(action).end();
+        res
+          .status(201)
+          .json({
+            success: true,
+            message: `Created new card action set.`,
+            payload: action,
+          })
+          .end();
       })
       .catch(next);
   });
 
 /**
- * ACTIONS ROUTE MIDDLEWARE
- * ========================================
+ * ### ACTIONS MIDDLEWARE
  */
 async function checkUserActed(req, res, next) {
   try {
@@ -198,8 +204,7 @@ async function checkUserActed(req, res, next) {
 }
 
 /**
- * ACTIONS ROUTE MIDDLEWARE
- * ========================================
+ * ### ACTIONS MIDDLEWARE
  */
 async function checkUserActedOnce(req, res, next) {
   try {
@@ -234,8 +239,7 @@ async function checkUserActedOnce(req, res, next) {
 }
 
 /**
- * ACTIONS ROUTE MIDDLEWARE
- * ========================================
+ * ### ACTIONS MIDDLEWARE
  */
 async function matchedActions(req, res, next) {
   try {
@@ -263,8 +267,7 @@ async function matchedActions(req, res, next) {
 }
 
 /**
- * ACTIONS ROUTE MIDDLEWARE
- * ========================================
+ * ### ACTIONS MIDDLEWARE
  */
 async function checkCardExists(req, res, next) {
   try {

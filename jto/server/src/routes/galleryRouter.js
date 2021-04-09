@@ -1,24 +1,24 @@
 const express = require("express");
-
 const { requireAuth } = require("../middleware/jwtAuthMW");
-const cardsService = require("../services/cardsService");
+const galleryService = require("../services/galleryService");
 const dashboardService = require("../services/dashboardService");
-const cardRouter = express.Router();
+// Set-up
+const galleryRouter = express.Router();
 const bodyParser = express.json();
 
 /**
  * @desc GET all published cards
- * @route GET /api/gallery
+ * @route /api/gallery
  * @access Public
  */
-cardRouter.route("/").get((req, res, next) => {
-  cardsService
+galleryRouter.route("/").get((req, res, next) => {
+  galleryService
     .getAllCards(req.app.get("db"))
     .then((cards) => {
       res.status(200).json({
         success: true,
-        message: "Showing all published cards",
-        payload: cardsService.serializeCards(cards),
+        message: "Showing all published cards.",
+        payload: galleryService.serializeCards(cards),
       });
     })
     .catch(next);
@@ -26,32 +26,32 @@ cardRouter.route("/").get((req, res, next) => {
 
 /**
  * @desc GET any particular card (published or otherwise) using its id
- * @route GET /api/gallery/any/:card_id
+ * @route /api/gallery/any/:card_id
  * @access Public
  */
-cardRouter
+galleryRouter
   .route("/any/:card_id")
   .all(checkAnyCardExists)
   .get((req, res) => {
     res.status(200).json({
-      message: `Showing card with id: ${req.params.card_id}`,
-      payload: cardsService.serializeCard(res.any_card),
+      message: `Showing card with id: "${req.params.card_id}".`,
+      payload: galleryService.serializeCard(res.any_card),
     });
   });
 
 /**
  * @desc GET + DELETE + PATCH any published card (given its id)
- * @route GET + DELETE + PATCH /api/gallery/:card_id
+ * @route /api/gallery/:card_id
  * @access Public, Admin, Private
  */
-cardRouter
+galleryRouter
   .route("/:card_id")
   .all(checkCardExists)
   .get((req, res) => {
     res.json({
       success: true,
-      message: `Showing published card with id: "${req.params.card_id}"`,
-      payload: cardsService.serializeCard(res.card),
+      message: `Showing published card with id: "${req.params.card_id}".`,
+      payload: galleryService.serializeCard(res.card),
     });
   })
   .delete(requireAuth, (req, res, next) => {
@@ -89,7 +89,7 @@ cardRouter
     if (numberOfValues === 0) {
       return res.status(400).json({
         success: false,
-        message: `Please include any of the following in the update: theme, front_message, front_image, inside_message, or inside_image`,
+        message: `Please target at least 1 card property in the update.`,
       });
     }
     cardToUpdate.date_modified = new Date().toLocaleString();
@@ -122,7 +122,7 @@ cardRouter
         if (!updatedCard) {
           return res.status(409).json({
             success: false,
-            message: "request timeout",
+            message: "Request timeout.",
           });
         }
 
@@ -138,30 +138,30 @@ cardRouter
 
 /**
  * @desc GET a published card's comments, using card id
- * @route GET /api/gallery/comments/:card_id
+ * @route /api/gallery/comments/:card_id
  * @access Public
  */
-cardRouter
+galleryRouter
   .route("/comments/:card_id")
   .all(checkCardExists)
   .get((req, res, next) => {
-    cardsService
+    galleryService
       .getCommentsByCard(req.app.get("db"), res.card["id"])
       .then((comments) => {
         res.status(200).json({
-          message: `Showing card comments for card with id: "${res.card["id"]}"`,
-          payload: cardsService.serializeCardComments(comments),
+          message: `Showing card comments for card with id: "${res.card["id"]}".`,
+          payload: galleryService.serializeCardComments(comments),
         });
       })
       .catch(next);
   });
 
 /**
- * @desc PATCH a published card's to make it private
- * @route PATCH /api/gallery/unpublish/:card_id
+ * @desc PATCH, but only to unpublish a published card.
+ * @route /api/gallery/unpublish/:card_id
  * @access Private
  */
-cardRouter
+galleryRouter
   .route("/unpublish/:card_id")
   .all(requireAuth)
   .all(checkCardExists)
@@ -182,12 +182,11 @@ cardRouter
   });
 
 /**
- * GALLERY ROUTE MIDDLEWARE
- * ========================================
+ * ### GALLERY MIDDLEWARE
  */
 async function checkCardExists(req, res, next) {
   try {
-    const card = await cardsService.getPublicById(
+    const card = await galleryService.getPublicById(
       req.app.get("db"),
       req.params.card_id
     );
@@ -195,7 +194,7 @@ async function checkCardExists(req, res, next) {
     if (!card) {
       return res.status(404).json({
         success: false,
-        message: `This public card no longer exists. It might have been deleted or made private.`,
+        message: `This public card no longer exists. It might have been deleted or unpublished.`,
       });
     }
 
@@ -207,12 +206,11 @@ async function checkCardExists(req, res, next) {
 }
 
 /**
- * GALLERY ROUTE MIDDLEWARE
- * ========================================
+ * ### GALLERY MIDDLEWARE
  */
 async function checkAnyCardExists(req, res, next) {
   try {
-    const anyCard = await cardsService.getAnyById(
+    const anyCard = await galleryService.getAnyById(
       req.app.get("db"),
       req.params.card_id
     );
@@ -220,7 +218,7 @@ async function checkAnyCardExists(req, res, next) {
     if (!anyCard) {
       return res.status(404).json({
         success: false,
-        message: `This card no longer exists. It has been deleted.`,
+        message: `This card no longer exists. It may have been deleted.`,
       });
     }
 
@@ -231,4 +229,4 @@ async function checkAnyCardExists(req, res, next) {
   }
 }
 
-module.exports = cardRouter;
+module.exports = galleryRouter;

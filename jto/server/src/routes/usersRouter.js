@@ -1,17 +1,14 @@
 const express = require("express");
 const path = require("path");
 const { requireAuth } = require("../middleware/jwtAuthMW");
-
-/**
- * SETUP
- * */
+// Set-up
 const usersService = require("../services/usersService");
 const usersRouter = express.Router();
 const bodyParser = express.json();
 
 /**
  * @desc GET user data, POST new user account
- * @route POST /api/users
+ * @route /api/users
  * @access Admin, Private
  */
 usersRouter
@@ -131,7 +128,7 @@ usersRouter
 
 /**
  * @desc GET public username stats
- * @route GET /api/users/public/:user_id
+ * @route /api/users/public/:user_id
  * @access Public
  */
 usersRouter
@@ -146,7 +143,7 @@ usersRouter
 
 /**
  * @desc GET + DELETE private user data
- * @route GET + DELETE /api/users/:user_id
+ * @route /api/users/:user_id
  * @access Admin + Authenticated User
  */
 usersRouter
@@ -186,8 +183,7 @@ usersRouter
   });
 
 /**
- * USERS ROUTE MIDDLEWARE
- * ========================================
+ * ### USERS MIDDLEWARE
  */
 async function checkUsersExist(req, res, next) {
   try {
@@ -208,8 +204,7 @@ async function checkUsersExist(req, res, next) {
 }
 
 /**
- * USERS ROUTE MIDDLEWARE
- * ========================================
+ * ### USERS MIDDLEWARE
  */
 async function checkUserExists(req, res, next) {
   try {
