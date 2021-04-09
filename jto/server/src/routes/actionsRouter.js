@@ -38,8 +38,8 @@ actionsRouter
   });
 
 /**
- * @desc GET/PATCH/POST a card's likes
- * @route GET/PATCH/POST /api/actions/likes/:card_id
+ * @desc GET + PATCH + POST a card's likes
+ * @route GET + PATCH + POST /api/actions/likes/:card_id
  * @access Private
  */
 actionsRouter
@@ -100,8 +100,8 @@ actionsRouter
   });
 
 /**
- * @desc GET/PATCH/POST a card's saves
- * @route GET/PATCH/POST /api/actions/saves/:card_id
+ * @desc GET + PATCH + POST a card's saves
+ * @route GET + PATCH + POST /api/actions/saves/:card_id
  * @access Private
  */
 actionsRouter

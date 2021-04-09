@@ -74,9 +74,7 @@ const commentsService = {
   correctUser(loggedInId, targetId) {
     const NO_ERRORS = null;
     if (loggedInId !== targetId) {
-      return {
-        error: `User does not match card`,
-      };
+      return `User does not match card`;
     }
     return NO_ERRORS;
   },

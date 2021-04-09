@@ -1,6 +1,6 @@
 TRUNCATE
-  jto_reacts,
+  jto_actions,
   jto_comments,
   jto_cards,
-  jto_actions
+  jto_users
   RESTART IDENTITY CASCADE;

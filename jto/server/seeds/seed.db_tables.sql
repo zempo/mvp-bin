@@ -65,7 +65,7 @@ INSERT INTO jto_comments
     ('Agreed! Quite cute, indeed!', 2, 1);
 
 INSERT INTO jto_actions
-    (card_id, user_id, react_liked, react_saved)
+    (card_id, user_id, action_liked, action_saved)
     VALUES
     (1, 2, TRUE, default),
     (1, 3, default, default),

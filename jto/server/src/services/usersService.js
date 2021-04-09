@@ -7,7 +7,7 @@ const filter = new Filter();
 // Validation
 const { REGEX } = require("../config");
 const { VALID_USERNAME, VALID_PWD } = REGEX;
-
+ 
 const usersService = {
   getUsers(db) {
     return db.select("*").from("jto_users");
