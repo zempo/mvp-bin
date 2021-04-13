@@ -122,7 +122,11 @@ dashboardRouter
           .location(
             path.posix.join(req.originalUrl, `/${insertedCard[0]["id"]}`)
           )
-          .json(dashboardService.serializeCard(insertedCard[0]));
+          .json({
+            success: true,
+            message: `Inserted new card.`,
+            payload: dashboardService.serializeCard(insertedCard[0]),
+          });
       } catch (error) {
         next(error);
       }

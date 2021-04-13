@@ -13,7 +13,7 @@ const bodyParser = express.json();
  */
 galleryRouter.route("/").get((req, res, next) => {
   galleryService
-    .getAllCards(req.app.get("db"))
+    .getPublicCards(req.app.get("db"))
     .then((cards) => {
       res.status(200).json({
         success: true,
@@ -34,6 +34,7 @@ galleryRouter
   .all(checkAnyCardExists)
   .get((req, res) => {
     res.status(200).json({
+      success: true,
       message: `Showing card with id: "${req.params.card_id}".`,
       payload: galleryService.serializeCard(res.any_card),
     });
@@ -149,6 +150,7 @@ galleryRouter
       .getCommentsByCard(req.app.get("db"), res.card["id"])
       .then((comments) => {
         res.status(200).json({
+          success: true,
           message: `Showing card comments for card with id: "${res.card["id"]}".`,
           payload: galleryService.serializeCardComments(comments),
         });
