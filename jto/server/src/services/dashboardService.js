@@ -171,4 +171,12 @@ const dashboardService = {
   },
 };
 
+const userFields = [
+  "usr.id AS user:id",
+  "usr.admin AS user:admin",
+  "usr.user_name AS user:user_name",
+  "usr.date_created AS user:date_created",
+  "usr.date_modified AS user:date_modified",
+];
+
 module.exports = dashboardService;

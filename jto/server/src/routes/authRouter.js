@@ -27,28 +27,32 @@ authRouter.post("/login", bodyParser, (req, res, next) => {
     .getUserByEmail(req.app.get("db"), userCreds.email)
     .then((dbUser) => {
       if (!dbUser) {
-        return res.status(400).json({
+        return res.status(401).json({
           success: false,
-          message: "Incorrect email or password, please try again.",
+          message: `Incorrect email or password, please try again.`,
         });
+      } else {
+        return authService
+          .comparePwds(userCreds.password, dbUser.password)
+          .then((matching) => {
+            if (matching) {
+              const sub = dbUser.email;
+              const payload = { user_id: dbUser.id };
+
+              return res.status(201).json({
+                success: true,
+                message: `Created new token.`,
+                token: authService.createJwt(sub, payload),
+              });
+            } else {
+              return res.status(401).json({
+                success: false,
+                message: `Incorrect email or password, please try again.`,
+              });
+            }
+          })
+          .catch(next);
       }
-      return authService
-        .comparePwds(userCreds.password, dbUser.password)
-        .then((matching) => {
-          if (!matching) {
-            return res.status(400).json({
-              success: false,
-              message: "Incorrect email or password, please try again.",
-            });
-          }
-          const sub = dbUser.email;
-          const payload = { user_id: dbUser.id };
-          res.status(201).json({
-            success: true,
-            token: authService.createJwt(sub, payload),
-          });
-        })
-        .catch(next);
     });
 });
 

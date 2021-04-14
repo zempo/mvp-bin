@@ -523,12 +523,14 @@ function seedMaliciousCard(db, user, card) {
 }
 
 function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
+  const expiry = process.env.JWT_EXPIRY || "180d";
   const token = jwt.sign({ user_id: user.id }, secret, {
     subject: user.email,
+    expiresIn: expiry,
     algorithm: "HS256",
   });
-  // console.log(token)
-  return `Bearer ${token}`;
+
+  return `bearer ${token}`;
 }
 
 module.exports = {

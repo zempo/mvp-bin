@@ -13,9 +13,9 @@ const authService = {
     return bcrypt.compare(password, hash);
   },
   createJwt(subject, payload) {
-    return jwt.sign(payload, {
+    return jwt.sign(payload, JWT_SECRET, {
       subject,
-      expiresIn: JWT_EXPIRY,
+      expiresIn: `${JWT_EXPIRY}`,
       algorithm: "HS256",
     });
   },

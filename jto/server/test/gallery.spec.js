@@ -259,7 +259,8 @@ describe(`Gallery Endpoints`, () => {
           .patch(`/api/gallery/unpublish/${card_id}`)
           .set("Authorization", helpers.makeAuthHeader(testUsers[0]))
           .expect(404, {
-            message: `This public card no longer exists. It might have been deleted or made private.`,
+            success: false,
+            message: `This public card no longer exists. It might have been deleted or unpublished.`,
           });
       });
     });
