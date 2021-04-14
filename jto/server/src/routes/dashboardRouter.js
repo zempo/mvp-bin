@@ -250,11 +250,11 @@ dashboardRouter
 
 /**
  * @desc PATCH, but only publish an unpublished card
- * @route /api/dashboard/publish/:card_id
+ * @route /api/dashboard/publish/:user_id/:card_id
  * @access Private
  */
 dashboardRouter
-  .route("/publish/:card_id")
+  .route("/publish/:user_id/:card_id")
   .all(requireAuth)
   .all(checkCardStillPrivate)
   .patch(bodyParser, (req, res, next) => {
