@@ -150,7 +150,7 @@ describe(`Gallery Endpoints`, () => {
           .get(`/api/gallery/${card_id}`)
           .expect(200, {
             success: true,
-            message: `Showing published card with id: "${expectedCard.id}".`,
+            message: `Showing published card with id of ${expectedCard.id}.`,
             payload: expectedCard,
           });
       });
@@ -204,7 +204,7 @@ describe(`Gallery Endpoints`, () => {
           .get(`/api/gallery/comments/${card_id}`)
           .expect(200, {
             success: true,
-            message: `Showing card comments for card with id: "${card_id}".`,
+            message: `Showing card comments for card with id of ${card_id}.`,
             payload: [],
           });
       });
@@ -233,7 +233,7 @@ describe(`Gallery Endpoints`, () => {
           .get(`/api/gallery/comments/${card_id}`)
           .expect(200, {
             success: true,
-            message: `Showing card comments for card with id: "${card_id}".`,
+            message: `Showing card comments for card with id of ${card_id}.`,
             payload: expectedCardComments,
           });
       });

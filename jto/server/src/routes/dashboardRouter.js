@@ -71,7 +71,7 @@ dashboardRouter
     if (req.user.id === res.cards[0]["user:id"]) {
       res.status(200).json({
         success: true,
-        message: `Showing cards for user with id: "${req.params.user_id}"`,
+        message: `Showing cards for user with id of ${req.params.user_id}.`,
         payload: dashboardService.serializeCards(res.cards),
       });
     } else {
@@ -149,7 +149,7 @@ dashboardRouter
     if (req.user.id === res.card[0]["user:id"]) {
       res.status(200).json({
         success: true,
-        message: `Showing card from user with id: ${req.params.user_id}`,
+        message: `Showing card from user with id of ${req.params.user_id}.`,
         payload: dashboardService.serializeCards(res.card),
       });
     } else {

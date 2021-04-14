@@ -35,7 +35,7 @@ galleryRouter
   .get((req, res) => {
     res.status(200).json({
       success: true,
-      message: `Showing card with id: "${req.params.card_id}".`,
+      message: `Showing card with id of ${req.params.card_id}.`,
       payload: galleryService.serializeCard(res.any_card),
     });
   });
@@ -51,7 +51,7 @@ galleryRouter
   .get((req, res) => {
     res.json({
       success: true,
-      message: `Showing published card with id: "${req.params.card_id}".`,
+      message: `Showing published card with id of ${req.params.card_id}.`,
       payload: galleryService.serializeCard(res.card),
     });
   })
@@ -151,7 +151,7 @@ galleryRouter
       .then((comments) => {
         res.status(200).json({
           success: true,
-          message: `Showing card comments for card with id: "${res.card["id"]}".`,
+          message: `Showing card comments for card with id of ${res.card["id"]}.`,
           payload: galleryService.serializeCardComments(comments),
         });
       })

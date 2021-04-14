@@ -68,7 +68,7 @@ const dashboardService = {
       })
       .then((card) => {
         // console.log(card);
-        return dashboardService.getDashById(db, card.user_id, card.id);
+        return dashboardService.getUserCardsById(db, card.user_id, card.id);
       });
   },
   deleteCard(db, id) {
@@ -101,7 +101,7 @@ const dashboardService = {
         (key === "front_image" && value != null && !isWebUri(value)) ||
         (key === "inside_image" && value != null && !isWebUri(value))
       ) {
-        return `Please provide a valid URL for card images.`;
+        return `Please use a valid URL for card images.`;
       }
     }
 
@@ -126,11 +126,11 @@ const dashboardService = {
       }
     } else if (card.front_image != null) {
       if (!isWebUri(card.front_image)) {
-        return `Please make sure card images are a valid URL.`;
+        return `Please use a valid URL for card images.`;
       }
     } else if (card.inside_image != null) {
       if (!isWebUri(card.inside_image)) {
-        return `Please make sure card images are a valid URL.`;
+        return `Please use a valid URL for card images.`;
       }
     }
     return NO_ERRORS;

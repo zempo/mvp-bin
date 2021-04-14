@@ -357,6 +357,7 @@ function makeExpectedDashCard(users, card) {
     public: card.public,
     user: {
       id: usr.id,
+      admin: usr.admin,
       user_name: usr.user_name,
       date_created: usr.date_created,
       date_modified: usr.date_modified,
