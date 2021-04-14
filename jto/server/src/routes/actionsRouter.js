@@ -16,6 +16,7 @@ actionsRouter.route("/").get((req, res, next) => {
     .then((cards) => {
       res.status(200).json({
         success: true,
+        message: `Showing cards with action status.`,
         payload: actionsService.serializeActions(cards),
       });
     })
@@ -33,6 +34,7 @@ actionsRouter
   .get((req, res) => {
     res.status(200).json({
       success: true,
+      message: `Showing action status for card with id of ${req.params.card_id}.`,
       payload: actionsService.serializeActionCount(res.card),
     });
   });
