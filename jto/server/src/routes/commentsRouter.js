@@ -72,7 +72,7 @@ commentsRouter
     if (req.user.id === res.comment.user.id || req.user.admin) {
       res.json({
         success: true,
-        message: `Showing comment with id: "${req.params.comment_id}".`,
+        message: `Showing comment with id of ${req.params.comment_id}.`,
         payload: commentsService.serializeComment(res.comment),
       });
     } else {

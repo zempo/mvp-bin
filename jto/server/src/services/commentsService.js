@@ -40,7 +40,7 @@ const commentsService = {
       })
       .then((comment) => {
         // console.log(comment["id"])
-        return CommentsService.getById(db, comment.id);
+        return commentsService.getById(db, comment.id);
       });
   },
   deleteComment(db, id) {

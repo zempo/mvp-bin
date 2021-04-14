@@ -2,7 +2,7 @@ const knex = require("knex");
 const app = require("../src/app");
 const helpers = require("./testHelpers");
 
-describe("Card Actions endpoints", function () {
+describe("Card Action Endpoints", function () {
   let db;
 
   const {

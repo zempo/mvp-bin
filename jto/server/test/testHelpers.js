@@ -386,7 +386,10 @@ function makeExpectedComments(users, comment_id, comments) {
           0,
           commentUser.date_created.length - 1
         ),
-        date_modified: commentUser.date_modified,
+        date_modified: commentUser.date_modified.substr(
+          0,
+          commentUser.date_created.length - 1
+        ),
       },
     };
   });
