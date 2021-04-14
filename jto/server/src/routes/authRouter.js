@@ -69,6 +69,7 @@ authRouter
     const payload = { user_id: req.user.id };
     res.status(201).json({
       success: true,
+      message: `Created token refresh.`,
       token: authService.createJwt(sub, payload),
     });
   });
