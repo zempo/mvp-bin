@@ -280,6 +280,17 @@ function makeActionsArray(users, cards) {
   ];
 }
 
+function makeExpectedUser(user) {
+  return {
+    admin: user.admin || false,
+    user_name: user.user_name,
+    full_name: user.full_name,
+    email: user.email,
+    date_created: user.date_created,
+    date_modified: user.date_modified,
+  };
+}
+
 function makeExpectedCard(users, card, comments = []) {
   const usr = users.find((u) => u.id === card.user_id);
 
@@ -536,6 +547,7 @@ function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
 module.exports = {
   makeUsersArray,
   makeCardsArray,
+  makeExpectedUser,
   makeExpectedCard,
   makeMaliciousCard,
   makeExpectedDashCard,

@@ -45,12 +45,12 @@ const usersService = {
   },
   hasAllFields(user) {
     for (const [key, value] of Object.entries(user)) {
-      if (value == null) {
+      if (value === undefined) {
         return `Missing required '${key}' to create new user`;
       }
     }
     // if loops through and finds all keys
-    return null;
+    return "";
   },
   validateUserName(user_name) {
     if (!VALID_USERNAME.test(user_name)) {
@@ -68,13 +68,13 @@ const usersService = {
     if (user_name.startsWith(" ") || user_name.endsWith(" ")) {
       return "Username must not start or end with empty spaces";
     }
-    return null;
+    return "";
   },
   validateEmail(email) {
     if (validator.validate(email) == false) {
       return "Invalid email";
     }
-    return null;
+    return "";
   },
   validatePassword(password) {
     if (password.length < 8) {
@@ -89,13 +89,13 @@ const usersService = {
     if (!VALID_PWD.test(password)) {
       return "Password must contain 1 upper case, lower case, number and special character";
     }
-    return null;
+    return "";
   },
   validateFullName(name) {
     if (name.length > 150) {
       return "Full names shall be abbreviated to 150 characters based on Minnesota Statutory Law. Please reach out to our support team if you would like to create an account for the kitten who walks across your keyboard.";
     }
-    return null;
+    return "";
   },
   hashPassword(password) {
     return bcrypt.hash(password, 12);

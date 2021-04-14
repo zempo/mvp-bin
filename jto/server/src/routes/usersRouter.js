@@ -31,13 +31,15 @@ usersRouter
   })
   .post(bodyParser, (req, res, next) => {
     const { password, user_name, full_name, email } = req.body;
-    const newUser = { password, user_name, admin: false, full_name, email };
+    const newUser = { password, user_name, full_name, email };
+
+    newUser.admin = false;
 
     async function validateUser(user, service) {
       try {
         // if we get an error, we step out of function
-        let missingKeys = await service.checkAllFields(user);
-        if (missingKeys) {
+        let missingKeys = await service.hasAllFields(user);
+        if (missingKeys !== "") {
           return res.status(400).json({
             success: false,
             message: missingKeys,
@@ -45,7 +47,7 @@ usersRouter
         }
 
         let invalidUser = await service.validateUserName(user.user_name);
-        if (invalidUser) {
+        if (invalidUser !== "") {
           return res.status(400).json({
             success: false,
             message: invalidUser,
@@ -53,14 +55,14 @@ usersRouter
         }
 
         let invalidName = await service.validateFullName(user.full_name);
-        if (invalidName) {
+        if (invalidName !== "") {
           return res.status(400).json({
             success: false,
             message: invalidName,
           });
         }
         let invalidEmail = await service.validateEmail(user.email);
-        if (invalidEmail) {
+        if (invalidEmail !== "") {
           return res.status(400).json({
             success: false,
             message: invalidEmail,
@@ -68,7 +70,7 @@ usersRouter
         }
 
         let invalidPassword = await service.validatePassword(user.password);
-        if (invalidPassword) {
+        if (invalidPassword !== "") {
           return res.status(400).json({
             success: false,
             message: invalidPassword,
@@ -101,6 +103,7 @@ usersRouter
         let hashpwd = await service.hashPassword(user.password);
         user.password = hashpwd;
         // then we insert the new user
+        console.log(user);
         let insertedUser = await service.insertUser(req.app.get("db"), user);
         if (!insertedUser) {
           return res.status(500).json({
