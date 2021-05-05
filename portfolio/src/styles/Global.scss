@@ -1,6 +1,8 @@
 @import "config";
 
-.pg {
+.pg,
+header,
+footer {
   h1 {
     font-family: $font;
     @include font-size($h1-font-sizes);
