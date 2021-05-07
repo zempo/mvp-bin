@@ -1,5 +1,5 @@
 import React from "react";
-import { capitalizeStr } from "../../../functions/textManipulation";
+import { capitalizeStr } from "../../../../services/textManipulation";
 
 export const SearchForm = (props) => {
   /**
