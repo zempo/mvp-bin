@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 // Static
 import { Header } from "./components/static/Header";
+import { Footer } from "./components/static/Footer";
 // Routes
 import { Home } from "./components/routes/Home";
 import { About } from "./components/routes/About";
@@ -25,6 +26,7 @@ function App() {
           <Route path='*' component={Error} />
         </Switch>
       </main>
+      <Footer/>
     </>
   );
 }
