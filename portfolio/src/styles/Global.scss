@@ -4,7 +4,29 @@
 header,
 footer {
   h1 {
+    text-align: center;
     font-family: $font;
     @include font-size($h1-font-sizes);
   }
+  h2 {
+    text-align: center;
+    font-family: $font;
+    @include font-size($h2-font-sizes);
+  }
+}
+
+header {
+  .main-nav {
+    ul {
+      list-style-type: none;
+      li svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
 }

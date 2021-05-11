@@ -19,7 +19,5 @@ export const getNextPg = (dir, location) => {
     next = end;
   }
 
-  console.log(next);
-
   return pages[next];
 };
