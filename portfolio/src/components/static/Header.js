@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   AboutIcon,
   BytesIcon,
@@ -14,32 +14,37 @@ export const Header = () => {
       <nav className='main-nav'>
         <ul>
           <li>
-            <Link to='/'>
+            <NavLink exact to='/' activeClassName='link-active'>
               <HomeIcon />
-            </Link>
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to='/about'>
+            <NavLink to='/about' activeClassName='link-active'>
               <AboutIcon />
-            </Link>
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to='/works'>
+            <NavLink to='/works' activeClassName='link-active'>
               <WorksIcon />
-            </Link>
+              Works
+            </NavLink>
           </li>
           <li>
-            <Link to='/bytes'>
+            <NavLink to='/bytes' activeClassName='link-active'>
               <BytesIcon />
-            </Link>
+              Bytes
+            </NavLink>
           </li>
           <li>
-            <Link to='/contact'>
+            <NavLink to='/contact' activeClassName='link-active'>
               <ContactIcon />
-            </Link>
+              Contact
+            </NavLink>
           </li>
           {/* <li>
-            <Link to='/err'>Error</Link>
+            <NavLink to='/err'>Error</NavLink>
           </li> */}
         </ul>
       </nav>
