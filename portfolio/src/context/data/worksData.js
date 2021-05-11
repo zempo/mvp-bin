@@ -1,9 +1,4 @@
-export const projectQueries = [
-  "atl-client",
-  "jto-client",
-  "solomon-zelenko",
-  "Aeropolis",
-];
+export const projectQueries = ["atl-client", "jto-client", "solomon-zelenko"];
 
 export const projects = [
   {

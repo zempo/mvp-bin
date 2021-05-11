@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router";
 // Static
 import { Header } from "./components/static/Header";
 import { Footer } from "./components/static/Footer";
+import { SlideNavigation } from "./components/static/NavBtns";
 // Routes
 import { Home } from "./components/routes/Home";
 import { About } from "./components/routes/About";
@@ -25,8 +26,10 @@ function App() {
           <Route exact path='/contact' component={Contact} />
           <Route path='*' component={Error} />
         </Switch>
+        <SlideNavigation direction='prev' />
+        <SlideNavigation direction='fwd' />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

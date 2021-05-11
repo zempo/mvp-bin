@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchRepos } from "../../services/endpoints";
+import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
 
 export const Works = () => {
