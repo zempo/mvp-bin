@@ -15,31 +15,31 @@ export const Header = () => {
         <ul>
           <li>
             <NavLink exact to='/' activeClassName='link-active'>
-              <HomeIcon />
+              <HomeIcon /> <br />
               Home
             </NavLink>
           </li>
           <li>
             <NavLink to='/about' activeClassName='link-active'>
-              <AboutIcon />
+              <AboutIcon /> <br />
               About
             </NavLink>
           </li>
           <li>
             <NavLink to='/works' activeClassName='link-active'>
-              <WorksIcon />
+              <WorksIcon /> <br />
               Works
             </NavLink>
           </li>
           <li>
             <NavLink to='/bytes' activeClassName='link-active'>
-              <BytesIcon />
+              <BytesIcon /> <br />
               Bytes
             </NavLink>
           </li>
           <li>
             <NavLink to='/contact' activeClassName='link-active'>
-              <ContactIcon />
+              <ContactIcon /> <br />
               Contact
             </NavLink>
           </li>
