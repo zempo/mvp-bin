@@ -11,6 +11,7 @@ export const Home = () => {
            Add git hub stats 
            And some more quick links
       */}
+      <p className='hand'>← Try Swiping →</p>
     </section>
   );
 };

@@ -84,8 +84,8 @@ $h2-font-sizes: (
   null: calc(1.4rem + 0.2vw),
   map-get($breakpoints, "phone-wide"): calc(1.5rem + 0.2vw),
   map-get($breakpoints, "phablet"): calc(1.6rem + 0.2vw),
-  map-get($breakpoints, "tablet"): calc(1.6rem + 0.2vw),
-  map-get($breakpoints, "desktop"): calc(2rem + 0.2vw),
+  map-get($breakpoints, "tablet"): calc(1.7rem + 0.2vw),
+  map-get($breakpoints, "desktop"): calc(1.9rem + 0.2vw),
   map-get($breakpoints, "ultra-wide"): calc(2.5rem + 0.2vw),
 );
 

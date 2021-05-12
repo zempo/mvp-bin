@@ -6,6 +6,7 @@ footer {
   h1 {
     text-align: center;
     font-family: $font;
+    line-height: 1;
     @include font-size($h1-font-sizes);
   }
   h2 {
@@ -16,6 +17,14 @@ footer {
   }
   h3 {
     @include font-size($h3-font-sizes);
+  }
+  .hand {
+    font-family: $font-hand;
+    @include font-size($h2-font-sizes);
+    display: block;
+    @include mq("tablet") {
+      display: none;
+    }
   }
   p {
     @include font-size($p-font-sizes);
@@ -36,6 +45,7 @@ footer {
 }
 
 .pg {
+  padding: 0 1rem;
   margin-top: 5rem;
   min-height: 75vh;
   h2 {
