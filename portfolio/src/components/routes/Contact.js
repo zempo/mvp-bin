@@ -11,10 +11,10 @@ export const Contact = () => {
       <header>
         <h1>Let's get in touch!</h1>
         <h2 className='sub-head'>
-          From <span>{getClientTime()[0]}</span> to{" "}
-          <span>{getClientTime()[1]}</span>, your time <br />
-          I'd be happy to chat with you.{" "}
+          I am free from <span>{getClientTime()[0].replace(":00 ", "")}</span>{" "}
+          to <span>{getClientTime()[1].replace(":30 ", "")}</span>.
         </h2>
+        <h2 className='sub-head'>Your local time.</h2>
       </header>
     </section>
   );

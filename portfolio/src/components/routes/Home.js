@@ -31,7 +31,6 @@ export const Home = () => {
               "Python",
               "Three.js",
               "Bash",
-              "Markdown",
             ]}
             typeSpeed={145}
             backDelay={400}
