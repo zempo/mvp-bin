@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { getNextPg } from "../../services/navService";
+import "../../styles/Static.scss";
 
 export const SlideNavigation = (props) => {
   const { direction } = props;
@@ -9,11 +10,19 @@ export const SlideNavigation = (props) => {
   return (
     <>
       {location ? (
-        <NavLink to={getNextPg(direction, location.pathname)}>
+        <NavLink
+          to={getNextPg(direction, location.pathname)}
+          className={`side-nav-link nav-${direction}`}
+          title={direction === "fwd" ? "Next" : "Prev"}
+        >
           {direction === "fwd" ? <ArrowRight /> : <ArrowLeft />}
         </NavLink>
       ) : (
-        <NavLink to={getNextPg(direction, "/home")}>
+        <NavLink
+          to={getNextPg(direction, "/home")}
+          className={`side-nav-link nav-${direction}`}
+          title={direction === "fwd" ? "Next" : "Prev"}
+        >
           {direction === "fwd" ? <ArrowRight /> : <ArrowLeft />}
         </NavLink>
       )}

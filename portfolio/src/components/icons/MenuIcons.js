@@ -91,7 +91,7 @@ export const AboutIcon = () => {
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='2'
-      className='icon icon-tabler icon-tabler-info-circle'
+      className='nav-icon nav-icon-about'
       viewBox='0 0 24 24'
     >
       <path stroke='none' d='M0 0h24v24H0z'></path>
@@ -113,7 +113,7 @@ export const WorksIcon = () => {
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='2'
-      className='icon icon-tabler icon-tabler-folder'
+      className='nav-icon nav-icon-works'
       viewBox='0 0 24 24'
     >
       <path stroke='none' d='M0 0h24v24H0z'></path>
@@ -133,7 +133,7 @@ export const BytesIcon = () => {
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='2'
-      className='icon icon-tabler icon-tabler-code'
+      className='nav-icon nav-icon-bytes'
       viewBox='0 0 24 24'
     >
       <path stroke='none' d='M0 0h24v24H0z'></path>
@@ -155,7 +155,7 @@ export const ContactIcon = () => {
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='2'
-      className='icon icon-tabler icon-tabler-send'
+      className='nav-icon nav-icon-contact'
       viewBox='0 0 24 24'
     >
       <path stroke='none' d='M0 0h24v24H0z'></path>

@@ -26,8 +26,10 @@ function App() {
           <Route exact path='/contact' component={Contact} />
           <Route path='*' component={Error} />
         </Switch>
-        <SlideNavigation direction='prev' />
-        <SlideNavigation direction='fwd' />
+        <nav className='side-nav' aria-label='Secondary Navigation'>
+          <SlideNavigation direction='prev' />
+          <SlideNavigation direction='fwd' />
+        </nav>
       </main>
       <Footer />
     </>

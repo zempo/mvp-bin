@@ -7,12 +7,13 @@ import {
   HomeIcon,
   WorksIcon,
 } from "../icons/MenuIcons";
+import "../../styles/Static.scss";
 
 export const Header = () => {
   return (
     <header>
-      <nav className='main-nav'>
-        <ul>
+      <nav className='main-nav' aria-label='Global Navigation'>
+        <ul className='nav-link-list'>
           <li>
             <NavLink exact to='/' activeClassName='link-active'>
               <HomeIcon /> <br />

@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import { returnYear } from "../../services/genService";
+import "../../styles/Static.scss";
 
 export const Footer = () => {
-    return (
-        <footer>
-            <h3>Code Your Vision&trade;</h3>
-            <h4>&copy; 2020 Solomon Zelenko.</h4>
-            <h4>All rights reserved. Powered by Vanilla JS.</h4>
-        </footer>
-    )
-}
+  return (
+    <footer className='app-footer'>
+      <h3>Code Your Vision&trade;</h3>
+      <p>&copy; {returnYear()} Solomon Zelenko.</p>
+      <p>All rights reserved. Powered by React.</p>
+    </footer>
+  );
+};

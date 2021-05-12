@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background: #f8f9fa;
+  background: map-get($colors, app-white);
   overflow: overlay !important;
   margin: 0;
 }
@@ -404,36 +404,4 @@ sub {
 
 sup {
   top: -0.5em;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
-::-webkit-scrollbar-thumb {
-  background: lighten(map-get($colors, dark-2), 30%);
-  border: 2px none #000000;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: lighten(map-get($colors, dark-2), 20%);
-}
-::-webkit-scrollbar-thumb:active {
-  background: lighten(map-get($colors, dark-2), 0%);
-}
-::-webkit-scrollbar-track {
-  background: none;
-  border: 1px none #000000;
-}
-::-webkit-scrollbar-track:hover {
-  background: none;
-}
-::-webkit-scrollbar-track:active {
-  background: none;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
 }

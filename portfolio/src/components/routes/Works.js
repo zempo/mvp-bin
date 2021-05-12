@@ -24,7 +24,12 @@ export const Works = () => {
   }, []);
   return (
     <section className='pg works-pg'>
-      <h1>What do I Code?</h1>
+      <header>
+        <h1>What do I Code?</h1>
+        <h2 className='sub-head'>
+          I build apps with all the <span>Works</span>.
+        </h2>
+      </header>
     </section>
   );
 };
