@@ -1,4 +1,5 @@
 @import "config";
+@import "utils";
 
 .home-pg {
   text-align: center;
@@ -7,5 +8,56 @@
     max-width: 900px;
     max-height: 225px;
     margin: auto;
+  }
+  .btn-resume,
+  .btn-contact {
+    @extend %btn;
+    background: none;
+    margin: 0.5rem;
+    padding: 10px 20px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid black;
+    font-weight: normal;
+    @include font-size($h2-font-sizes);
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0%;
+      left: 0;
+      background: black;
+      color: rgb(250, 250, 250);
+      height: 100%;
+      width: 100%;
+    }
+    &::before,
+    & > span {
+      padding: 10.5px 0;
+      -moz-transition: map-get($animations, transition-1);
+      -o-transition: map-get($animations, transition-1);
+      -webkit-transition: map-get($animations, transition-1);
+      transition: map-get($animations, transition-1);
+    }
+    &:hover::before {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    &:hover > span {
+      -moz-transition: transform 0.4s;
+      -o-transition: transform 0.4s;
+      -webkit-transition: transform 0.4s;
+      transition: transform 0.4s;
+    }
+  }
+  .btn-resume::before {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  .btn-contact::before {
+    -webkit-transform: translate3d(200%, 0, 0);
+    transform: translate3d(200%, 0, 0);
+  }
+  .btn-resume {
+    margin-bottom: 6vh;
   }
 }

@@ -9,11 +9,11 @@
   src: url(./font/SpartanMB-Regular.otf);
   font-weight: normal;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 $font: "SpartanMB";
-$font-2: Lato, Helvetica, Arial, sans-serif;
+$font-2: "Lato", sans-serif;
 $font-hand: "Indie Flower", cursive;
 $colors: (
   app-white: rgb(250, 250, 250),
@@ -27,7 +27,7 @@ $colors: (
 );
 $animations: (
   expand-down: expand-down 0.45s ease-in both,
-  fade-in: fadeIn 0.8s,
+  fade-in: fadeIn 0.8s ease-out,
   from-top: fromTop 0.8s cubic-bezier(0.39, 0.575, 0.565, 1),
   from-right: fromRight 0.5s cubic-bezier(0.39, 0.575, 0.565, 1),
   from-left: fromLeft 0.5s cubic-bezier(0.39, 0.575, 0.565, 1),
@@ -57,9 +57,9 @@ $bigh-font-sizes: (
   null: calc(3.1rem + 0.25vw),
   map-get($breakpoints, "phone-wide"): calc(3.3rem + 0.25vw),
   map-get($breakpoints, "phablet"): calc(3.5rem + 0.25vw),
-  map-get($breakpoints, "tablet"): calc(4.5rem + 0.25vw),
-  map-get($breakpoints, "desktop"): calc(5rem + 0.25vw),
-  map-get($breakpoints, "ultra-wide"): calc(6rem + 0.25vw),
+  map-get($breakpoints, "tablet"): calc(4rem + 0.25vw),
+  map-get($breakpoints, "desktop"): calc(4.5rem + 0.25vw),
+  map-get($breakpoints, "ultra-wide"): calc(5rem + 0.25vw),
 );
 
 $h1-font-sizes: (

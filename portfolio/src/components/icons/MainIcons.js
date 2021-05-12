@@ -8,6 +8,7 @@ export const LandingIcon = () => {
       height='191mm'
       viewBox='0 0 621 191'
       className='landing-logo'
+      role='presentation'
     >
       <defs>
         <clipPath>

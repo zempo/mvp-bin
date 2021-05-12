@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SadIcon } from "../icons/StatusIcons";
 
 export const Error = () => {
+  useEffect(() => {
+    document.title = "Error 404";
+  }, []);
+
   return (
     <section className='pg err-pg'>
       <header>

@@ -100,14 +100,14 @@ header {
     }
   }
   .nav-prev {
-    top: 50vh;
-    left: 2rem;
+    top: 45vh;
+    left: 3rem;
     @include mq("tablet-wide") {
       left: 8rem;
     }
   }
   .nav-fwd {
-    top: 50vh;
+    top: 45vh;
     right: 2rem;
     @include mq("tablet-wide") {
       right: 2rem;

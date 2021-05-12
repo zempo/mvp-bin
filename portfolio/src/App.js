@@ -11,6 +11,7 @@ import { Contact } from "./components/routes/Contact";
 import { Works } from "./components/routes/Works";
 // Error/Missing
 import { Error } from "./components/routes/Error";
+import "./styles/Animations.scss";
 import "./styles/Global.scss";
 
 function App() {

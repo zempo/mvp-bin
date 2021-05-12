@@ -1,0 +1,20 @@
+%btn {
+  cursor: pointer;
+  font-family: $font;
+  -moz-transition: map-get($animations, transition-1);
+  -o-transition: map-get($animations, transition-1);
+  -webkit-transition: map-get($animations, transition-1);
+  transition: map-get($animations, transition-1);
+  &:hover {
+    -moz-transition: map-get($animations, transition-1);
+    -o-transition: map-get($animations, transition-1);
+    -webkit-transition: map-get($animations, transition-1);
+    transition: map-get($animations, transition-1);
+  }
+  &:active {
+    -moz-transition: map-get($animations, transition-1);
+    -o-transition: map-get($animations, transition-1);
+    -webkit-transition: map-get($animations, transition-1);
+    transition: map-get($animations, transition-1);
+  }
+}

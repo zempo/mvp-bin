@@ -8,11 +8,17 @@ footer {
     font-family: $font;
     line-height: 1;
     @include font-size($h1-font-sizes);
+    &.mega-header {
+      font-family: $font-2;
+      font-weight: 300;
+      @include font-size($bigh-font-sizes);
+    }
   }
   h2 {
     text-align: center;
     letter-spacing: 1.5px;
-    font-family: $font;
+    font-weight: 300;
+    font-family: $font-2;
     @include font-size($h2-font-sizes);
   }
   h3 {
@@ -48,6 +54,10 @@ footer {
   padding: 0 1rem;
   margin-top: 5rem;
   min-height: 75vh;
+  -o-animation: map-get($animations, fade-in);
+  -moz-animation: map-get($animations, fade-in);
+  -webkit-animation: map-get($animations, fade-in);
+  animation: map-get($animations, fade-in);
   h2 {
     span {
       font-weight: bold;

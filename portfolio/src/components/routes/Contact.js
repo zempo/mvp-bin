@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { getClientTime } from "../../services/genService";
 
 export const Contact = () => {
+  useEffect(() => {
+    document.title = "Contact";
+  }, []);
+
   return (
     <section className='pg contact-pg'>
       <header>
