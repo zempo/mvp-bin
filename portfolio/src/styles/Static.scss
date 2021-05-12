@@ -10,21 +10,18 @@ header {
     background: map-get($colors, app-white);
     box-shadow: 0px -3px 6px -5px rgba(51, 51, 51, 0.4);
     @include mq("tablet-wide") {
-      width: 6.5rem;
-      height: 100vh;
-      top: 0;
-      box-shadow: 5px 2px 6px -5px rgba(51, 51, 51, 0.4);
       .nav-link-list {
         text-align: center;
         position: relative;
-        top: calc(50vh - 265px);
         li {
-          margin: 0.75rem auto !important;
+          margin: 0.75rem calc(3rem + 2vw) !important;
           a {
             font-size: 20px !important;
             svg.nav-icon {
-              width: 2.4rem;
-              height: 2.4rem;
+              width: calc(1.75rem + 1vw);
+              max-width: 2.6rem;
+              height: calc(1.75rem + 1vw);
+              max-height: 2.6rem;
             }
           }
         }
@@ -100,18 +97,12 @@ header {
     }
   }
   .nav-prev {
-    top: 45vh;
-    left: 3rem;
-    @include mq("tablet-wide") {
-      left: 8rem;
-    }
+    top: calc(45vh - 5rem);
+    left: 5rem;
   }
   .nav-fwd {
-    top: 45vh;
-    right: 2rem;
-    @include mq("tablet-wide") {
-      right: 2rem;
-    }
+    top: calc(45vh - 5rem);
+    right: 5rem;
   }
 }
 
@@ -119,10 +110,7 @@ header {
   background: map-get($colors, app-dark);
   color: map-get($colors, app-white);
   text-align: center;
-  padding: 3rem 0 7rem;
-  @include mq("tablet-wide") {
-    padding: 3rem 0 2rem;
-  }
+  padding: 3rem 0 10rem;
   h3 {
     @include font-size($h3-font-sizes);
   }

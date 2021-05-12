@@ -13,11 +13,13 @@ import { Works } from "./components/routes/Works";
 import { Error } from "./components/routes/Error";
 import "./styles/Animations.scss";
 import "./styles/Global.scss";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <main>
         <Switch>
           <Route exact path='/' component={Home} />

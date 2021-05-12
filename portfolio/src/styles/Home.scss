@@ -4,10 +4,22 @@
 .home-pg {
   text-align: center;
   .landing-logo {
-    width: 80vw;
+    width: 90vw;
     max-width: 900px;
     max-height: 225px;
     margin: auto;
+    position: relative;
+    top: 1rem;
+    @include mq("phablet") {
+      top: 0;
+      width: 85vw;
+      margin-bottom: 1rem;
+    }
+    @include mq("tablet-small") {
+      top: 0;
+      width: 80vw;
+      margin-bottom: 1rem;
+    }
   }
   .btn-resume,
   .btn-contact {
