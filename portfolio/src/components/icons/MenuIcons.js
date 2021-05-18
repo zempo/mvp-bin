@@ -90,7 +90,7 @@ export const AboutIcon = () => {
       stroke='#000'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='2'
+      strokeWidth='1.9'
       className='nav-icon nav-icon-about'
       viewBox='0 0 24 24'
     >
@@ -112,7 +112,7 @@ export const WorksIcon = () => {
       stroke='#000'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='2'
+      strokeWidth='1.9'
       className='nav-icon nav-icon-works'
       viewBox='0 0 24 24'
     >
@@ -132,7 +132,7 @@ export const BytesIcon = () => {
       stroke='#000'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='2'
+      strokeWidth='1.9'
       className='nav-icon nav-icon-bytes'
       viewBox='0 0 24 24'
     >
@@ -154,7 +154,7 @@ export const ContactIcon = () => {
       stroke='#000'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='2'
+      strokeWidth='1.9'
       className='nav-icon nav-icon-contact'
       viewBox='0 0 24 24'
     >

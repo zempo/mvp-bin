@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 export const Bytes = () => {
   useEffect(() => {
-    document.title = "Home";
+    document.title = "Bytes";
   }, []);
 
   return (
