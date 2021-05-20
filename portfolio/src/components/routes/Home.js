@@ -39,10 +39,10 @@ export const Home = () => {
           ></Typed>
         </h1>
       </header>
-      <button class='btn-contact' data-text='Contact'>
+      <button className='btn-contact' data-text='Contact'>
         <span>Contact</span>
       </button>
-      <button class='btn-resume' data-text='Resumé'>
+      <button className='btn-resume' data-text='Resumé'>
         <span>Resumé</span>
       </button>
       <p className='hand'>← Try Swiping →</p>
