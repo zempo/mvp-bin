@@ -5,12 +5,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 // Components
 import App from "./App";
 import "./styles/Reset.scss";
+import WorksState from "./context/state/WorksState";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <WorksState>
+      <Router>
+        <App />
+      </Router>
+    </WorksState>
   </React.StrictMode>,
   document.getElementById("root")
 );

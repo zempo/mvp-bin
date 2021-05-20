@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
+import worksContext from "../../context/worksContext";
 
 export const Works = () => {
+  const WorksContext = useContext(worksContext);
+  const { works, getWorks } = WorksContext;
   useEffect(() => {
     document.title = "Works";
+
+    getWorks();
 
     const getRepoData = async () => {
       try {
@@ -23,7 +28,9 @@ export const Works = () => {
     };
 
     // getRepoData();
+    // eslint-disable-next-line
   }, []);
+
   return (
     <section className='pg works-pg'>
       <header>
@@ -31,6 +38,7 @@ export const Works = () => {
         <h2 className='sub-head'>
           I build apps with all the <span>Works</span>.
         </h2>
+        {works.length}
       </header>
     </section>
   );
