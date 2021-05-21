@@ -8,7 +8,7 @@ const WorksState = (props) => {
   const initialState = {
     works: projects,
     currentWorks: null,
-    filterWorks: null,
+    filteredWorks: null,
   };
 
   const [state, dispatch] = useReducer(worksReducer, initialState);

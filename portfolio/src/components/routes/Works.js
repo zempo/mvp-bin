@@ -1,11 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import { fetchRepos } from "../../services/endpointsService";
-import { gitApi } from "../../config";
 import worksContext from "../../context/worksContext";
+import ItemPreview from "./layout/utils/ItemPreview";
+import { gitApi } from "../../config";
+import "../../styles/Works.scss";
 
 export const Works = () => {
   const WorksContext = useContext(worksContext);
-  const { works, getWorks } = WorksContext;
+  const { works, filteredWorks, getWorks } = WorksContext;
+
   useEffect(() => {
     document.title = "Works";
 
@@ -38,8 +41,17 @@ export const Works = () => {
         <h2 className='sub-head'>
           I build apps with all the <span>Works</span>.
         </h2>
-        {works.length}
       </header>
+      {/* {works.length} */}
+      <div className='app-content works-container'>
+        <ul className='app-list works-list'>
+          {filteredWorks != null
+            ? filteredWorks.map((w) => (
+                <ItemPreview itemType='work' payload={w} />
+              ))
+            : works.map((w) => <ItemPreview itemType='work' payload={w} />)}
+        </ul>
+      </div>
     </section>
   );
 };

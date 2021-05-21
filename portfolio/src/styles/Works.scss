@@ -1,0 +1,11 @@
+@import "config";
+@import "utils";
+
+.works-pg {
+  .works-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    @extend %itemPreview;
+  }
+}
