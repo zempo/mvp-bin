@@ -47,9 +47,11 @@ export const Works = () => {
         <ul className='app-list works-list'>
           {filteredWorks != null
             ? filteredWorks.map((w) => (
-                <ItemPreview itemType='work' payload={w} />
+                <ItemPreview itemType='work' payload={w} key={w.id} />
               ))
-            : works.map((w) => <ItemPreview itemType='work' payload={w} />)}
+            : works.map((w) => (
+                <ItemPreview itemType='work' payload={w} key={w.id} />
+              ))}
         </ul>
       </div>
     </section>

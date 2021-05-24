@@ -9,7 +9,11 @@ const ItemPreview = ({ payload, itemType }) => {
       <div className='img-wrapper-outer'>
         <div className='img-wrapper-inner'>
           <img src={preview_img} alt={`Preview for ${title} ${itemType}.`} />
-          {type ? <div className={`ribbon-${type}`}></div> : null}
+          {itemType === "work" ? (
+            <div className={`ribbon ribbon-${type}`}>
+              <span>{type}</span>
+            </div>
+          ) : null}
         </div>
       </div>
     </li>

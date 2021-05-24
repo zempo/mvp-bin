@@ -1,3 +1,5 @@
+@import "config";
+
 %btn {
   cursor: pointer;
   font-family: $font;
@@ -25,18 +27,32 @@
   .app-list {
     padding: 5rem 0 7rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     width: 100%;
+    grid-template-columns: 1fr;
     margin: auto;
+    @include mq("desktop") {
+      grid-template-columns: 1fr 1fr;
+      .list-item {
+        width: 90%;
+        max-width: 100%;
+        -o-animation: map-get($animations, fade-in-2);
+        -moz-animation: map-get($animations, fade-in-2);
+        -webkit-animation: map-get($animations, fade-in-2);
+        animation: map-get($animations, fade-in-2);
+        > span {
+          line-height: 2 !important;
+        }
+      }
+    }
     .list-item {
       font-family: $font-2;
-      width: 90%;
+      width: 92%;
       max-width: 600px;
       text-align: center;
-      margin: 2rem auto;
+      margin: 2.5rem auto;
       > span {
         font-weight: normal;
-        line-height: 1.75;
+        line-height: 2.5;
         @include font-size($h2-font-sizes);
       }
       .img-wrapper-inner,
@@ -47,56 +63,29 @@
         cursor: pointer;
       }
       .img-wrapper-outer {
-        &:after {
-          content: "X";
-          background: map-get($colors, app-orange);
-          color: map-get($colors, app-white);
-          display: inline-block;
-          vertical-align: center;
-          text-align: center;
-          position: absolute;
+        &::after,
+        &::before,
+        .img-wrapper-inner::before {
+          content: "";
           top: 0.26rem;
-          right: 0.31rem;
-          height: 0.95rem;
-          width: 0.95rem;
-          line-height: 1.54;
-          font-weight: normal;
-          font-family: $font-2;
-          font-size: 11px;
-          text-align: center;
-          border: 0px solid rgba(0, 0, 0, 0);
+          height: 0.93rem;
+          width: 0.93rem;
           border-radius: 50%;
+          position: absolute;
+          z-index: 2;
+        }
+        &::after {
+          background: map-get($colors, app-close);
+          left: 0.31rem;
         }
         &::before {
-          content: "";
-          background: map-get($colors, null);
-          color: map-get($colors, app-white);
-          display: inline-block;
-          vertical-align: center;
-          position: absolute;
-          top: 0.4rem;
-          right: 1.7rem;
-          height: 10px;
-          width: 10px;
-          text-align: center;
-          z-index: 1;
-          border: 0.1rem solid map-get($colors, app-white);
+          background: map-get($colors, app-min);
+          left: 1.62rem;
         }
         .img-wrapper-inner {
           &::before {
-            content: "";
-            background: map-get($colors, null);
-            color: map-get($colors, app-white);
-            display: inline-block;
-            vertical-align: center;
-            position: absolute;
-            top: 0.39rem;
-            right: 2.9rem;
-            height: 10px;
-            width: 10px;
-            text-align: center;
-            z-index: 1;
-            border-bottom: 1px solid map-get($colors, app-white);
+            background: map-get($colors, app-open);
+            left: 2.93rem;
           }
           img {
             border: 0.44rem solid map-get($colors, app-dark);
@@ -107,6 +96,84 @@
             -moz-border-radius-topright: 0.4rem;
             border-top-left-radius: 0.4rem;
             border-top-right-radius: 0.4rem;
+          }
+          .ribbon {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            &::before,
+            &::after {
+              border: 5px solid #2980b9;
+              content: "";
+              position: absolute;
+              display: block;
+              z-index: -1 !important;
+              content: "";
+              border-top-color: transparent !important;
+              border-right-color: transparent !important;
+            }
+            &::before {
+              top: 0;
+              left: 0;
+            }
+            &::after {
+              bottom: 0;
+              right: 0;
+            }
+            span {
+              position: absolute;
+              display: block;
+              width: 225px;
+              padding: 16px 0;
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+              color: map-get($colors, app-white);
+              font: 700 16px/1 "Lato", sans-serif;
+              @include mq("desktop") {
+                padding: 14px 0;
+                font: 700 20px/1 "Lato", sans-serif;
+              }
+              letter-spacing: 2px;
+              text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+              text-transform: uppercase;
+              text-align: center;
+              // position
+              left: -25px;
+              top: 30px;
+              -o-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+          .ribbon-team {
+            span {
+              background-color: map-get($colors, app-team);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-team);
+            }
+          }
+          .ribbon-solo {
+            span {
+              background-color: map-get($colors, app-solo);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-solo);
+            }
+          }
+          .ribbon-client {
+            span {
+              background-color: map-get($colors, app-client);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-client);
+            }
           }
         }
       }

@@ -7,6 +7,7 @@ export const projectQueries = [
 
 export const projects = [
   {
+    id: `w001`,
     title: `Blue Witness`,
     tags: [
       `reactjs`,
@@ -34,6 +35,7 @@ export const projects = [
     screenshots: [``],
   },
   {
+    id: `w002`,
     title: `Beam Pocket`,
     tags: [`client`, `vanilla js`, `front end`, `deployed`, `client`],
     type: `client`,
@@ -52,6 +54,7 @@ export const projects = [
     screenshots: [``],
   },
   {
+    id: `w003`,
     title: `Above the Line`,
     tags: [`solo`, `reactjs`, `nodejs`, `fullstack`, `deployed`, `sql`],
     type: `solo`,
@@ -71,6 +74,7 @@ export const projects = [
     screenshots: [``],
   },
   {
+    id: `w004`,
     title: `Just the Occasion`,
     tags: [
       `solo`,
@@ -99,6 +103,7 @@ export const projects = [
     screenshots: [``],
   },
   {
+    id: `w005`,
     title: `My Portfolio`,
     tags: [`solo`, `reactjs`, `front end`, `sass`, `deployed`, `threejs`],
     type: `solo`,

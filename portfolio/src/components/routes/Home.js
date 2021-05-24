@@ -45,7 +45,8 @@ export const Home = () => {
       <button className='btn-resume' data-text='Resumé'>
         <span>Resumé</span>
       </button>
-      <p className='hand'>← Try Swiping →</p>
+      {/* back-burner task: implement swiping */}
+      {/* <p className='hand'>← Try Swiping →</p> */}
     </section>
   );
 };
