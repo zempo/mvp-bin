@@ -1,5 +1,32 @@
 import React from "react";
 
+export const ExpandIcon = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      stroke='currentColor'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+      className='icon icon-tabler icon-tabler-arrows-maximize'
+      viewBox='0 0 24 24'
+    >
+      <path stroke='none' d='M0 0h24v24H0z'></path>
+      <path d='M16 4L20 4 20 8'></path>
+      <path d='M14 10L20 4'></path>
+      <path d='M8 20L4 20 4 16'></path>
+      <path d='M4 20L10 14'></path>
+      <path d='M16 20L20 20 20 16'></path>
+      <path d='M14 14L20 20'></path>
+      <path d='M8 4L4 4 4 8'></path>
+      <path d='M4 4L10 10'></path>
+    </svg>
+  );
+};
+
 export const SadIcon = () => {
   return (
     <svg

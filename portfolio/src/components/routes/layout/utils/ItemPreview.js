@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemPreview = ({ payload, itemType }) => {
-  const { title, type, preview_img } = payload;
+  const { id, title, type, preview_img } = payload;
 
   return (
     <li className={`list-item ${itemType}-list-item`}>
@@ -14,6 +14,9 @@ const ItemPreview = ({ payload, itemType }) => {
               <span>{type}</span>
             </div>
           ) : null}
+          <button className={`open-item`}>
+            <span>See More</span>
+          </button>
         </div>
       </div>
     </li>

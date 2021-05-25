@@ -51,7 +51,7 @@
       text-align: center;
       margin: 2.5rem auto;
       > span {
-        font-weight: normal;
+        font-weight: bold;
         line-height: 2.5;
         @include font-size($h2-font-sizes);
       }
@@ -60,7 +60,6 @@
       img {
         position: relative;
         max-width: 100%;
-        cursor: pointer;
       }
       .img-wrapper-outer {
         &::after,
@@ -123,7 +122,7 @@
               bottom: 0;
               right: 0;
             }
-            span {
+            > span {
               position: absolute;
               display: block;
               width: 225px;
@@ -131,6 +130,7 @@
               box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
               color: map-get($colors, app-white);
               font: 700 16px/1 "Lato", sans-serif;
+              z-index: 2;
               @include mq("desktop") {
                 padding: 14px 0;
                 font: 700 20px/1 "Lato", sans-serif;
@@ -173,6 +173,55 @@
             &::before,
             &::after {
               border: 5px solid map-get($colors, app-dark-client);
+            }
+          }
+          .open-item {
+            background: map-get($colors, null);
+            width: 100%;
+            height: calc(100% - 1.94rem);
+            border: none;
+            border: 1px solid map-get($colors, null);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            -moz-transition: all 0.4s ease-out;
+            -o-transition: all 0.4s ease-out;
+            -webkit-transition: all 0.4s ease-out;
+            transition: all 0.4s ease-out;
+            cursor: pointer;
+            position: absolute;
+            top: 1.5rem;
+            left: 0px;
+            z-index: 1;
+            &:hover,
+            &:focus,
+            &:active {
+              background: rgba(0, 0, 0, 0.3);
+              -moz-transition: all 0.4s ease-out;
+              -o-transition: all 0.4s ease-out;
+              -webkit-transition: all 0.4s ease-out;
+              transition: all 0.4s ease-out;
+            }
+            &:hover > span,
+            &:focus > span,
+            &:active > span {
+              background: map-get($colors, app-dark);
+              padding: 10px;
+              border: 1px solid map-get($colors, app-dark);
+              font-weight: bold;
+              border-radius: 7px;
+              -moz-transition: all 0.3s ease-out;
+              -o-transition: all 0.3s ease-out;
+              -webkit-transition: all 0.3s ease-out;
+              transition: all 0.3s ease-out;
+              color: map-get($colors, app-white);
+            }
+            > span {
+              cursor: pointer;
+              font-family: $font-2;
+              font-weight: 400 !important;
+              // text-transform: uppercase;
+              color: map-get($colors, null);
+              @include font-size($h3-font-sizes);
             }
           }
         }
