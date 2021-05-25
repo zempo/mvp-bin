@@ -221,7 +221,7 @@
               font-weight: 400 !important;
               // text-transform: uppercase;
               color: map-get($colors, null);
-              @include font-size($h3-font-sizes);
+              @include font-size($p-font-sizes);
             }
           }
         }
