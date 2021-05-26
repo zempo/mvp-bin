@@ -4,10 +4,11 @@ import worksContext from "../../context/worksContext";
 import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
 import "../../styles/pages/Works.scss";
+import { SearchForm } from "./layout/utils/SearchForm";
 
 export const Works = () => {
   const WorksContext = useContext(worksContext);
-  const { works, filteredWorks, getWorks } = WorksContext;
+  const { works, filteredWorks, getWorks, tags } = WorksContext;
 
   useEffect(() => {
     document.title = "Works";
@@ -42,6 +43,7 @@ export const Works = () => {
           I build apps with all the <span>Works</span>.
         </h2>
       </header>
+      <SearchForm tags={tags} type='work' />
       <div className='app-content works-container'>
         <ul className='app-list works-list'>
           {filteredWorks != null

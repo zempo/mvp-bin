@@ -32,7 +32,16 @@ export const queryData = (data, query, idx = 0) => {
   let entry = data[pos];
   let tags = entry.tags;
 
-  tags.forEach((t) => (query === t ? matchingEntries.push(entry) : null));
+  // reset matching entries
+  if (pos === 0) {
+    matchingEntries = [];
+  }
+
+  tags.forEach((t) => {
+    if (t === query) {
+      matchingEntries.push(entry);
+    }
+  });
 
   // base case
   if (pos === data.length - 1) {

@@ -2,7 +2,12 @@ import React, { useReducer } from "react";
 import worksReducer from "../reducers/worksReducer";
 import WorksContext from "../worksContext";
 import { projects } from "../data/worksData";
-import { GET_WORKS, ERR_WORKS, SET_CURRENT_WORK } from "../_types";
+import {
+  CLEAR_FILTER_WORK,
+  FILTER_WORKS,
+  GET_WORKS,
+  SET_CURRENT_WORK,
+} from "../_types";
 import { getTags, queryData } from "../../services/queryService";
 
 const WorksState = (props) => {
@@ -16,9 +21,6 @@ const WorksState = (props) => {
   const [state, dispatch] = useReducer(worksReducer, initialState);
 
   const getWorks = async () => {
-    let tags = getTags(projects);
-    let exsearch = queryData(projects, "team");
-    console.log(tags, exsearch);
     dispatch({
       type: GET_WORKS,
       payload: projects,
@@ -27,6 +29,16 @@ const WorksState = (props) => {
 
   const setCurrentWork = (currentId) => {
     dispatch({ type: SET_CURRENT_WORK, payload: currentId });
+  };
+
+  const filterWorks = (query) => {
+    let result = queryData(state.works, query);
+
+    dispatch({ type: FILTER_WORKS, payload: result });
+  };
+
+  const clearWorksFilter = () => {
+    dispatch({ type: CLEAR_FILTER_WORK });
   };
 
   return (
@@ -38,6 +50,8 @@ const WorksState = (props) => {
         currentWork: state.currentWork,
         getWorks,
         setCurrentWork,
+        filterWorks,
+        clearWorksFilter,
       }}
     >
       {props.children}

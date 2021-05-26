@@ -1,15 +1,31 @@
-import React from "react";
-import { capitalizeStr } from "../../../../services/textManipulation";
+import React, { useContext } from "react";
+import worksContext from "../../../../context/worksContext";
+import { capitalizeStr } from "../../../../services/genService";
 
 const SearchTag = ({ tag, type }) => {
-  const filterResults = (tag) => {
-    console.log("tag");
+  const WorksContext = useContext(worksContext);
+  const { filterWorks, clearWorksFilter } = WorksContext;
+
+  const filterResults = (e, query, type) => {
+    e.preventDefault();
+
+    if (type === "work") {
+      clearWorksFilter();
+      filterWorks(query);
+    } else {
+      console.log("hello");
+    }
   };
 
   return (
-    <button className='search-tag' onClick={filterResults(tag)}>
-      {capitalizeStr(tag)}
-    </button>
+    <>
+      <button
+        className='search-tag'
+        onClick={(e) => filterResults(e, tag, type)}
+      >
+        {capitalizeStr(tag)}
+      </button>
+    </>
   );
 };
 
@@ -17,8 +33,8 @@ export const SearchForm = ({ tags, type }) => {
   return (
     <form className='form search-form'>
       <div className='tags-container'>
-        {tags.map((t) => (
-          <SearchTag key={t.id} tag={t} type={type} />
+        {tags.map((t, i) => (
+          <SearchTag key={i} tag={t} type={type} />
         ))}
       </div>
     </form>

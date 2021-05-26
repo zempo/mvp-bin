@@ -39,14 +39,7 @@ export const projects = [
   {
     id: `w002`,
     title: `Beam Pocket`,
-    tags: [
-      `show all`,
-      `client`,
-      `vanilla js`,
-      `front end`,
-      `deployed`,
-      `client`,
-    ],
+    tags: [`show all`, `client`, `vanilla js`, `front end`, `deployed`],
     type: `client`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,
