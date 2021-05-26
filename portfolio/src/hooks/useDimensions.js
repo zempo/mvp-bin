@@ -18,7 +18,7 @@ export const useDimensions = () => {
     function handleResize() {
       setDimensions(ref.current.getBoundingClientRect().toJSON());
 
-      setOffset(dimensions.top);
+      setOffset(ref.current.offsetTop);
     }
 
     window.addEventListener("resize", handleResize);
