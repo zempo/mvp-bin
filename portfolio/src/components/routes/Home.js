@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { LandingIcon } from "../icons/MainIcons";
 import Typed from "react-typed";
-import "../../styles/Home.scss";
+import "../../styles/pages/Home.scss";
 
 export const Home = () => {
   useEffect(() => {

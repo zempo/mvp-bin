@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react";
-import { fetchRepos } from "../../services/endpointsService";
-import worksContext from "../../context/worksContext";
 import ItemPreview from "./layout/utils/ItemPreview";
+import worksContext from "../../context/worksContext";
+import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
-import "../../styles/Works.scss";
+import "../../styles/pages/Works.scss";
 
 export const Works = () => {
   const WorksContext = useContext(worksContext);

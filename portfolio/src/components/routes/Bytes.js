@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "../../styles/pages/Bytes.scss";
 
 export const Bytes = () => {
   useEffect(() => {

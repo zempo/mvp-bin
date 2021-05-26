@@ -14,5 +14,8 @@ export const GET_BLOGPOSTS = "GET_BLOGPOSTS";
  *  WORKS
  * */
 export const GET_WORKS = "GET_WORKS";
+export const SET_CURRENT_WORK = "SET_CURRENT_WORK";
+export const CLEAR_CURRENT_WORK = "CLEAR_CURRENT_WORK";
 export const FILTER_WORKS = "FILTER_WORKS";
+export const CLEAR_FILTER_WORK = "CLEAR_FILTER_WORK";
 export const ERR_WORKS = "ERR_WORKS";

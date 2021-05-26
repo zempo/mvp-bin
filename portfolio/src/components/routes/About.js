@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "../../styles/pages/About.scss";
 
 export const About = () => {
   useEffect(() => {

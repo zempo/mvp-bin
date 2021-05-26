@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { getClientTime } from "../../services/genService";
+import "../../styles/pages/Contact.scss";
 
 export const Contact = () => {
   useEffect(() => {
