@@ -42,7 +42,6 @@ export const Works = () => {
           I build apps with all the <span>Works</span>.
         </h2>
       </header>
-      {/* {works.length} */}
       <div className='app-content works-container'>
         <ul className='app-list works-list'>
           {filteredWorks != null

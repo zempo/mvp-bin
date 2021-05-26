@@ -10,6 +10,7 @@ export const projects = [
     id: `w001`,
     title: `Blue Witness`,
     tags: [
+      `show all`,
       `reactjs`,
       `nodejs`,
       `fullstack`,
@@ -17,6 +18,7 @@ export const projects = [
       `in progress`,
       `mapping`,
       `open source`,
+      `team`,
       `sql`,
     ],
     type: `team`,
@@ -37,7 +39,14 @@ export const projects = [
   {
     id: `w002`,
     title: `Beam Pocket`,
-    tags: [`client`, `vanilla js`, `front end`, `deployed`, `client`],
+    tags: [
+      `show all`,
+      `client`,
+      `vanilla js`,
+      `front end`,
+      `deployed`,
+      `client`,
+    ],
     type: `client`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,
@@ -56,7 +65,15 @@ export const projects = [
   {
     id: `w003`,
     title: `Above the Line`,
-    tags: [`solo`, `reactjs`, `nodejs`, `fullstack`, `deployed`, `sql`],
+    tags: [
+      `show all`,
+      `solo`,
+      `reactjs`,
+      `nodejs`,
+      `fullstack`,
+      `deployed`,
+      `sql`,
+    ],
     type: `solo`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,
@@ -77,6 +94,7 @@ export const projects = [
     id: `w004`,
     title: `Just the Occasion`,
     tags: [
+      `show all`,
       `solo`,
       `reactjs`,
       `nodejs`,
@@ -105,7 +123,15 @@ export const projects = [
   {
     id: `w005`,
     title: `My Portfolio`,
-    tags: [`solo`, `reactjs`, `front end`, `sass`, `deployed`, `threejs`],
+    tags: [
+      `show all`,
+      `solo`,
+      `reactjs`,
+      `front end`,
+      `sass`,
+      `deployed`,
+      `threejs`,
+    ],
     type: `solo`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,
@@ -122,7 +148,8 @@ export const projects = [
   },
   // {
   //   title: `Aeropolis II`,
-  //   tags: [`svelte`, `front end`, `sass`, `deployed`, `mapping`],
+  //   tags: [
+  // `show all`,`svelte`, `front end`, `sass`, `deployed`, `mapping`],
   //   type: `solo`,
   //   role: `Developer 💻`,
   //   status: `Deployed 🚀`,
