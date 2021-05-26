@@ -3,6 +3,7 @@
  * */
 export const GET_NAV_OFFSET = "GET_NAV_OFFSET";
 export const SET_NAV_OFFSET = "SET_NAV_OFFSET";
+export const TOGGLE_MODAL_WIN = "TOGGLE_MODAL_WIN";
 /**
  *  BYTES
  * */

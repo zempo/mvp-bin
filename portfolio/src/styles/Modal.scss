@@ -27,7 +27,7 @@ body {
       -moz-animation: map-get($animations, zoom);
       -webkit-animation: map-get($animations, zoom);
       animation: map-get($animations, zoom);
-      width: 90%;
+      width: 100%;
       height: calc(100% - 10rem);
       border: 1px solid map-get($colors, app-dark);
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
