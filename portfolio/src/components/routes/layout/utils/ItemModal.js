@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
+import styleContext from "../../../../context/styleContext";
 import "../../../../styles/Modal.scss";
 
 const WorkModal = ({ item, type, hide }) => {
@@ -11,18 +12,24 @@ const ByteModal = ({ item, type, hide }) => {
 };
 
 export const ItemModal = ({ item, type, isShowing, hide }) => {
+  const StyleContext = useContext(styleContext);
+
+  const { navOffset } = StyleContext;
+
   if (isShowing) {
     return ReactDOM.createPortal(
       <div onClick={hide} className='Modal'>
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`Modal__inner ${isShowing}`}
+          className={`Modal__outer ${isShowing}`}
         >
-          {type === "work" ? (
-            <WorkModal item={item} hide={hide} />
-          ) : (
-            <ByteModal item={item} hide={hide} />
-          )}
+          <div className={`Modal__inner`}>
+            {type === "work" ? (
+              <WorkModal item={item} hide={hide} type={type} />
+            ) : (
+              <ByteModal item={item} hide={hide} type={type} />
+            )}
+          </div>
         </div>
       </div>,
       document.querySelector("#modal")

@@ -1,15 +1,12 @@
 /**
  *  ART
  * */
-export const GET_ART = "GET_ART";
+export const GET_NAV_OFFSET = "GET_NAV_OFFSET";
+export const SET_NAV_OFFSET = "SET_NAV_OFFSET";
 /**
  *  BYTES
  * */
 export const GET_BYTES = "GET_BYTES";
-/**
- *  BLOG
- * */
-export const GET_BLOGPOSTS = "GET_BLOGPOSTS";
 /**
  *  WORKS
  * */

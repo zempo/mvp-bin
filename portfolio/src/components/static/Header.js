@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useDimensions } from "../../hooks/useDimensions";
 import {
   AboutIcon,
   BytesIcon,
@@ -10,9 +11,11 @@ import {
 import "../../styles/Static.scss";
 
 export const Header = () => {
+  const [navRef, navSize] = useDimensions();
+
   return (
     <header>
-      <nav className='main-nav' aria-label='Global Navigation'>
+      <nav ref={navRef} className='main-nav' aria-label='Global Navigation'>
         <ul className='nav-link-list'>
           <li>
             <NavLink exact to='/' activeClassName='link-active'>
