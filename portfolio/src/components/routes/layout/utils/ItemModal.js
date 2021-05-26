@@ -6,13 +6,25 @@ import "../../../../styles/Modal.scss";
 const ModalControls = ({ hide }) => {
   const StyleContext = useContext(styleContext);
 
-  const { toggleModalWin } = StyleContext;
+  const { toggleModalWin, modalExpanded } = StyleContext;
 
   return (
     <div className='modal-controls' aria-label='window-controls'>
-      <button className='close-modal' onClick={hide}></button>
-      <button className='min-modal' onClick={hide}></button>
-      <button className='resize-modal' onClick={toggleModalWin}></button>
+      <button
+        className='close-modal modal-btn'
+        onClick={hide}
+        title='close'
+      ></button>
+      <button
+        className='min-modal modal-btn'
+        onClick={hide}
+        title='hide'
+      ></button>
+      <button
+        className='resize-modal modal-btn'
+        onClick={toggleModalWin}
+        title={`${modalExpanded ? "resize" : "expand"}`}
+      ></button>
     </div>
   );
 };
@@ -42,12 +54,13 @@ export const ItemModal = ({ item, type, isShowing, hide }) => {
 
   const ModalStyles = modalExpanded
     ? {
-        height: `calc(${navOffset}px - .44rem`,
+        height: `calc(${navOffset}px - .65rem`,
       }
     : {
-        height: `calc(${navOffset}px - .44rem - 5rem`,
-        width: "85%",
-        top: "2.5rem",
+        height: `calc(${navOffset}px - .65rem - 6rem`,
+        width: "calc(100% - 6rem)",
+        top: "3rem",
+        maxWidth: `1100px`,
       };
 
   if (isShowing) {
@@ -55,16 +68,14 @@ export const ItemModal = ({ item, type, isShowing, hide }) => {
       <div onClick={hide} className='Modal'>
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`Modal__outer ${isShowing}`}
+          className={`Modal__inner ${isShowing}`}
           style={ModalStyles}
         >
-          <div className={`Modal__inner`}>
-            {type === "work" ? (
-              <WorkModal item={item} hide={hide} type={type} />
-            ) : (
-              <ByteModal item={item} hide={hide} type={type} />
-            )}
-          </div>
+          {type === "work" ? (
+            <WorkModal item={item} hide={hide} type={type} />
+          ) : (
+            <ByteModal item={item} hide={hide} type={type} />
+          )}
         </div>
       </div>,
       document.querySelector("#modal")

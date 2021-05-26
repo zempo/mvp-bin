@@ -110,9 +110,31 @@ header {
   background: map-get($colors, app-dark);
   color: map-get($colors, app-white);
   text-align: center;
-  padding: 3rem 0 10rem;
+  padding: 3rem 0 11rem;
+  .social-nav {
+    margin: 2rem auto 4rem;
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      max-width: 950px;
+      li {
+        display: inline-block;
+        text-align: center;
+        width: 20%;
+        a {
+          svg {
+            height: calc(2rem + 2vw);
+            width: calc(2rem + 2vw);
+          }
+        }
+      }
+    }
+  }
   h3 {
     @include font-size($h3-font-sizes);
+    margin-bottom: 3.5rem;
   }
   p {
     @include font-size($sub-font-sizes);
