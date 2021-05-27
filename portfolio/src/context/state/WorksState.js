@@ -15,6 +15,7 @@ const WorksState = (props) => {
     works: projects,
     tags: getTags(projects),
     currentWork: null,
+    currentTag: "show all",
     filteredWorks: null,
   };
 
@@ -32,7 +33,10 @@ const WorksState = (props) => {
   };
 
   const filterWorks = (query) => {
-    let result = queryData(state.works, query);
+    let result = {
+      query,
+      data: queryData(state.works, query),
+    };
 
     dispatch({ type: FILTER_WORKS, payload: result });
   };
@@ -48,6 +52,7 @@ const WorksState = (props) => {
         tags: state.tags,
         filteredWorks: state.filteredWorks,
         currentWork: state.currentWork,
+        currentTag: state.currentTag,
         getWorks,
         setCurrentWork,
         filterWorks,

@@ -1,12 +1,23 @@
 import React, { useEffect } from "react";
 import { LandingIcon } from "../icons/MainIcons";
 import Typed from "react-typed";
+import pdf from "./layout/docs/new_resume.pdf";
 import "../../styles/pages/Home.scss";
 
 export const Home = () => {
   useEffect(() => {
     document.title = "Solomon Zelenko";
   }, []);
+
+  const openResume = () => {
+    window.open(pdf);
+  };
+
+  const handleContact = () => {
+    window.open(
+      "mailto:support@solomonzelenko.dev?subject=let%27s%20get%20in%20touch"
+    );
+  };
 
   return (
     <section className='pg home-pg'>
@@ -39,10 +50,14 @@ export const Home = () => {
           ></Typed>
         </h1>
       </header>
-      <button className='btn-contact' data-text='Contact'>
+      <button
+        className='btn-contact'
+        data-text='Contact'
+        onClick={handleContact}
+      >
         <span>Contact</span>
       </button>
-      <button className='btn-resume' data-text='Resumé'>
+      <button className='btn-resume' data-text='Resumé' onClick={openResume}>
         <span>Resumé</span>
       </button>
       {/* back-burner task: implement swiping */}

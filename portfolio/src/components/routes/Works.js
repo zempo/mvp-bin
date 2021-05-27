@@ -8,7 +8,7 @@ import { SearchForm } from "./layout/utils/SearchForm";
 
 export const Works = () => {
   const WorksContext = useContext(worksContext);
-  const { works, filteredWorks, getWorks, tags } = WorksContext;
+  const { works, filteredWorks, getWorks, tags, currentTag } = WorksContext;
 
   useEffect(() => {
     document.title = "Works";
@@ -35,6 +35,17 @@ export const Works = () => {
     // eslint-disable-next-line
   }, []);
 
+  const getWorksCount = () => {
+    let len = works.length;
+
+    if (filteredWorks == null || currentTag === "show all") {
+      return `Showing all ${len} works. You can filter apps by type or tech.`;
+    } else {
+      let fLen = filteredWorks.length;
+      return `Showing ${fLen} of ${len} works — filtered by ${currentTag.toUpperCase()}.`;
+    }
+  };
+
   return (
     <section className='pg works-pg'>
       <header>
@@ -45,6 +56,7 @@ export const Works = () => {
       </header>
       <SearchForm tags={tags} type='work' />
       <div className='app-content works-container'>
+        <p className='works-count'>{getWorksCount()}</p>
         <ul className='app-list works-list'>
           {filteredWorks != null
             ? filteredWorks.map((w) => (

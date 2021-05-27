@@ -21,7 +21,8 @@ export default (state, action) => {
     case FILTER_WORKS:
       return {
         ...state,
-        filteredWorks: action.payload,
+        filteredWorks: action.payload.data,
+        currentTag: action.payload.query,
       };
     case CLEAR_FILTER_WORK:
       console.log("hello");

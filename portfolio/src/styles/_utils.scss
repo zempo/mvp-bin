@@ -25,7 +25,7 @@
   // cursor: pointer;
   // For all lists
   .app-list {
-    padding: 2rem 0 7rem;
+    padding: 0 0 7rem;
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
@@ -234,13 +234,20 @@
 
 %searchForm {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.25rem 0 6rem;
+  margin-top: 0;
   background: map-get($colors, app-dark);
+  @include mq("tablet-wide") {
+    margin-top: -0.25rem;
+  }
   .tags-container {
-    width: 100%;
+    width: 95%;
     max-width: 1000px;
     margin: auto;
-    text-align: justify;
+    text-align: center;
+    @include mq("tablet-wide") {
+      text-align: justify;
+    }
     .search-tag {
       background: map-get($colors, app-dark);
       color: map-get($colors, app-white);
@@ -266,7 +273,7 @@
         -moz-transition: all 0.3s;
         transition: all 0.3s;
       }
-      &:focus {
+      &.active {
         background: lighten($color: map-get($colors, app-dark), $amount: 20);
         color: map-get($colors, app-white);
         // border-width: 1px 1px 3px 1px;

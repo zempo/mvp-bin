@@ -4,7 +4,7 @@ import { capitalizeStr } from "../../../../services/genService";
 
 const SearchTag = ({ tag, type }) => {
   const WorksContext = useContext(worksContext);
-  const { filterWorks, clearWorksFilter } = WorksContext;
+  const { currentTag, filterWorks, clearWorksFilter } = WorksContext;
 
   const filterResults = (e, query, type) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const SearchTag = ({ tag, type }) => {
   return (
     <>
       <button
-        className='search-tag'
+        className={`search-tag ${tag === currentTag ? "active" : ""}`}
         onClick={(e) => filterResults(e, tag, type)}
       >
         {capitalizeStr(tag)}

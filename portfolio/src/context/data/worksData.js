@@ -31,9 +31,9 @@ export const projects = [
      `,
     live_site: `https://a.humanrightsfirst.dev/`,
     // be sure to fork
-    github_repo: `https://github.com/Lambda-School-Labs/human-rights-first-police-fe-b`,
+    github_repo: `https://github.com/zempo/human-rights-first-police-fe-b`,
     guest_creds: false,
-    preview_img: `https://i.ibb.co/kSDD4MP/blue-witness-preview.png`,
+    preview_img: `https://i.ibb.co/5W21Bx1/hrf-blue-witness-preview.png`,
     screenshots: [``],
   },
   {
