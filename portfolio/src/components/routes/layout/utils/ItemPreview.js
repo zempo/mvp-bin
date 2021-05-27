@@ -22,11 +22,9 @@ const ItemPreview = ({ payload, itemType }) => {
       <div className='img-wrapper-outer'>
         <div className='img-wrapper-inner'>
           <img src={preview_img} alt={`Preview for ${title} ${itemType}.`} />
-          {itemType === "work" ? (
-            <div className={`ribbon ribbon-${type}`}>
-              <span>{type}</span>
-            </div>
-          ) : null}
+          <div className={`ribbon ribbon-${type}`}>
+            <span>{type}</span>
+          </div>
           <button className={`open-item`} onClick={openItem}>
             <span>See More</span>
           </button>
