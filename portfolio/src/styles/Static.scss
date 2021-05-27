@@ -80,9 +80,11 @@ header {
   .nav-prev,
   .nav-fwd {
     position: fixed;
-    opacity: 0.8;
+    opacity: 0.9;
     text-decoration: none;
     color: map-get($colors, app-dark);
+    background: map-get($colors, app-white);
+    border-radius: 50%;
     &:hover,
     &:active {
       opacity: 1;
