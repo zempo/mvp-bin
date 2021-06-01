@@ -128,7 +128,7 @@
               width: 225px;
               padding: 16px 0;
               box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-              color: map-get($colors, app-white);
+              color: white;
               font: 700 16px/1 "Lato", sans-serif;
               z-index: 2;
               @include mq("desktop") {
@@ -173,6 +173,15 @@
             &::before,
             &::after {
               border: 5px solid map-get($colors, app-dark-client);
+            }
+          }
+          .ribbon-article {
+            span {
+              background-color: map-get($colors, app-article);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-article);
             }
           }
           .open-item {

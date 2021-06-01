@@ -11,6 +11,11 @@ export const getTags = (data, idx = 0) => {
   let entry = data[pos];
   let tags = entry.tags;
 
+    // reset matching entries
+    if (pos === 0) {
+      uniqueTags = [];
+    }
+
   // map all tags
   tags.forEach((t) => {
     if (uniqueTags.indexOf(t) === -1) {

@@ -7,14 +7,17 @@ import App from "./App";
 import "./styles/Reset.scss";
 import StyleState from "./context/state/StyleState";
 import WorksState from "./context/state/WorksState";
+import BytesState from "./context/state/BytesState";
 
 ReactDOM.render(
   <React.StrictMode>
     <StyleState>
       <WorksState>
+        <BytesState>
         <Router>
           <App />
         </Router>
+        </BytesState>
       </WorksState>
     </StyleState>
   </React.StrictMode>,

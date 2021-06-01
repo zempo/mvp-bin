@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import worksContext from "../../../../context/worksContext";
+import bytesContext from "../../../../context/bytesContext";
 import { capitalizeStr } from "../../../../services/genService";
 
 const SearchTag = ({ tag, type }) => {
   const WorksContext = useContext(worksContext);
   const { currentTag, filterWorks, clearWorksFilter } = WorksContext;
+  const BytesContext = useContext(bytesContext);
+  const { currentByteTag, filterBytes, clearBytesFilter } = BytesContext;
 
   const filterResults = (e, query, type) => {
     e.preventDefault();

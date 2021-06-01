@@ -2,9 +2,9 @@ import React, { useEffect, useContext } from "react";
 import ItemPreview from "./layout/utils/ItemPreview";
 import worksContext from "../../context/worksContext";
 import { fetchRepos } from "../../services/endpointsService";
+import { SearchForm } from "./layout/utils/SearchForm";
 import { gitApi } from "../../config";
 import "../../styles/pages/Works.scss";
-import { SearchForm } from "./layout/utils/SearchForm";
 
 export const Works = () => {
   const WorksContext = useContext(worksContext);

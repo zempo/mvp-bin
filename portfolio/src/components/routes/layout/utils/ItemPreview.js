@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import worksContext from "../../../../context/worksContext";
 import { useModal } from "../../../../hooks/useModal";
+import { shortenWord } from "../../../../services/genService";
 import { ItemModal } from "./ItemModal";
 
 const ItemPreview = ({ payload, itemType }) => {
   const WorksContext = useContext(worksContext);
-  const { setCurrentWork, currentWork } = WorksContext;
+  const { setCurrentWork } = WorksContext;
   const { isShowing: isShowingItemPreview, toggle: toggleItemPreview } =
     useModal();
   const { id, title, type, preview_img } = payload;
@@ -18,7 +19,7 @@ const ItemPreview = ({ payload, itemType }) => {
 
   return (
     <li className={`list-item ${itemType}-list-item`}>
-      <span>{title}</span>
+      <span>{shortenWord(title, 25)}</span> 
       <div className='img-wrapper-outer'>
         <div className='img-wrapper-inner'>
           <img src={preview_img} alt={`Preview for ${title} ${itemType}.`} />

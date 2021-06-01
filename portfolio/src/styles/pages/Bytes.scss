@@ -1,2 +1,22 @@
 @import "../config";
 @import "../utils";
+
+.bytes-pg {
+  .search-form {
+    @extend %searchForm;
+  }
+  .bytes-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    .bytes-count {
+      text-align: center;
+      margin: -3.25rem auto 4rem;
+      color: map-get($colors, app-white);
+      font-style: italic;
+      opacity: 0.75;
+      font-weight: 350;
+    }
+    @extend %itemPreview;
+  }
+}
