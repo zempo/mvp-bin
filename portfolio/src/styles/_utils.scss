@@ -184,6 +184,15 @@
               border: 5px solid map-get($colors, app-dark-article);
             }
           }
+          .ribbon-snippet {
+            span {
+              background-color: map-get($colors, app-snippet);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-snippet);
+            }
+          }
           .open-item {
             background: map-get($colors, null);
             width: 100%;

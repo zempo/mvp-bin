@@ -40,5 +40,26 @@ export const bytes = [
         guest_creds: false,
         preview_img: `https://i.ibb.co/J71YwgC/article-creating-a-blue-witness.png`,
       },
+      {
+        id: `b003`,
+        title: `The Solomeyer's Reset`,
+        tags: [
+          `show all`,  
+          `snippet`,
+          `css`,
+        ],
+        type: `snippet`,
+        desc: `
+        I came up with my very own CSS reset to use in my projects.
+        Based on normalize.css & the meyer's css reset,
+         the Solomeyer's reset is the less-opinionated alternative to begin your projects.
+         `,
+        link: ``,
+        // be sure to fork
+        github_repo: `https://gist.github.com/zempo/c082636dd05f166ffb5316e2670f7cf8`,
+        guest_creds: false,
+        // preview_img: `https://i.ibb.co/Dpj5NhQ/snippet.png`,
+        preview_img: `https://assets.wallpapersin4k.org/uploads/2017/04/Html-Wallpaper-Background-Code-15.jpg`
+      },
 ]
 
