@@ -25,16 +25,17 @@ export const returnYear = () => {
 
 export const getHours = (str) => {
   let timeStr = str;
-  let timeStart = timeStr.indexOf(",") + 2;
-  let timeEnd = timeStr.substr(timeStart).indexOf("M");
-
+  // console.log(timeStr)
+  let timeStart = timeStr.indexOf(":") - 2;
+  let timeEnd = timeStr.substr(timeStart).indexOf("M") + 1;
+ 
   if (timeStr.substr(timeStart)[0] === "0") {
     timeStart += 1;
   }
 
   timeStr = timeStr
     .substr(timeStart, timeEnd)
-    .replace(":00 ", " ")
+    .replace(":00:00 ", "")
     .toLowerCase();
   return timeStr;
 };
@@ -53,8 +54,8 @@ export const getClientTime = () => {
     timeZoneName: "short",
   };
   const formater = new Intl.DateTimeFormat("en-US", options);
-  const startingDate = new Date("2020/04/10 15:00:00 +0000");
-  const endingDate = new Date("2020/04/10 23:30:00 +0000");
+  const startingDate = new Date("2020/04/10 00:00:00 +0000");
+  const endingDate = new Date("2020/04/10 06:00:00 +0000");
 
   let pacificStart = formater.format(startingDate);
   pacificStart = getHours(pacificStart);

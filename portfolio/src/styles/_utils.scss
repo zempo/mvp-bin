@@ -193,6 +193,24 @@
               border: 5px solid map-get($colors, app-dark-snippet);
             }
           }
+          .ribbon-three {
+            span {
+              background-color: map-get($colors, app-3d);
+            }
+            &::before, 
+            &::after {
+              border: 5px solid map-get($colors, app-dark-3d);
+            }
+          }
+          .ribbon-template {
+            span {
+              background-color: map-get($colors, app-template);
+            }
+            &::before,
+            &::after {
+              border: 5px solid map-get($colors, app-dark-template);
+            }
+          }
           .open-item {
             background: map-get($colors, null);
             width: 100%;

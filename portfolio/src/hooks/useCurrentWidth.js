@@ -1,5 +1,20 @@
 import { useState, useEffect } from "react";
 
+/*
+ * USAGE
+---------------------------------
+export const myComponent = () => {
+  let width = useCurrentWidth();
+
+  return (
+    <>
+    {width}
+    </>
+  )
+}
+---------------------------------
+*/
+
 const getWidth = () =>
   window.innerWidth ||
   document.documentElement.clientWidth ||

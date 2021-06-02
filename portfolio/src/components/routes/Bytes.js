@@ -6,7 +6,7 @@ import "../../styles/pages/Bytes.scss";
 
 export const Bytes = () => {
   const BytesContext = useContext(bytesContext);
-  const { bytes, filteredBytes, getBytes, tags, currentTag } = BytesContext;
+  const { bytes, filteredBytes, getBytes, tags, currentByteTag } = BytesContext;
 
   useEffect(() => {
     document.title = "Bytes";
@@ -18,11 +18,11 @@ export const Bytes = () => {
   const getBytesCount = () => {
     let len = bytes.length;
 
-    if (filteredBytes == null || currentTag === "show all") {
+    if (filteredBytes == null || currentByteTag === "show all") {
       return `Showing all ${len} bytes. You can filter apps by type or tech.`;
     } else {
       let fLen = filteredBytes.length;
-      return `Showing ${fLen} of ${len} bytes — filtered by ${currentTag.toUpperCase()}.`;
+      return `Showing ${fLen} of ${len} bytes — filtered by ${currentByteTag.toUpperCase()}.`;
     }
   };
 

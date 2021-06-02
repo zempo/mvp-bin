@@ -1,6 +1,27 @@
 import { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 
+/*
+USAGE
+------------------------------
+import ScrollToTop from "./hooks/ScrollToTop";
+
+  export const App = () => {
+    return (
+      <>
+        <ScrollToTop />
+        <main>
+          <Switch>
+            {Children...}
+          </Switch>
+        </main>
+      </>
+    )
+  }
+  -------------------------
+ * 
+*/
+
 function ScrollToTop({ history }) {
   useEffect(() => {
     const unlisten = history.listen(() => {
@@ -9,6 +30,7 @@ function ScrollToTop({ history }) {
     return () => {
       unlisten();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;

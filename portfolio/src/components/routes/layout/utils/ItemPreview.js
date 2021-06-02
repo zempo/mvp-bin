@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import worksContext from "../../../../context/worksContext";
+import bytesContext from "../../../../context/bytesContext";
 import { useModal } from "../../../../hooks/useModal";
 import { shortenWord } from "../../../../services/genService";
 import { ItemModal } from "./ItemModal";
@@ -7,14 +8,20 @@ import { ItemModal } from "./ItemModal";
 const ItemPreview = ({ payload, itemType }) => {
   const WorksContext = useContext(worksContext);
   const { setCurrentWork } = WorksContext;
+  const BytesContext = useContext(bytesContext);
+  const { setCurrentByte } = BytesContext;
   const { isShowing: isShowingItemPreview, toggle: toggleItemPreview } =
     useModal();
   const { id, title, type, preview_img } = payload;
 
   const openItem = () => {
-    setCurrentWork(id);
-
-    toggleItemPreview();
+    if (itemType === 'work') {
+      setCurrentWork(id);
+      toggleItemPreview();
+    } else {
+      setCurrentByte(id);
+      toggleItemPreview();
+    } 
   };
 
   return (

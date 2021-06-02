@@ -16,14 +16,15 @@ const SearchTag = ({ tag, type }) => {
       clearWorksFilter();
       filterWorks(query);
     } else {
-      console.log("hello");
+      clearBytesFilter();
+      filterBytes(query)
     }
   };
 
   return (
     <>
       <button
-        className={`search-tag ${tag === currentTag ? "active" : ""}`}
+        className={`search-tag ${(tag === currentTag && type === 'work') || (tag === currentByteTag && type === 'byte') ? "active" : ""}`}
         onClick={(e) => filterResults(e, tag, type)}
       >
         {capitalizeStr(tag)}
@@ -33,6 +34,7 @@ const SearchTag = ({ tag, type }) => {
 };
 
 export const SearchForm = ({ tags, type }) => {
+
   return (
     <form className='form search-form'>
       <div className='tags-container'>
