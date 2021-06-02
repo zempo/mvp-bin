@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import { getClientTime } from "../../services/genService";
+import { InlineWidget } from "react-calendly";
 import "../../styles/pages/Contact.scss";
 
 export const Contact = () => {
   useEffect(() => {
     document.title = "Contact";
   }, []);
+
+  const calendlyStyles = {
+    margin: `4rem auto 2rem`,
+    height: `850px`,
+  };
 
   return (
     <section className='pg contact-pg'>
@@ -17,6 +23,12 @@ export const Contact = () => {
         </h2>
         <h2 className='sub-head'>Your local time.</h2>
       </header>
+      <div className='calendly-container'>
+        <InlineWidget
+          styles={calendlyStyles}
+          url='https://calendly.com/solomon-zelenko'
+        />
+      </div>
     </section>
   );
 };
