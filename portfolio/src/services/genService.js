@@ -28,7 +28,7 @@ export const getHours = (str) => {
   // console.log(timeStr)
   let timeStart = timeStr.indexOf(":") - 2;
   let timeEnd = timeStr.substr(timeStart).indexOf("M") + 1;
- 
+
   if (timeStr.substr(timeStart)[0] === "0") {
     timeStart += 1;
   }

@@ -9,7 +9,7 @@ export const Contact = () => {
   }, []);
 
   const calendlyStyles = {
-    margin: `4rem auto 2rem`,
+    margin: `4rem auto 3rem`,
     height: `850px`,
   };
 

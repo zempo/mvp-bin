@@ -9,7 +9,7 @@ import {
   SET_CURRENT_BYTE,
 } from "../_types";
 import { getTags, queryData } from "../../services/queryService";
- 
+
 const BytesState = (props) => {
   const initialState = {
     bytes: bytes,
@@ -17,7 +17,7 @@ const BytesState = (props) => {
     currentByte: null,
     currentByteTag: "show all",
     filteredBytes: null,
-  };  
+  };
 
   const [state, dispatch] = useReducer(bytesReducer, initialState);
 
@@ -26,7 +26,7 @@ const BytesState = (props) => {
       type: GET_BYTES,
       payload: bytes,
     });
-  }; 
+  };
 
   const setCurrentByte = (currentId) => {
     dispatch({ type: SET_CURRENT_BYTE, payload: currentId });
@@ -36,7 +36,7 @@ const BytesState = (props) => {
     let result = {
       query,
       data: queryData(state.bytes, query),
-    }; 
+    };
 
     dispatch({ type: FILTER_BYTES, payload: result });
   };
@@ -49,7 +49,7 @@ const BytesState = (props) => {
     <BytesContext.Provider
       value={{
         bytes: state.bytes,
-        tags: state.tags, 
+        tags: state.tags,
         filteredBytes: state.filteredBytes,
         currentByte: state.currentByte,
         currentByteTag: state.currentByteTag,

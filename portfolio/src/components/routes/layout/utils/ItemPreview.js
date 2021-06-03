@@ -15,18 +15,18 @@ const ItemPreview = ({ payload, itemType }) => {
   const { id, title, type, preview_img } = payload;
 
   const openItem = () => {
-    if (itemType === 'work') {
+    if (itemType === "work") {
       setCurrentWork(id);
       toggleItemPreview();
     } else {
       setCurrentByte(id);
       toggleItemPreview();
-    } 
+    }
   };
 
   return (
     <li className={`list-item ${itemType}-list-item`}>
-      <span>{shortenWord(title, 25)}</span> 
+      <span>{shortenWord(title, 25)}</span>
       <div className='img-wrapper-outer'>
         <div className='img-wrapper-inner'>
           <img src={preview_img} alt={`Preview for ${title} ${itemType}.`} />

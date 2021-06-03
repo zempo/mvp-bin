@@ -11,8 +11,8 @@ export const Bytes = () => {
   useEffect(() => {
     document.title = "Bytes";
 
-    getBytes()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    getBytes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getBytesCount = () => {
@@ -43,8 +43,8 @@ export const Bytes = () => {
             : bytes.map((b) => (
                 <ItemPreview itemType='byte' payload={b} key={b.id} />
               ))}
-        </ul> 
+        </ul>
       </div>
     </section>
   );
-}; 
+};

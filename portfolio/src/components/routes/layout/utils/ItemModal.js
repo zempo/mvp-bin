@@ -80,7 +80,7 @@ export const ItemModal = ({ item, type, isShowing, hide }) => {
       </div>,
       document.querySelector("#modal")
     );
-  } else { 
+  } else {
     return null;
   }
 };

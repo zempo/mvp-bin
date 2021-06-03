@@ -14,9 +14,7 @@ export const Home = () => {
   };
 
   const handleContact = () => {
-    window.open(
-      "mailto:support@solomonzelenko.dev?subject=let%27s%20get%20in%20touch"
-    );
+    window.open("https://calendly.com/solomon-zelenko");
   };
 
   return (

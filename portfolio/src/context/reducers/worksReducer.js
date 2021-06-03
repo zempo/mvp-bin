@@ -4,7 +4,7 @@ import {
   GET_WORKS,
   SET_CURRENT_WORK,
 } from "../_types";
- 
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
   switch (action.type) {
