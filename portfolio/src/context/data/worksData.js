@@ -26,13 +26,16 @@ export const projects = [
     The Blue Witness project tracks and visualizes incidents of police brutality across the United States.
      Together, the Human Rights First's Innovation Lab and Lambda School have partnered to bring this project to life.
      As part of my journey with Lambda, I had the utmost privilege working with this team as a design lead.
+     -linebreak-
+     *Note: At the time of this writing, this project is being merged with another team's work and might have a different UI and/or URI.*
      `,
     live_site: `https://a.humanrightsfirst.dev/`,
     // be sure to fork
     github_repo: `https://github.com/zempo/human-rights-first-police-fe-b`,
     guest_creds: false,
     preview_img: `https://i.ibb.co/5W21Bx1/hrf-blue-witness-preview.png`,
-    screenshots: [``],
+    screenshots: [`https://i.ibb.co/5W21Bx1/hrf-blue-witness-preview.png`],
+    screenshot_captions: [`Landing page for "Blue Witness".`] 
   },
   {
     id: `w002`,
@@ -46,12 +49,15 @@ export const projects = [
     The Beam Pocket website was created to give prospective buyers important informaton about this revolutionary product.
     And I enjoyed helping Karius Architecture bring their product to life - 
     for my first professional developer experience.
+    -linebreak-
+    *Note: At the time of this writing, I am implementing new features for this project.*
     `,
     live_site: `https://www.beampocket.com/`,
     github_repo: false,
     guest_creds: false,
     preview_img: `https://i.ibb.co/6DgQh2G/beampocket-preview.png`,
-    screenshots: [``],
+    screenshots: [`https://i.ibb.co/6DgQh2G/beampocket-preview.png`],
+    screenshot_captions: [`Landing page for "Beampocket".`]
   },
   {
     id: `w003`,
@@ -71,7 +77,8 @@ export const projects = [
       password: "ForHire1234@!",
     },
     preview_img: `https://i.ibb.co/QXjyLmS/atl-preview.png`,
-    screenshots: [``],
+    screenshots: [`https://i.ibb.co/QXjyLmS/atl-preview.png`],
+    screenshot_captions: [`Landing page for "Above the Line".`]
   },
   {
     id: `w004`,
@@ -99,7 +106,8 @@ export const projects = [
       password: "ForHire1234@!",
     },
     preview_img: `https://i.ibb.co/3fmcs2F/jto-preview.png`,
-    screenshots: [``],
+    screenshots: [`https://i.ibb.co/3fmcs2F/jto-preview.png`],
+    screenshot_captions: [`Landing page for "Just the Occasion".`]
   },
   {
     id: `w005`,
@@ -125,7 +133,8 @@ export const projects = [
     github_repo: `https://github.com/zempo/solomon-zelenko`,
     guest_creds: false,
     preview_img: `https://i.ibb.co/fvRmtbn/portfolio-preview.png`,
-    screenshots: [``],
+    screenshots: [`https://i.ibb.co/fvRmtbn/portfolio-preview.png`],
+    screenshot_captions: [`Landing page for my portfolio.`]
   },
   // {
   //   title: `Aeropolis II`,
@@ -143,5 +152,6 @@ export const projects = [
   //   guest_creds: false,
   //   preview_img: ``,
   //   screenshots: [``],
+  // screenshot_captions: [``]
   // },
 ];
