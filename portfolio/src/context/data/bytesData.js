@@ -2,7 +2,7 @@ export const bytes = [
   {
     id: `b001`,
     title: `Expedite Your Eurekas`,
-    tags: [`show all`, `article`, `tech lifestyle`, `creativity`],
+    tags: [`show all`, `article`, `creativity`],
     type: `article`,
     desc: `
         In my first medium article, I share my thoughts on how you can improve your creative process.
@@ -16,7 +16,7 @@ export const bytes = [
   {
     id: `b002`,
     title: `The Blue Witness: Can we map Police Misconduct?`,
-    tags: [`show all`, `article`, `tech lifestyle`, `teamwork`],
+    tags: [`show all`, `article`, `teamwork`],
     type: `article`,
     desc: `
         For the past 9 months,
@@ -49,7 +49,7 @@ export const bytes = [
   {
     id: `b004`,
     title: `My Mini Lodash`,
-    tags: [`show all`, `snippet`, `vanilla js`],
+    tags: [`show all`, `snippet`],
     type: `snippet`,
     desc: `
         An ongoing collection of lodash-like functions for modifying text.
@@ -79,32 +79,77 @@ export const bytes = [
   {
     id: `b006`,
     title: `Great Greeting Cards`,
-    tags: [`show all`, `snippet`, `css`],
-    type: `snippet`,
+    tags: [`show all`, `demo`, `css`],
+    type: `demo`,
     desc: `
           With some css and html sorcery, I found a way to create realistic greeting cards for one of my side projects.
-          May you find a use for this snippet in your projects.
+          May you find a use for this demo in your projects.
          `,
     link: `https://codepen.io/zemposPen/pen/PowLbBd`,
     github_repo: `https://gist.github.com/zempo/580aef3d034334369aa7fb89db47ee52`,
     guest_creds: false,
-    preview_img: `https://morgancodes.s3.amazonaws.com/desktop_light_mode.jpg`,
-    code_embed: true,
+    preview_img: `https://i.ibb.co/9cZJ2QT/greeting-cards.png`,
+    code_embed: false,
   },
   {
     id: `b007`,
     title: `A Cloudy Landing`,
-    tags: [`show all`, `snippet`, `css`],
-    type: `snippet`,
+    tags: [`show all`, `demo`, `css`],
+    type: `demo`,
     desc: `
-          With some css and html sorcery, I found a way to create realistic greeting cards for one of my side projects.
-          May you find a use for this snippet in your projects.
+          After a bit of tinkering and researching, I built this cloudy landing page.
+          May you find a use for this demo in your projects.
          `,
     link: `https://codepen.io/zemposPen/pen/PowLbBd`,
     github_repo: `https://gist.github.com/zempo/580aef3d034334369aa7fb89db47ee52`,
     guest_creds: false,
-    preview_img: `https://morgancodes.s3.amazonaws.com/desktop_light_mode.jpg`,
-    code_embed: true,
+    preview_img: `https://i.ibb.co/7QDcPtt/cloudy-landing.png`,
+    code_embed: false,
+  },
+  {
+    id: `b008`,
+    title: `Node Postgres Starter`,
+    tags: [`show all`, `template`, `node`, `postgres`],
+    type: `template`,
+    desc: `
+    Personal boilerplate for a node server with postgres.
+     `,
+    link: `https://github.com/zempo/node-starter-postgres`,
+    github_repo: `https://github.com/zempo/node-starter-postgres`,
+    guest_creds: false,
+    preview_img: `https://i.pinimg.com/originals/92/94/1d/92941d986586249ee79a24065f68c910.jpg`,
+    code_embed: false,
+  },
+  {
+    id: `b009`,
+    title: `Node Mongo Starter`,
+    tags: [`show all`, `template`, `node`, `mongodb`],
+    type: `template`,
+    desc: `
+    Personal boilerplate for a node server with MongoDB.
+     `,
+    link: `https://github.com/zempo/node-boiler-mongo`,
+    github_repo: `https://github.com/zempo/node-boiler-mongo`,
+    guest_creds: false,
+    preview_img: `https://i.pinimg.com/originals/92/94/1d/92941d986586249ee79a24065f68c910.jpg`,
+    code_embed: false,
+  },
+  {
+    id: `b010`,
+    title: `Sveltekit Starter`,
+    tags: [`show all`, `template`, `svelte`, `threejs`],
+    type: `template`,
+    desc: `
+    Personal boilerplate for a sveltekit project using sass and threejs.
+    Sveltekit is currently in beta (at the time of this writing),
+     and will hopefully become much more developer-friendly over time.
+    Until that day comes, I decided to experiment with Sveltekit.
+     `,
+    link: `https://github.com/zempo/sveltekit_starter`,
+    github_repo: `https://github.com/zempo/sveltekit_starter`,
+    guest_creds: false,
+    preview_img: `https://i.pinimg.com/originals/92/94/1d/92941d986586249ee79a24065f68c910.jpg`,
+    code_embed: false,
   },
   // {
   //   id: `b006`,

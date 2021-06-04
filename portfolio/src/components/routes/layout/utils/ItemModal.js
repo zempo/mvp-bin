@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import ReactDOM from "react-dom";
+import bytesContext from "../../../../context/bytesContext";
+import worksContext from "../../../../context/worksContext";
 import styleContext from "../../../../context/styleContext";
 import "../../../../styles/Modal.scss";
 
@@ -30,18 +32,47 @@ const ModalControls = ({ hide }) => {
 };
 
 const WorkModal = ({ item, type, hide }) => {
+  const WorksContext = useContext(worksContext);
+  const { currentWork } = WorksContext;
+  const {
+    id,
+    title,
+    desc,
+    github_repo,
+    guest_creds,
+    live_site,
+    role,
+    screenshots,
+    status,
+  } = currentWork[0];
+
   return (
     <div className={`modal-pg ${type}-modal`}>
-      {item}
+      <h2>{title}</h2>
+      <p>{desc}</p>
       <ModalControls hide={hide} />
     </div>
   );
 };
 
 const ByteModal = ({ item, type, hide }) => {
+  const BytesContext = useContext(bytesContext);
+  const { currentByte } = BytesContext;
+  const {
+    id,
+    title,
+    desc,
+    link,
+    github_repo,
+    guest_creds,
+    preview_img,
+    code_embed,
+  } = currentByte[0];
+
   return (
     <div className={`modal-pg ${type}-modal`}>
-      {item}
+      <h2>{title}</h2>
+      <p>{desc}</p>
       <ModalControls hide={hide} />
     </div>
   );

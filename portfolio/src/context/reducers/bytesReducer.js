@@ -16,7 +16,7 @@ export default (state, action) => {
     case SET_CURRENT_BYTE:
       return {
         ...state,
-        currentWork: state.works.filter((w) => w.id === action.payload),
+        currentByte: state.bytes.filter((b) => b.id === action.payload),
       };
     case FILTER_BYTES:
       return {

@@ -29,7 +29,14 @@ const ItemPreview = ({ payload, itemType }) => {
       <span>{shortenWord(title, 25)}</span>
       <div className='img-wrapper-outer'>
         <div className='img-wrapper-inner'>
-          <img src={preview_img} alt={`Preview for ${title} ${itemType}.`} />
+          <img
+            src={preview_img}
+            alt={`${itemType === "work" ? "Landing page" : "Preview"} for ${
+              itemType !== "work"
+                ? `my ${type} named,`
+                : `my ${type} project named,`
+            } '${title}'.`}
+          />
           <div className={`ribbon ribbon-${type}`}>
             <span>{type}</span>
           </div>

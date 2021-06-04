@@ -17,7 +17,7 @@ const WorksState = (props) => {
     currentWork: null,
     currentTag: "show all",
     filteredWorks: null,
-  }; 
+  };
 
   const [state, dispatch] = useReducer(worksReducer, initialState);
 

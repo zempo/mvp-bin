@@ -11,15 +11,13 @@ export const projects = [
     title: `Blue Witness`,
     tags: [
       `show all`,
+      `pern stack`,
       `reactjs`,
-      `nodejs`,
-      `fullstack`,
       `sass`,
       `in progress`,
       `mapping`,
       `open source`,
       `team`,
-      `sql`,
     ],
     type: `team`,
     role: `Design Lead 🎨`,
@@ -39,10 +37,10 @@ export const projects = [
   {
     id: `w002`,
     title: `Beam Pocket`,
-    tags: [`show all`, `client`, `vanilla js`, `front end`, `deployed`],
+    tags: [`show all`, `client`, `front end`, `in progress`],
     type: `client`,
     role: `Developer 💻`,
-    status: `Deployed 🚀`,
+    status: `In Progress 🚧`,
     desc: `
     From Karius Architecture, comes a new way of connecting steel beams to concrete walls.
     The Beam Pocket website was created to give prospective buyers important informaton about this revolutionary product.
@@ -58,15 +56,7 @@ export const projects = [
   {
     id: `w003`,
     title: `Above the Line`,
-    tags: [
-      `show all`,
-      `solo`,
-      `reactjs`,
-      `nodejs`,
-      `fullstack`,
-      `deployed`,
-      `sql`,
-    ],
+    tags: [`show all`, `solo`, `pern stack`, `reactjs`, `deployed`],
     type: `solo`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,
@@ -89,11 +79,9 @@ export const projects = [
     tags: [
       `show all`,
       `solo`,
+      `pern stack`,
       `reactjs`,
-      `nodejs`,
-      `fullstack`,
       `deployed`,
-      `sql`,
       `cloud storage`,
     ],
     type: `solo`,
@@ -119,9 +107,9 @@ export const projects = [
     tags: [
       `show all`,
       `solo`,
-      `reactjs`,
-      `front end`,
       `sass`,
+      `front end`,
+      `reactjs`,
       `deployed`,
       `threejs`,
     ],
