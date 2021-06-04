@@ -82,6 +82,8 @@
           left: 1.62rem;
         }
         .img-wrapper-inner {
+          background-image: url('./media/img-preload.png');
+          background-size: contain;
           &::before {
             background: map-get($colors, app-open);
             left: 2.93rem;
