@@ -1,4 +1,9 @@
-import { GET_NAV_OFFSET, SET_NAV_OFFSET, TOGGLE_MODAL_WIN } from "../_types";
+import {
+  GET_NAV_OFFSET,
+  SET_NAV_OFFSET,
+  SET_WIDTH,
+  TOGGLE_MODAL_WIN,
+} from "../_types";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
@@ -12,6 +17,11 @@ export default (state, action) => {
       return {
         ...state,
         navOffset: action.payload,
+      };
+    case SET_WIDTH:
+      return {
+        ...state,
+        currWidth: action.payload,
       };
     case TOGGLE_MODAL_WIN:
       return {

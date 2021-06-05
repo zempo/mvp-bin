@@ -31,6 +31,8 @@ body {
       border: 1px solid map-get($colors, app-dark);
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border: 0.44rem solid map-get($colors, app-dark);
+      border-top: 2rem solid map-get($colors, app-dark);
       -moz-border-radius-topleft: 0.4rem;
       -moz-border-radius-topright: 0.4rem;
       border-top-left-radius: 0.4rem;
@@ -40,36 +42,41 @@ body {
         height: 100%;
         width: 100%;
         background-color: map-get($colors, app-white);
-        border: 0.44rem solid map-get($colors, app-dark);
-        border-top: 2rem solid map-get($colors, app-dark);
-        -webkit-border-top-left-radius: 0.4rem;
-        -webkit-border-top-right-radius: 0.4rem;
-        -moz-border-radius-topleft: 0.4rem;
-        -moz-border-radius-topright: 0.4rem;
-        border-top-left-radius: 0.4rem;
-        border-top-right-radius: 0.4rem;
+        padding: 1rem 2rem;
+        .modal-content {
+          height: auto;
+          width: 100%;
+          overflow-y: scroll;
+          text-align: center;
+        }
+        .carousel-root {
+          max-width: 55rem;
+          margin: auto;
+        }
+        .modal-controls {
+          display: block;
+          z-index: 3;
+        }
         .modal-btn {
-          content: "";
-          top: -1.65rem;
+          position: fixed;
+          top: 0.4rem;
           height: 1.2rem;
           width: 1.2rem;
           border-radius: 50%;
-          position: absolute;
           border: 0;
-          z-index: 3;
           cursor: pointer;
         }
         .close-modal {
           background: map-get($colors, app-close);
-          left: 0.11rem;
+          left: 0.41rem;
         }
         .min-modal {
           background: map-get($colors, app-min);
-          left: 1.82rem;
+          left: 2.12rem;
         }
         .resize-modal {
           background: map-get($colors, app-open);
-          left: 3.43rem;
+          left: 3.73rem;
         }
       }
     }

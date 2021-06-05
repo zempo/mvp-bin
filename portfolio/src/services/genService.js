@@ -18,6 +18,12 @@ export const capitalizeStr = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+export const splitParas = (para) => {
+  let sen = para.split(".");
+
+  // sen.forEach(s => )
+};
+
 export const returnYear = () => {
   let d = new Date();
   return d.getFullYear();

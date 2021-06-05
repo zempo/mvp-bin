@@ -12,12 +12,13 @@ export const useDimensions = () => {
   const ref = useRef();
   const [dimensions, setDimensions] = useState({});
   const StyleContext = useContext(styleContext);
-  const { setOffset } = StyleContext;
+  const { setOffset, setCurrWidth } = StyleContext;
 
   useLayoutEffect(() => {
     function handleResize() {
       setDimensions(ref.current.getBoundingClientRect().toJSON());
-
+      console.log(ref.current.clientWidth);
+      setCurrWidth(ref.current.clientWidth);
       setOffset(ref.current.offsetTop);
     }
 

@@ -11,10 +11,10 @@ export const ItemModal = ({ item, type, isShowing, hide }) => {
 
   const ModalStyles = modalExpanded
     ? {
-        height: `calc(${navOffset}px`,
+        height: `calc(${navOffset}px)`,
       }
     : {
-        height: `calc(${navOffset}px - 6rem`,
+        height: `calc(${navOffset}px - 6rem)`,
         width: "calc(100% - 6rem)",
         top: "3rem",
         maxWidth: `1100px`,
