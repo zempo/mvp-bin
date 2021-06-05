@@ -17,7 +17,6 @@ export const useDimensions = () => {
   useLayoutEffect(() => {
     function handleResize() {
       setDimensions(ref.current.getBoundingClientRect().toJSON());
-      console.log(ref.current.clientWidth);
       setCurrWidth(ref.current.clientWidth);
       setOffset(ref.current.offsetTop);
     }

@@ -42,7 +42,7 @@ body {
         height: 100%;
         width: 100%;
         background-color: map-get($colors, app-white);
-        padding: 1rem 2rem;
+        padding: 3rem 2rem;
         .modal-content {
           height: auto;
           width: 100%;
@@ -52,6 +52,9 @@ body {
         .carousel-root {
           max-width: 55rem;
           margin: auto;
+          .legend {
+            @include font-size($sub-font-sizes);
+          }
         }
         .modal-controls {
           display: block;
@@ -65,6 +68,10 @@ body {
           border-radius: 50%;
           border: 0;
           cursor: pointer;
+          -o-animation: map-get($animations, fade-in-3);
+          -moz-animation: map-get($animations, fade-in-3);
+          -webkit-animation: map-get($animations, fade-in-3);
+          animation: map-get($animations, fade-in-3);
         }
         .close-modal {
           background: map-get($colors, app-close);
