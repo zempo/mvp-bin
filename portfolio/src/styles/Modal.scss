@@ -5,7 +5,7 @@ body {
   width: 100%;
   height: 100%;
   .Modal {
-    position: fixed;
+    position: fixed; 
     left: 0;
     top: 0;
     width: 100%;
@@ -48,6 +48,23 @@ body {
           width: 100%;
           overflow-y: scroll;
           text-align: center;
+          .modal-desc {
+            width: 90%;
+            margin: 4rem auto;
+            word-wrap: break-word;
+            max-width: 51rem;
+            line-height: 1.5;
+            text-align: justify;
+            p {
+              text-indent: 4rem;
+              span.note {
+                display: block;
+                font-style: italic;
+                margin-top: 2rem;
+                text-indent: 0;
+              }
+            }
+          }
         }
         .carousel-root {
           max-width: 55rem;

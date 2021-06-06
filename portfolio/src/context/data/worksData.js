@@ -24,10 +24,9 @@ export const projects = [
     status: `In Progress 🚧`,
     desc: `
     The Blue Witness project tracks and visualizes incidents of police brutality across the United States.
-     Together, the Human Rights First's Innovation Lab and Lambda School have partnered to bring this project to life.
-     As part of my journey with Lambda, I had the utmost privilege working with this team as a design lead.
-     -linebreak-
-     *NOTE: At the time of this writing, this project is being merged with another team's work and might have a different UI and/or URI.*
+    Together, the Human Rights First's Innovation Lab and Lambda School have partnered to bring this project to life.
+    As part of my journey with Lambda, I had the utmost privilege working with this team as a design lead.
+    NOTE: At the time of this writing, this project is being merged with another team's work and might have a different UI and/or URI.
      `,
     live_site: `https://a.humanrightsfirst.dev/`,
     // be sure to fork
@@ -61,10 +60,9 @@ export const projects = [
     desc: `
     From Karius Architecture, comes a new way of connecting steel beams to concrete walls.
     The Beam Pocket website was created to give prospective buyers important informaton about this revolutionary product.
-    And I enjoyed helping Karius Architecture bring their product to life - 
-    for my first professional developer experience.
-    -linebreak-
-    *NOTE: At the time of this writing, I am implementing new features for this project.*
+    As my first professional developer experiecen,
+    I enjoyed helping Karius Architecture bring their product to life. 
+    NOTE: At the time of this writing, I am implementing new features for this project.
     `,
     live_site: `https://www.beampocket.com/`,
     github_repo: false,

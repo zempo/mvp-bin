@@ -19,9 +19,9 @@ export const capitalizeStr = (str) => {
 };
 
 export const splitParas = (para) => {
-  let sen = para.split(".");
+  let sen = para.replace(/\n/g, '').replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|")
 
-  // sen.forEach(s => )
+  return sen
 };
 
 export const returnYear = () => {

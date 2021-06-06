@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { LandingIcon } from "../icons/MainIcons";
 import Typed from "react-typed";
-import pdf from "./layout/docs/new_resume.pdf";
+import pdf from "./layout/docs/resume.pdf";
 import "../../styles/pages/Home.scss";
 
 export const Home = () => {

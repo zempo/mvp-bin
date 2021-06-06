@@ -5,13 +5,14 @@ import styleContext from "../../../../context/styleContext";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "../../../../styles/Modal.scss";
+import { splitParas } from "../../../../services/genService";
 
 export const ModalCarousel = ({ imgSrcs, captions }) => {
-  return (
+  return ( 
     <>
       <Carousel>
         {imgSrcs.map((src, i) => (
-          <div className='img-container'>
+          <div className='img-container' key={i}>
             <img src={src} alt={`Screenshot of the ${captions[i]}`} />
             <p className='legend'>{captions[i]}</p>
           </div>
@@ -109,7 +110,11 @@ export const WorkModal = ({ item, type, hide }) => {
         <h1>{title}</h1>
         <h2>Status: {status}</h2>
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
-        <div className='modal-desc'>{desc}</div>
+        <div className='modal-desc'>
+          <p>
+          {splitParas(desc).map((s, i) => (s.includes('NOTE') ? (<span key={i} className='note'>*{s}*</span>) : (<span key={i}>{s} </span>)))}
+          </p>
+          </div>
       </div>
     </div>
   );
