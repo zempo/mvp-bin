@@ -48,11 +48,50 @@ body {
           width: 100%;
           overflow-y: scroll;
           text-align: center;
+          .modal-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 55rem;
+            margin: 1.75rem auto 1rem;
+            a {
+              background: map-get($colors, app-dark);
+              color: map-get($colors, app-white);
+              text-decoration: none;
+              display: block;
+              padding: .5rem 1rem;
+              line-height: 1.25;
+              border-radius: .4rem;
+              @include font-size($p-font-sizes);
+              opacity: .9;
+              -moz-transition: map-get($animations, transition-1);
+              -o-transition: map-get($animations, transition-1);
+              -webkit-transition: map-get($animations, transition-1);
+              transition: map-get($animations, transition-1);
+              &:hover, &:focus, &:active {
+                -moz-transition: map-get($animations, transition-1);
+                -o-transition: map-get($animations, transition-1);
+                -webkit-transition: map-get($animations, transition-1);
+                transition: map-get($animations, transition-1);
+                background: black;
+                opacity: 1; 
+              }
+              svg {
+                margin-right: .75rem;
+                width: 25px;
+                height: 25px;
+                stroke-width: 1.75;
+                position: relative;
+                top: .1rem;
+              }
+            }
+          }
           .modal-desc {
             width: 90%;
             margin: 4rem auto;
             word-wrap: break-word;
-            max-width: 51rem;
+            max-width: 50rem;
             line-height: 1.5;
             text-align: justify;
             p {
@@ -67,7 +106,7 @@ body {
           }
         }
         .carousel-root {
-          max-width: 55rem;
+          max-width: 60rem;
           margin: auto;
           .legend {
             @include font-size($sub-font-sizes);

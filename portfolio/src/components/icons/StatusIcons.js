@@ -27,6 +27,24 @@ export const ExpandIcon = () => {
   );
 };
 
+export const ExternalLink = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#fafafa"
+        d="M14 5a1 1 0 110-2h6a1 1 0 011 1v6a1 1 0 11-2 0V6.414l-9.293 9.293a1 1 0 01-1.414-1.414L17.586 5H14zM3 7a2 2 0 012-2h5a1 1 0 110 2H5v12h12v-5a1 1 0 112 0v5a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"
+      ></path>
+    </svg>
+  );
+}
+
 export const SadIcon = () => {
   return (
     <svg

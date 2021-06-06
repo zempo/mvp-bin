@@ -6,6 +6,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import "../../../../styles/Modal.scss";
 import { splitParas } from "../../../../services/genService";
+import { ExternalLink } from "../../../icons/StatusIcons";
+import { GitHub } from "../../../icons/SocialIcons";
 
 export const ModalCarousel = ({ imgSrcs, captions }) => {
   return ( 
@@ -106,9 +108,21 @@ export const WorkModal = ({ item, type, hide }) => {
   return (
     <div className={`modal-pg ${type}-modal`}>
       <ModalControls hide={hide} />
-      <div className='modal-content'>
+        <header>
         <h1>{title}</h1>
         <h2>Status: {status}</h2>
+        </header>
+      <div className='modal-content'>
+        <div className='modal-links'>
+          <a href={live_site} target="_blank" rel="noopener noreferrer">
+            <ExternalLink />
+            Visit the Site
+          </a>
+          <a href={github_repo} target="_blank" rel="noopener noreferrer">
+            <GitHub/> 
+            Project Repo
+          </a>
+        </div>
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
         <div className='modal-desc'>
           <p>
