@@ -10,7 +10,7 @@ import { ExternalLink } from "../../../icons/StatusIcons";
 import { GitHub } from "../../../icons/SocialIcons";
 
 export const ModalCarousel = ({ imgSrcs, captions }) => {
-  return ( 
+  return (
     <>
       <Carousel>
         {imgSrcs.map((src, i) => (
@@ -108,27 +108,35 @@ export const WorkModal = ({ item, type, hide }) => {
   return (
     <div className={`modal-pg ${type}-modal`}>
       <ModalControls hide={hide} />
-        <header>
+      <header>
         <h1>{title}</h1>
         <h2>Status: {status}</h2>
-        </header>
+      </header>
       <div className='modal-content'>
         <div className='modal-links'>
-          <a href={live_site} target="_blank" rel="noopener noreferrer">
+          <a href={live_site} target='_blank' rel='noopener noreferrer'>
             <ExternalLink />
             Visit the Site
           </a>
-          <a href={github_repo} target="_blank" rel="noopener noreferrer">
-            <GitHub/> 
+          <a href={github_repo} target='_blank' rel='noopener noreferrer'>
+            <GitHub />
             Project Repo
           </a>
         </div>
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
         <div className='modal-desc'>
           <p>
-          {splitParas(desc).map((s, i) => (s.includes('NOTE') ? (<span key={i} className='note'>*{s}*</span>) : (<span key={i}>{s} </span>)))}
+            {splitParas(desc).map((s, i) =>
+              s.includes("NOTE") ? (
+                <span key={i} className='note'>
+                  *{s}*
+                </span>
+              ) : (
+                <span key={i}>{s} </span>
+              )
+            )}
           </p>
-          </div>
+        </div>
       </div>
     </div>
   );
