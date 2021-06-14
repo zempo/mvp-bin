@@ -5,7 +5,7 @@ body {
   width: 100%;
   height: 100%;
   .Modal {
-    position: fixed; 
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -43,47 +43,69 @@ body {
         width: 100%;
         background-color: map-get($colors, app-white);
         padding: 3rem 2rem;
+        &.byte-modal {
+          header {
+            h1 {
+              @include font-size($h2-font-sizes);
+            }
+            h2 {
+              @include font-size($h3-font-sizes);
+            }
+          }
+          .modal-links {
+            margin: 0 auto 2rem !important;
+          }
+        }
         .modal-content {
           height: auto;
           width: 100%;
           overflow-y: scroll;
           text-align: center;
+          .modal-preview {
+            text-align: center;
+            width: 100%;
+            max-width: 60rem;
+            margin: 1rem auto;
+          }
           .modal-links {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
             width: 100%;
             max-width: 55rem;
-            margin: 1.75rem auto 1rem;
+            margin: 0 auto 4rem;
             a {
               background: map-get($colors, app-dark);
               color: map-get($colors, app-white);
               text-decoration: none;
               display: block;
-              padding: .5rem 1rem;
+              padding: 0.5rem 1rem;
+              margin: auto 1rem;
               line-height: 1.25;
-              border-radius: .4rem;
+              border-radius: 0.4rem;
               @include font-size($p-font-sizes);
-              opacity: .9;
+              opacity: 0.9;
               -moz-transition: map-get($animations, transition-1);
               -o-transition: map-get($animations, transition-1);
               -webkit-transition: map-get($animations, transition-1);
               transition: map-get($animations, transition-1);
-              &:hover, &:focus, &:active {
+              &:hover,
+              &:focus,
+              &:active {
                 -moz-transition: map-get($animations, transition-1);
                 -o-transition: map-get($animations, transition-1);
                 -webkit-transition: map-get($animations, transition-1);
                 transition: map-get($animations, transition-1);
                 background: black;
-                opacity: 1; 
+                opacity: 1;
               }
               svg {
-                margin-right: .75rem;
+                margin-right: 0.75rem;
                 width: 25px;
                 height: 25px;
                 stroke-width: 1.75;
                 position: relative;
-                top: .1rem;
+                top: 0.1rem;
               }
             }
           }
@@ -109,7 +131,14 @@ body {
           max-width: 60rem;
           margin: auto;
           .legend {
+            background: map-get($colors, app-dark);
             @include font-size($sub-font-sizes);
+          }
+          .carousel .control-dots .dot {
+            width: 15px;
+            height: 15px;
+            background: map-get($colors, app-white);
+            box-shadow: 1px 1px 3px 0px rgba(32, 32, 32, 0.89);
           }
         }
         .modal-controls {

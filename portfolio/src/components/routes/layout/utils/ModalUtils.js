@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
+import ReactEmbedGist from "react-embed-gist";
 import bytesContext from "../../../../context/bytesContext";
 import worksContext from "../../../../context/worksContext";
 import styleContext from "../../../../context/styleContext";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "../../../../styles/Modal.scss";
-import { splitParas } from "../../../../services/genService";
+import { capitalizeStr, splitParas } from "../../../../services/genService";
 import { ExternalLink } from "../../../icons/StatusIcons";
 import { GitHub } from "../../../icons/SocialIcons";
+import { getEmoji, getGist } from "../../../../services/queryService";
 
 export const ModalCarousel = ({ imgSrcs, captions }) => {
   return (
@@ -89,7 +91,18 @@ export const ModalControls = ({ hide }) => {
   );
 };
 
-export const WorkModal = ({ item, type, hide }) => {
+export const GuestCreds = () => {
+  return (
+    <div aria-label='guest credentials'>
+      <h3>
+        {" "}
+        <GuestCreds /> Guest Credentials
+      </h3>
+    </div>
+  );
+};
+
+export const WorkModal = ({ item, modalType, hide }) => {
   const WorksContext = useContext(worksContext);
   const { currentWork } = WorksContext;
   const {
@@ -106,7 +119,7 @@ export const WorkModal = ({ item, type, hide }) => {
   } = currentWork[0];
 
   return (
-    <div className={`modal-pg ${type}-modal`}>
+    <div className={`modal-pg ${modalType}-modal`}>
       <ModalControls hide={hide} />
       <header>
         <h1>{title}</h1>
@@ -118,10 +131,12 @@ export const WorkModal = ({ item, type, hide }) => {
             <ExternalLink />
             Visit the Site
           </a>
-          <a href={github_repo} target='_blank' rel='noopener noreferrer'>
-            <GitHub />
-            Project Repo
-          </a>
+          {github_repo ? (
+            <a href={github_repo} target='_blank' rel='noopener noreferrer'>
+              <GitHub />
+              Project Repo
+            </a>
+          ) : null}
         </div>
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
         <div className='modal-desc'>
@@ -142,12 +157,13 @@ export const WorkModal = ({ item, type, hide }) => {
   );
 };
 
-export const ByteModal = ({ item, type, hide }) => {
+export const ByteModal = ({ item, modalType, hide }) => {
   const BytesContext = useContext(bytesContext);
   const { currentByte } = BytesContext;
   const {
     id,
     title,
+    type,
     desc,
     link,
     github_repo,
@@ -157,10 +173,37 @@ export const ByteModal = ({ item, type, hide }) => {
   } = currentByte[0];
 
   return (
-    <div className={`modal-pg ${type}-modal`}>
-      <h2>{title}</h2>
-      <p>{desc}</p>
+    <div className={`modal-pg ${modalType}-modal`}>
       <ModalControls hide={hide} />
+      <header>
+        <h1>{title}</h1>
+        <h2>Type: {getEmoji(type)}</h2>
+      </header>
+      <div className='modal-content'>
+        <div className='modal-links'>
+          {link ? (
+            <a href={link} target='_blank' rel='noopener noreferrer'>
+              <ExternalLink />
+              View this {capitalizeStr(type)}
+            </a>
+          ) : null}
+          {github_repo ? (
+            <a href={github_repo} target='_blank' rel='noopener noreferrer'>
+              <GitHub />
+              {capitalizeStr(type)} Repo
+            </a>
+          ) : null}
+        </div>
+      </div>
+      {code_embed ? (
+        <ReactEmbedGist gist={getGist(github_repo)} />
+      ) : (
+        <img
+          className='modal-preview'
+          src={preview_img}
+          alt={`Preview for ${type} named, "${title}".`}
+        />
+      )}
     </div>
   );
 };

@@ -45,6 +45,48 @@ export const ExternalLink = () => {
   );
 };
 
+export const CopyIcon = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      stroke='#fafafa'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='1.5'
+      className='icon icon-tabler icon-tabler-copy'
+      viewBox='0 0 24 24'
+    >
+      <path stroke='none' d='M0 0h24v24H0z'></path>
+      <rect width='12' height='12' x='8' y='8' rx='2'></rect>
+      <path d='M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2'></path>
+    </svg>
+  );
+};
+
+export const CredsIcon = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      stroke='#fafafa'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='1.5'
+      className='icon icon-tabler icon-tabler-users'
+      viewBox='0 0 24 24'
+    >
+      <path stroke='none' d='M0 0h24v24H0z'></path>
+      <circle cx='9' cy='7' r='4'></circle>
+      <path d='M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.85'></path>
+    </svg>
+  );
+};
+
 export const SadIcon = () => {
   return (
     <svg

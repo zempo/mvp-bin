@@ -58,7 +58,7 @@ export const projects = [
     role: `Developer 💻`,
     status: `In Progress 🚧`,
     desc: `
-    From Karius Architecture, comes a new way of connecting steel beams to concrete walls.
+    From Karius Architecture, comes a better way of connecting steel beams to concrete walls.
     The Beam Pocket website was created to give prospective buyers important informaton about this revolutionary product.
     As my first professional developer experiecen,
     I enjoyed helping Karius Architecture bring their product to life. 

@@ -9,8 +9,8 @@ export const Contact = () => {
   }, []);
 
   const calendlyStyles = {
-    margin: `4rem auto 3rem`,
-    height: `850px`,
+    margin: `4rem auto 5rem`,
+    height: `650px`,
   };
 
   return (

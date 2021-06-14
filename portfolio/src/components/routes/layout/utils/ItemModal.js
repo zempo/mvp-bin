@@ -29,9 +29,9 @@ export const ItemModal = ({ item, type, isShowing, hide }) => {
           style={ModalStyles}
         >
           {type === "work" ? (
-            <WorkModal item={item} hide={hide} type={type} />
+            <WorkModal item={item} hide={hide} modalType={type} />
           ) : (
-            <ByteModal item={item} hide={hide} type={type} />
+            <ByteModal item={item} hide={hide} modalType={type} />
           )}
         </div>
       </div>,

@@ -5,6 +5,8 @@
  * Utility Functions for making queries with portfolio data
  */
 
+import { capitalizeStr } from "./genService";
+
 let uniqueTags = [];
 export const getTags = (data, idx = 0) => {
   let pos = idx;
@@ -54,4 +56,33 @@ export const queryData = (data, query, idx = 0) => {
   }
 
   return queryData(data, query, pos + 1);
+};
+
+export const getEmoji = (type) => {
+  let output = type;
+  switch (output) {
+    case "article":
+      output += " 📰";
+      return capitalizeStr(output);
+    case "snippet":
+      output += " 🧩";
+      return capitalizeStr(output);
+    case "demo":
+      output += " 🏆";
+      return capitalizeStr(output);
+    case "template":
+      output += " 🧬";
+      return capitalizeStr(output);
+    case "3d art":
+      output += " 💎";
+      return capitalizeStr(output);
+    default:
+      return capitalizeStr(output);
+  }
+};
+
+export const getGist = (url) => {
+  let pos = url.indexOf(".com/");
+
+  return url.slice(pos + 5);
 };
