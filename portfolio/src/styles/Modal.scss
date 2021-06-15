@@ -56,6 +56,14 @@ body {
             margin: 0 auto 2rem !important;
           }
         }
+        article {
+          width: 100%;
+          max-width: 60rem;
+          margin: auto;
+          > h2 {
+            display: none;
+          }
+        }
         .modal-content {
           height: auto;
           width: 100%;
