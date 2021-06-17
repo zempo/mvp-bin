@@ -52,13 +52,14 @@ export const CopyIcon = () => {
       width='24'
       height='24'
       fill='none'
-      stroke='#fafafa'
+      stroke='#3d3a3a'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='1.5'
+      strokeWidth='2'
       className='icon icon-tabler icon-tabler-copy'
       viewBox='0 0 24 24'
     >
+      <title>Copy</title>
       <path stroke='none' d='M0 0h24v24H0z'></path>
       <rect width='12' height='12' x='8' y='8' rx='2'></rect>
       <path d='M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2'></path>
@@ -76,13 +77,51 @@ export const CredsIcon = () => {
       stroke='#fafafa'
       strokeLinecap='round'
       strokeLinejoin='round'
-      strokeWidth='1.5'
+      strokeWidth='2'
       className='icon icon-tabler icon-tabler-users'
       viewBox='0 0 24 24'
     >
       <path stroke='none' d='M0 0h24v24H0z'></path>
       <circle cx='9' cy='7' r='4'></circle>
       <path d='M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.85'></path>
+    </svg>
+  );
+};
+
+export const PlusIcon = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      viewBox='0 0 24 24'
+    >
+      <title>Close</title>
+      <path
+        xmlns='http://www.w3.org/2000/svg'
+        fill='#fafafa'
+        d='M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z'
+      ></path>
+    </svg>
+  );
+};
+
+export const MinusIcon = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      viewBox='0 0 24 24'
+    >
+      <title>Expand</title>
+      <path
+        xmlns='http://www.w3.org/2000/svg'
+        fill='#fafafa'
+        d='M4 12a1 1 0 011-1h14a1 1 0 110 2H5a1 1 0 01-1-1z'
+      ></path>
     </svg>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ReactEmbedGist from "react-embed-gist";
 import bytesContext from "../../../../context/bytesContext";
 import worksContext from "../../../../context/worksContext";
@@ -7,7 +7,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import "../../../../styles/Modal.scss";
 import { capitalizeStr, splitParas } from "../../../../services/genService";
-import { ExternalLink } from "../../../icons/StatusIcons";
+import {
+  ExternalLink,
+  CredsIcon,
+  PlusIcon,
+  MinusIcon,
+  CopyIcon,
+} from "../../../icons/StatusIcons";
 import { GitHub } from "../../../icons/SocialIcons";
 import { getEmoji, getGist } from "../../../../services/queryService";
 
@@ -91,13 +97,40 @@ export const ModalControls = ({ hide }) => {
   );
 };
 
-export const GuestCreds = () => {
+export const GuestCreds = ({ creds }) => {
+  const [open, setOpen] = useState(false);
+
+  const toggleCreds = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div aria-label='guest credentials'>
-      <h3>
-        {" "}
-        <GuestCreds /> Guest Credentials
-      </h3>
+    <div
+      aria-label='guest credentials'
+      className='guest-creds'
+      title={`${open ? "Hide guest creds" : "View guest creds"}`}
+    >
+      <div className='guest-head' onClick={toggleCreds}>
+        <p>
+          {" "}
+          <CredsIcon /> Guest Credentials
+        </p>
+        {open ? <PlusIcon /> : <MinusIcon />}
+      </div>
+      <ul style={{ display: `${open ? "block" : "none"}` }}>
+        <li>
+          <b>Email</b> <br />
+          <span>
+            {creds.email} <CopyIcon />
+          </span>
+        </li>
+        <li>
+          <b>Password</b> <br />
+          <span>
+            {creds.password} <CopyIcon />
+          </span>
+        </li>
+      </ul>
     </div>
   );
 };
@@ -119,7 +152,7 @@ export const WorkModal = ({ item, modalType, hide }) => {
   } = currentWork[0];
 
   return (
-    <div className={`modal-pg ${modalType}-modal`}>
+    <div className={`modal-pg ${modalType}-modal`} id={id}>
       <ModalControls hide={hide} />
       <header>
         <h1>{title}</h1>
@@ -139,7 +172,9 @@ export const WorkModal = ({ item, modalType, hide }) => {
           ) : null}
         </div>
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
+        {guest_creds ? <GuestCreds creds={guest_creds} /> : null}
         <div className='modal-desc'>
+          <h3>Project Role: {role}</h3>
           <p>
             {splitParas(desc).map((s, i) =>
               s.includes("NOTE") ? (
@@ -194,16 +229,16 @@ export const ByteModal = ({ item, modalType, hide }) => {
             </a>
           ) : null}
         </div>
+        {code_embed ? (
+          <ReactEmbedGist gist={getGist(github_repo)} />
+        ) : (
+          <img
+            className='modal-preview'
+            src={preview_img}
+            alt={`Preview for ${type} named, "${title}".`}
+          />
+        )}
       </div>
-      {code_embed ? (
-        <ReactEmbedGist gist={getGist(github_repo)} />
-      ) : (
-        <img
-          className='modal-preview'
-          src={preview_img}
-          alt={`Preview for ${type} named, "${title}".`}
-        />
-      )}
     </div>
   );
 };

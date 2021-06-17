@@ -21,7 +21,7 @@ export const projects = [
     ],
     type: `team`,
     role: `Design Lead 🎨`,
-    status: `In Progress 🚧`,
+    status: `In-Progress 🚧`,
     desc: `
     The Blue Witness project tracks and visualizes incidents of police brutality across the United States.
     Together, the Human Rights First's Innovation Lab and Lambda School have partnered to bring this project to life.
@@ -56,7 +56,7 @@ export const projects = [
     tags: [`show all`, `client`, `front end`, `in progress`],
     type: `client`,
     role: `Developer 💻`,
-    status: `In Progress 🚧`,
+    status: `In-Progress 🚧`,
     desc: `
     From Karius Architecture, comes a better way of connecting steel beams to concrete walls.
     The Beam Pocket website was created to give prospective buyers important informaton about this revolutionary product.

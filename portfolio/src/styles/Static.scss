@@ -101,10 +101,18 @@ header {
   .nav-prev {
     top: calc(45vh - 5rem);
     left: 5rem;
+    svg {
+      position: relative;
+      left: -5px;
+    }
   }
   .nav-fwd {
     top: calc(45vh - 5rem);
     right: 5rem;
+    svg {
+      position: relative;
+      left: 5px;
+    }
   }
 }
 

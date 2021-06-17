@@ -119,11 +119,14 @@ body {
           }
           .modal-desc {
             width: 90%;
+            max-width: 50rem;
             margin: 4rem auto;
             word-wrap: break-word;
-            max-width: 50rem;
             line-height: 1.5;
             text-align: justify;
+            h3 {
+              text-align: center;
+            }
             p {
               text-indent: 4rem;
               span.note {
@@ -131,6 +134,63 @@ body {
                 font-style: italic;
                 margin-top: 2rem;
                 text-indent: 0;
+              }
+            }
+          }
+          .guest-creds {
+            width: 90%;
+            max-width: 60rem;
+            margin: 0 auto;
+            .guest-head {
+              background: map-get($colors, app-dark);
+              color: map-get($colors, app-white);
+              display: flex;
+              justify-content: space-between;
+              padding: 1.25rem 1.5rem;
+              cursor: pointer;
+              p {
+                svg {
+                  margin-right: 1rem;
+                  position: relative;
+                  top: 0.2rem;
+                }
+                margin: 0;
+                line-height: 0;
+              }
+            }
+            ul {
+              text-align: left;
+              width: 100%;
+              padding-left: 1.75rem;
+              padding: 2rem 1.75rem;
+              border: 2px solid map-get($colors, app-dark);
+              background: darken(
+                $color: map-get($colors, app-white),
+                $amount: 3.5
+              );
+              li {
+                width: 100%;
+                line-height: 2;
+                @include font-size($p-font-sizes);
+                b {
+                  font-weight: 400;
+                }
+                span {
+                  position: relative;
+                  font-weight: 300;
+                  svg {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 1rem;
+                    right: 0.5rem;
+                  }
+                  display: block;
+                  width: 100%;
+                  padding: 0.5rem;
+                  font-style: italic;
+                  border: 1px solid map-get($colors, app-dark);
+                  background: map-get($colors, app-white);
+                }
               }
             }
           }
