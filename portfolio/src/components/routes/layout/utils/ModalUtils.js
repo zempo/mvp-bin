@@ -163,6 +163,8 @@ export const GuestCreds = ({ creds }) => {
   );
 };
 
+export const ModalNav = () => {};
+
 export const WorkModal = ({ item, modalType, hide }) => {
   const WorksContext = useContext(worksContext);
   const { currentWork } = WorksContext;
@@ -267,13 +269,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
           </>
         ) : (
           <>
-            <img
-              className='modal-preview'
-              src={preview_img}
-              alt={`Preview for ${type} named, "${title}".`}
-            />
             <div className='modal-desc'>
-              <h3>{capitalizeStr(type)} Description</h3>
               <p>
                 {splitParas(desc).map((s, i) =>
                   s.includes("NOTE") ? (
@@ -286,6 +282,11 @@ export const ByteModal = ({ item, modalType, hide }) => {
                 )}
               </p>
             </div>
+            <img
+              className='modal-preview'
+              src={preview_img}
+              alt={`Preview for ${type} named, "${title}".`}
+            />
           </>
         )}
       </div>
