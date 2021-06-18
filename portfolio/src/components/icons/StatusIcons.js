@@ -126,6 +126,25 @@ export const MinusIcon = () => {
   );
 };
 
+export const Copied = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      fill='none'
+      className='copy-check'
+      viewBox='0 0 24 24'
+    >
+      <path
+        xmlns='http://www.w3.org/2000/svg'
+        fill='#00D17D'
+        d='M20.664 5.253a1 1 0 01.083 1.411l-10.666 12a1 1 0 01-1.495 0l-5.333-6a1 1 0 011.494-1.328l4.586 5.159 9.92-11.16a1 1 0 011.411-.082z'
+      ></path>
+    </svg>
+  );
+};
+
 export const SadIcon = () => {
   return (
     <svg

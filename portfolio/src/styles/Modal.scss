@@ -190,6 +190,13 @@ body {
                   font-style: italic;
                   border: 1px solid map-get($colors, app-dark);
                   background: map-get($colors, app-white);
+                  &.email-active,
+                  &.pwd-active {
+                    -o-animation: map-get($animations, fade-in-2);
+                    -moz-animation: map-get($animations, fade-in-2);
+                    -webkit-animation: map-get($animations, fade-in-2);
+                    animation: map-get($animations, fade-in-2);
+                  }
                 }
               }
             }

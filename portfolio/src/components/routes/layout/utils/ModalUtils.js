@@ -13,6 +13,7 @@ import {
   PlusIcon,
   MinusIcon,
   CopyIcon,
+  Copied,
 } from "../../../icons/StatusIcons";
 import { GitHub } from "../../../icons/SocialIcons";
 import { getEmoji, getGist } from "../../../../services/queryService";
@@ -99,9 +100,29 @@ export const ModalControls = ({ hide }) => {
 
 export const GuestCreds = ({ creds }) => {
   const [open, setOpen] = useState(false);
+  const [copiedCreds, setCopiedCreds] = useState({
+    email: false,
+    pwd: false,
+  });
 
   const toggleCreds = () => {
     setOpen(!open);
+  };
+
+  const copyCred = (field, txt) => {
+    navigator.clipboard.writeText(txt);
+
+    setCopiedCreds({
+      ...copiedCreds,
+      [`${field}`]: true,
+    });
+
+    setTimeout(() => {
+      setCopiedCreds({
+        ...copiedCreds,
+        [`${field}`]: false,
+      });
+    }, 1000);
   };
 
   return (
@@ -120,14 +141,21 @@ export const GuestCreds = ({ creds }) => {
       <ul style={{ display: `${open ? "block" : "none"}` }}>
         <li>
           <b>Email</b> <br />
-          <span>
-            {creds.email} <CopyIcon />
+          <span
+            className={`email-${copiedCreds.email ? "active" : ""}`}
+            onClick={() => copyCred("email", creds.email)}
+          >
+            {creds.email} {copiedCreds.email ? <Copied /> : <CopyIcon />}
           </span>
         </li>
         <li>
           <b>Password</b> <br />
-          <span>
-            {creds.password} <CopyIcon />
+          <span
+            className={`pwd-${copiedCreds.pwd ? "active" : ""}`}
+            onClick={() => copyCred("pwd", creds.password)}
+          >
+            {"*".repeat(creds.password.length)}{" "}
+            {copiedCreds.pwd ? <Copied /> : <CopyIcon />}
           </span>
         </li>
       </ul>
@@ -171,8 +199,8 @@ export const WorkModal = ({ item, modalType, hide }) => {
             </a>
           ) : null}
         </div>
-        <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
         {guest_creds ? <GuestCreds creds={guest_creds} /> : null}
+        <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
         <div className='modal-desc'>
           <h3>Project Role: {role}</h3>
           <p>
