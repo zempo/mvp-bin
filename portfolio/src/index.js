@@ -10,17 +10,17 @@ import WorksState from "./context/state/WorksState";
 import BytesState from "./context/state/BytesState";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <StyleState>
       <WorksState>
         <BytesState>
-        <Router>
-          <App />
-        </Router>
+          <Router>
+            <App />
+          </Router>
         </BytesState>
       </WorksState>
     </StyleState>
-  </React.StrictMode>,
+  </>,
   document.getElementById("root")
 );
 

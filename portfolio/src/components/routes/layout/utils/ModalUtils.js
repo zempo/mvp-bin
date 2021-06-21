@@ -15,6 +15,12 @@ import {
   CopyIcon,
   Copied,
 } from "../../../icons/StatusIcons";
+import {
+  ArrowFirst,
+  ArrowLeft,
+  ArrowRight,
+  ArrowLast,
+} from "../../../static/NavBtns";
 import { GitHub } from "../../../icons/SocialIcons";
 import { getEmoji, getGist } from "../../../../services/queryService";
 
@@ -163,7 +169,84 @@ export const GuestCreds = ({ creds }) => {
   );
 };
 
-export const ModalNav = () => {};
+export const ModalNav = ({ item, modalType }) => {
+  if (modalType === "work") {
+    const handleWorkPagination = (e, type) => {
+      e.preventDefault();
+      console.log(type, item);
+    };
+
+    return (
+      <div
+        aria-label='Pagination Navigation'
+        role='navigation'
+        className='modal-pagination'
+      >
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleWorkPagination(e, "first")}
+        >
+          <ArrowFirst />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleWorkPagination(e, "prev")}
+        >
+          <ArrowLeft />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleWorkPagination(e, "next")}
+        >
+          <ArrowRight />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleWorkPagination(e, "last")}
+        >
+          <ArrowLast />
+        </button>
+      </div>
+    );
+  } else {
+    const handleBytePagination = (e, type) => {
+      console.log(type, item);
+    };
+
+    return (
+      <div
+        aria-label='Pagination Navigation'
+        role='navigation'
+        className='modal-pagination'
+      >
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleBytePagination(e, "first")}
+        >
+          <ArrowFirst />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleBytePagination(e, "prev")}
+        >
+          <ArrowLeft />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleBytePagination(e, "next")}
+        >
+          <ArrowRight />
+        </button>
+        <button
+          className='pagination-btn'
+          onClick={(e) => handleBytePagination(e, "last")}
+        >
+          <ArrowLast />
+        </button>
+      </div>
+    );
+  }
+};
 
 export const WorkModal = ({ item, modalType, hide }) => {
   const WorksContext = useContext(worksContext);
@@ -217,6 +300,7 @@ export const WorkModal = ({ item, modalType, hide }) => {
             )}
           </p>
         </div>
+        <ModalNav item={item} modalType={modalType} />
       </div>
     </div>
   );
@@ -266,6 +350,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
               </p>
             </div>
             <ReactEmbedGist gist={getGist(github_repo)} />
+            <ModalNav item={item} modalType={modalType} />
           </>
         ) : (
           <>
@@ -287,6 +372,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
               src={preview_img}
               alt={`Preview for ${type} named, "${title}".`}
             />
+            <ModalNav item={item} modalType={modalType} />
           </>
         )}
       </div>
