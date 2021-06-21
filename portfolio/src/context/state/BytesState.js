@@ -8,7 +8,12 @@ import {
   GET_BYTES,
   SET_CURRENT_BYTE,
 } from "../_types";
-import { getTags, queryData } from "../../services/queryService";
+import {
+  getTags,
+  getNewIdx,
+  btnStatus,
+  queryData,
+} from "../../services/queryService";
 
 const BytesState = (props) => {
   const initialState = {
@@ -30,6 +35,24 @@ const BytesState = (props) => {
 
   const setCurrentByte = (currentId) => {
     dispatch({ type: SET_CURRENT_BYTE, payload: currentId });
+  };
+
+  const paginateByte = (currentId, type) => {
+    // are we working with filtered or standard bytes
+    let whichBytes =
+      state.filteredBytes == null ? state.bytes : state.filteredBytes;
+
+    let newItem = getNewIdx(currentId, whichBytes, type);
+
+    dispatch({ type: SET_CURRENT_BYTE, payload: newItem.id });
+  };
+
+  const checkByteBtnStatus = (currentId, type) => {
+    // are we working with filtered or standard bytes
+    let whichBytes =
+      state.filteredBytes == null ? state.bytes : state.filteredBytes;
+
+    return btnStatus(currentId, whichBytes, type);
   };
 
   const filterBytes = (query) => {
@@ -55,6 +78,8 @@ const BytesState = (props) => {
         currentByteTag: state.currentByteTag,
         getBytes,
         setCurrentByte,
+        checkByteBtnStatus,
+        paginateByte,
         filterBytes,
         clearBytesFilter,
       }}

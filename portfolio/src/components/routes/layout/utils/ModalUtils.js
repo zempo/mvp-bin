@@ -172,6 +172,8 @@ export const GuestCreds = ({ creds }) => {
 export const ModalNav = ({ item, modalType }) => {
   const WorksContext = useContext(worksContext);
   const { paginateWork, checkBtnStatus } = WorksContext;
+  const BytesContext = useContext(bytesContext);
+  const { paginateByte, checkByteBtnStatus } = BytesContext;
 
   if (modalType === "work") {
     const handleWorkPagination = (e, type) => {
@@ -217,7 +219,8 @@ export const ModalNav = ({ item, modalType }) => {
     );
   } else {
     const handleBytePagination = (e, type) => {
-      console.log(type, item);
+      e.preventDefault();
+      paginateByte(item, type);
     };
 
     return (
@@ -229,24 +232,28 @@ export const ModalNav = ({ item, modalType }) => {
         <button
           className='pagination-btn'
           onClick={(e) => handleBytePagination(e, "first")}
+          disabled={checkByteBtnStatus(item, "first")}
         >
           <ArrowFirst />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleBytePagination(e, "prev")}
+          disabled={checkByteBtnStatus(item, "prev")}
         >
           <ArrowLeft />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleBytePagination(e, "next")}
+          disabled={checkByteBtnStatus(item, "next")}
         >
           <ArrowRight />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleBytePagination(e, "last")}
+          disabled={checkByteBtnStatus(item, "last")}
         >
           <ArrowLast />
         </button>
@@ -356,8 +363,10 @@ export const ByteModal = ({ item, modalType, hide }) => {
                 )}
               </p>
             </div>
+            <ModalNav item={id} modalType={modalType} />
+            <br />
             <ReactEmbedGist gist={getGist(github_repo)} />
-            <ModalNav item={item} modalType={modalType} />
+            <ModalNav item={id} modalType={modalType} />
           </>
         ) : (
           <>
@@ -379,7 +388,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
               src={preview_img}
               alt={`Preview for ${type} named, "${title}".`}
             />
-            <ModalNav item={item} modalType={modalType} />
+            <ModalNav item={id} modalType={modalType} />
           </>
         )}
       </div>
