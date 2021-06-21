@@ -8,7 +8,12 @@ import {
   GET_WORKS,
   SET_CURRENT_WORK,
 } from "../_types";
-import { getTags, queryData } from "../../services/queryService";
+import {
+  getNewIdx,
+  btnStatus,
+  getTags,
+  queryData,
+} from "../../services/queryService";
 
 const WorksState = (props) => {
   const initialState = {
@@ -30,6 +35,24 @@ const WorksState = (props) => {
 
   const setCurrentWork = (currentId) => {
     dispatch({ type: SET_CURRENT_WORK, payload: currentId });
+  };
+
+  const paginateWork = (currentId, type) => {
+    // are we working with filtered or standard works
+    let whichWorks =
+      state.filteredWorks == null ? state.works : state.filteredWorks;
+
+    let newItem = getNewIdx(currentId, whichWorks, type);
+
+    dispatch({ type: SET_CURRENT_WORK, payload: newItem.id });
+  };
+
+  const checkBtnStatus = (currentId, type) => {
+    // are we working with filtered or standard works
+    let whichWorks =
+      state.filteredWorks == null ? state.works : state.filteredWorks;
+
+    return btnStatus(currentId, whichWorks, type);
   };
 
   const filterWorks = (query) => {
@@ -55,6 +78,8 @@ const WorksState = (props) => {
         currentTag: state.currentTag,
         getWorks,
         setCurrentWork,
+        checkBtnStatus,
+        paginateWork,
         filterWorks,
         clearWorksFilter,
       }}

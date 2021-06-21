@@ -81,6 +81,62 @@ export const getEmoji = (type) => {
   }
 };
 
+export const setNewIdx = (type, curr, len) => {
+  switch (type) {
+    case "first":
+      return 0;
+    case "prev":
+      return curr - 1;
+    case "next":
+      return curr + 1;
+    case "last":
+      return len - 1;
+    default:
+      return curr;
+  }
+};
+
+export const getNewIdx = (id, data, type) => {
+  let currentIds = [];
+  let currentIdx;
+  let newIdx;
+
+  // get current idx
+  data.forEach((item, i) => {
+    currentIds.push(item.id);
+
+    if (id === item.id) {
+      currentIdx = i;
+    }
+  });
+
+  newIdx = setNewIdx(type, currentIdx, data.length);
+
+  return data[newIdx];
+};
+
+export const btnStatus = (id, data, type) => {
+  let currentIdx;
+
+  // get current idx
+  data.forEach((item, i) => {
+    if (id === item.id) {
+      currentIdx = i;
+    }
+  });
+
+  switch (type) {
+    case "first":
+    case "prev":
+      return currentIdx === 0;
+    case "next":
+    case "last":
+      return currentIdx === data.length - 1;
+    default:
+      return false;
+  }
+};
+
 export const getGist = (url) => {
   let pos = url.indexOf(".com/");
 

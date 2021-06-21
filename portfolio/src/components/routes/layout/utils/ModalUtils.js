@@ -170,10 +170,13 @@ export const GuestCreds = ({ creds }) => {
 };
 
 export const ModalNav = ({ item, modalType }) => {
+  const WorksContext = useContext(worksContext);
+  const { paginateWork, checkBtnStatus } = WorksContext;
+
   if (modalType === "work") {
     const handleWorkPagination = (e, type) => {
       e.preventDefault();
-      console.log(type, item);
+      paginateWork(item, type);
     };
 
     return (
@@ -185,24 +188,28 @@ export const ModalNav = ({ item, modalType }) => {
         <button
           className='pagination-btn'
           onClick={(e) => handleWorkPagination(e, "first")}
+          disabled={checkBtnStatus(item, "first")}
         >
           <ArrowFirst />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleWorkPagination(e, "prev")}
+          disabled={checkBtnStatus(item, "prev")}
         >
           <ArrowLeft />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleWorkPagination(e, "next")}
+          disabled={checkBtnStatus(item, "next")}
         >
           <ArrowRight />
         </button>
         <button
           className='pagination-btn'
           onClick={(e) => handleWorkPagination(e, "last")}
+          disabled={checkBtnStatus(item, "last")}
         >
           <ArrowLast />
         </button>
@@ -300,7 +307,7 @@ export const WorkModal = ({ item, modalType, hide }) => {
             )}
           </p>
         </div>
-        <ModalNav item={item} modalType={modalType} />
+        <ModalNav item={id} modalType={modalType} />
       </div>
     </div>
   );
