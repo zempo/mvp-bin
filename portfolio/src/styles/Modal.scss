@@ -138,8 +138,48 @@ body {
               }
             }
           }
+          .modal-pagination {
+            button {
+              margin: 0.25rem 0;
+              padding: 0.5rem 0.75rem 0.4rem;
+              background: map-get($colors, app-white);
+              svg {
+                width: 2rem;
+                height: 2rem;
+              }
+              &:hover {
+                background: rgb(241, 240, 240);
+              }
+              &:active {
+                background: rgb(230, 228, 228);
+              }
+              border: 1px solid
+                rgba($color: map-get($colors, app-dark), $alpha: 0.4);
+              cursor: pointer;
+              &:disabled {
+                background: map-get($colors, app-white);
+                cursor: default;
+                svg {
+                  opacity: 0.4;
+                }
+              }
+              &:first-child {
+                border-top-left-radius: 0.4rem;
+                border-bottom-left-radius: 0.4rem;
+                border-right: none;
+              }
+              &:last-child {
+                border-top-right-radius: 0.4rem;
+                border-bottom-right-radius: 0.4rem;
+                border-left: none;
+              }
+              &:nth-child(2) {
+                border-right: none;
+              }
+            }
+          }
           .guest-creds {
-            width: 90%;
+            width: 100%;
             max-width: 60rem;
             margin: 0 auto;
             .guest-head {
@@ -206,9 +246,18 @@ body {
         .carousel-root {
           max-width: 60rem;
           margin: auto;
+          background: map-get($colors, app-less-white);
           .legend {
             background: map-get($colors, app-dark);
             @include font-size($sub-font-sizes);
+          }
+          .carousel .thumb {
+            border: 3px solid map-get($colors, app-white);
+            margin-bottom: 0.5rem;
+          }
+          .carousel .thumb.selected,
+          .carousel .thumb:hover {
+            border: 3px solid map-get($colors, app-dark);
           }
           .carousel .control-dots .dot {
             width: 15px;

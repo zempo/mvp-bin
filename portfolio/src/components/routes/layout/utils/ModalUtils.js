@@ -300,6 +300,7 @@ export const WorkModal = ({ item, modalType, hide }) => {
         </div>
         {guest_creds ? <GuestCreds creds={guest_creds} /> : null}
         <ModalCarousel imgSrcs={screenshots} captions={screenshot_captions} />
+        <hr />
         <div className='modal-desc'>
           <h3>Project Role: {role}</h3>
           <p>
@@ -363,6 +364,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
                 )}
               </p>
             </div>
+            <hr />
             <ModalNav item={id} modalType={modalType} />
             <br />
             <ReactEmbedGist gist={getGist(github_repo)} />
@@ -383,6 +385,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
                 )}
               </p>
             </div>
+            <hr />
             <img
               className='modal-preview'
               src={preview_img}
