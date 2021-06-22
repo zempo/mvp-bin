@@ -1,2 +1,24 @@
 @import "../config";
 @import "../utils";
+
+.about-pg {
+  .about-summary {
+    width: 90%;
+    max-width: 55rem;
+    margin: 5rem auto 3rem;
+    h3 {
+      text-indent: 5rem;
+      text-align: justify;
+    }
+    p {
+      text-indent: 5rem;
+      text-align: justify;
+      word-wrap: break-word;
+      font-weight: 300;
+      line-height: 1.75;
+      span {
+        font-weight: normal;
+      }
+    }
+  }
+}

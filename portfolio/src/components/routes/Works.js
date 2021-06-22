@@ -1,9 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import ItemPreview from "./layout/utils/ItemPreview";
 import worksContext from "../../context/worksContext";
-import { fetchRepos } from "../../services/endpointsService";
 import { SearchForm } from "./layout/utils/SearchForm";
-import { gitApi } from "../../config";
 import "../../styles/pages/Works.scss";
 
 export const Works = () => {
@@ -14,24 +12,6 @@ export const Works = () => {
     document.title = "Works";
 
     getWorks();
-
-    const getRepoData = async () => {
-      try {
-        const res = await fetchRepos(
-          `/users/zempo/repos?client_id=${gitApi.CLIENT_ID}&client_secret=${gitApi.CLIENT_SECRET}`
-        );
-        /**
-         * Data of interest
-         *
-         * - updated_at
-         * */
-        console.log(res.data);
-      } catch (err) {
-        console.log(err.response);
-      }
-    };
-
-    // getRepoData();
     // eslint-disable-next-line
   }, []);
 

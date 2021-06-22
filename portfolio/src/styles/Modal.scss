@@ -43,6 +43,10 @@ body {
         width: 100%;
         background-color: map-get($colors, app-white);
         padding: 3rem 2rem;
+        -o-animation: map-get($animations, fade-in);
+        -moz-animation: map-get($animations, fade-in);
+        -webkit-animation: map-get($animations, fade-in);
+        animation: map-get($animations, fade-in);
         &.byte-modal {
           header {
             h1 {
