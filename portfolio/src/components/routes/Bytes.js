@@ -19,7 +19,7 @@ export const Bytes = () => {
     let len = bytes.length;
 
     if (filteredBytes == null || currentByteTag === "show all") {
-      return `Showing all ${len} bytes. You can filter apps by type or tech.`;
+      return `Showing all ${len} bytes. You can filter bytes by type or tech.`;
     } else {
       let fLen = filteredBytes.length;
       return `Showing ${fLen} of ${len} bytes — filtered by ${currentByteTag.toUpperCase()}.`;

@@ -37,7 +37,7 @@ export const About = () => {
           living in <span>LA</span>.
         </h2>
       </header>
-      <div className='about-stats'>
+      {/* <div className='about-stats'>
         <div className='stat-repo'>
           <h3>{stats.repos}</h3>
           <p>Repos</p>
@@ -50,7 +50,7 @@ export const About = () => {
           <h3>{stats.repos}</h3>
           <p>Followers</p>
         </div>
-      </div>
+      </div> */}
       <article className='about-summary'>
         <h3>Hi there! 👋</h3>
         <p>
