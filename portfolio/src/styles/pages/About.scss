@@ -2,10 +2,37 @@
 @import "../utils";
 
 .about-pg {
+  .about-stats {
+    width: 90%;
+    max-width: 60rem;
+    margin: 6rem auto 0;
+    display: flex;
+    justify-content: space-around;
+    .stat-contributions {
+      position: relative;
+      top: -3rem;
+    }
+    .stat {
+      text-align: center;
+      p {
+        line-height: 1.5;
+        font-weight: 300;
+      }
+    }
+  }
   .about-summary {
     width: 90%;
-    max-width: 55rem;
-    margin: 5rem auto 3rem;
+    max-width: 50rem;
+    margin: 0rem auto 3rem;
+    text-align: center;
+    position: relative;
+    .prof-img {
+      margin: auto;
+      border: 2px solid map-get($colors, app-dark);
+      background: map-get($colors, app-3d);
+      border-radius: 50%;
+      width: 300px;
+    }
     h3 {
       text-indent: 5rem;
       text-align: justify;
@@ -18,6 +45,11 @@
       line-height: 1.75;
       span {
         font-weight: normal;
+      }
+      a {
+        span {
+          font-weight: normal;
+        }
       }
     }
   }
