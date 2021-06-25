@@ -109,8 +109,8 @@ export const About = () => {
         />
         <h3>Hi, there! 👋</h3>
         <p>
-          I am a tech enthusiast and generalist living in
-          <span> Los Angeles, CA</span>. Today, I work with&nbsp;
+          I am a tech enthusiast and generalist living in Los Angeles, CA.
+          Today, I work with&nbsp;
           <a
             href='https://www.aleks.com/'
             target='_blank'
@@ -118,8 +118,7 @@ export const About = () => {
           >
             <span>McGraw Hill &amp;&amp; ALEKS</span>
           </a>
-          &nbsp;as an <span> IT Specialist</span> and offer quality service as a
-          <span> Coding Tutor </span>
+          &nbsp;as an IT specialist and offer quality service as a Coding Tutor
           through&nbsp;
           <a
             href='https://www.wyzant.com/match/tutor/88373025'
@@ -129,17 +128,22 @@ export const About = () => {
             <span>Wyzant</span>
           </a>
           . In addition, I hone my skills by working with others, freelance
-          clients, or myself to build web experiences. I write
-          <span> Semantic HTML</span>, compile
-          <span> Sassy CSS</span>, and use
-          <span> JavaScript &amp;&amp; Frameworks </span> to build 22
-          <sup>nd</sup> century apps.
+          clients, or myself to build web experiences. I write Semantic HTML,
+          compile Sassy CSS, and use JavaScript &amp;&amp; Frameworks to build
+          22<sup>nd</sup> century apps.
         </p>
         <p>
-          Previously, I attended the <span>University of Denver </span>
-          where I graduated with a B.S. in Psychology. However, I soon found
-          myself at a crossroads. To support my education, I had worked with the
-          now defunct&nbsp;
+          Previously, I attended the&nbsp;
+          <a
+            href='https://liberalarts.du.edu/academics-admissions/programs-ug/ba-minor-psychology'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <span>University of Denver</span>
+          </a>
+          &nbsp; where I graduated with a B.S. in Psychology. However, I soon
+          found myself at a crossroads. To support my education, I had worked
+          with the now defunct&nbsp;
           <a
             href='https://www.facebook.com/OpenWorldLearning/'
             target='_blank'
@@ -148,17 +152,30 @@ export const About = () => {
             <span>OpenWorld Learning (OWL)</span>
           </a>
           . During my time with OWL, I studied the{" "}
-          <span>
-            MicroWorlds Curriculum &amp;&amp; Constructivist Learning Theory{" "}
-          </span>
-          to help mentor elementary school students all across the{" "}
-          <span>Denver Front Range</span>. Shortly after graduating, I followed
-          my newfound passion and moved to California to continue learning how
-          to code.
+          <a
+            href='http://www.microworlds.com/solutions/mwex.html'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <span>MicroWorlds Curriculum</span>
+          </a>
+          &nbsp;&amp;&amp;&nbsp;
+          <a
+            href='http://beta.edtechpolicy.org/AAASGW/Session2/const_inquiry_paper.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <span>Constructivist Learning Theory</span>
+          </a>
+          &nbsp; to help mentor elementary school students all across Denver,
+          CO. Shortly after graduating, I followed my newfound passion and moved
+          to California to continue learning how to code.
         </p>
         <p>
-          Outside of the tech world, I am an avid adventurer, baker, and
-          voiceover.
+          I also happen to be an avid adventurer, baker, and voiceover artist.
+          When not experiencing a global pandemic, you can catch me going on
+          weekend road trips, trying new recipes, and keeping a healthy
+          lifestyle.
         </p>
       </article>
     </section>

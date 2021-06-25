@@ -2,6 +2,7 @@
 @import "../utils";
 
 .about-pg {
+  margin-bottom: 7rem;
   .about-stats {
     width: 90%;
     max-width: 60rem;
@@ -24,12 +25,14 @@
     width: 90%;
     max-width: 50rem;
     margin: 0rem auto 3rem;
+    padding: 0 2rem;
     text-align: center;
     position: relative;
     .prof-img {
       margin: auto;
       border: 2px solid map-get($colors, app-dark);
-      background: map-get($colors, app-3d);
+      background-color: #9e8fb2;
+      background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
       border-radius: 50%;
       width: 300px;
     }
@@ -38,11 +41,15 @@
       text-align: justify;
     }
     p {
-      text-indent: 5rem;
+      text-indent: 0.5rem;
       text-align: justify;
       word-wrap: break-word;
+      @include mq("phablet") {
+        text-indent: 3rem;
+      }
       font-weight: 300;
       line-height: 1.75;
+      @include font-size($p-font-sizes);
       span {
         font-weight: normal;
       }

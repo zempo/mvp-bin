@@ -131,10 +131,10 @@ $p-font-sizes: (
 );
 
 $sub-font-sizes: (
-  null: calc(0.9rem + 0.1vw),
-  map-get($breakpoints, "phablet"): calc(0.95rem + 0.1vw),
+  null: calc(1rem + 0.1vw),
+  map-get($breakpoints, "phablet"): calc(1rem + 0.1vw),
   map-get($breakpoints, "tablet"): calc(1rem + 0.1vw),
-  map-get($breakpoints, "desktop"): calc(1.2rem + 0.1vw),
+  map-get($breakpoints, "desktop"): calc(1.3rem + 0.1vw),
   map-get($breakpoints, "ultra-wide"): calc(1.3rem + 0.1vw),
 );
 
