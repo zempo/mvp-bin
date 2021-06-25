@@ -71,7 +71,7 @@ export const About = () => {
             )}
           </h3>
           <p>
-            Public <br /> Repositories
+            GitHub <br /> Projects
           </p>
         </div>
         <div className='stat stat-contributions'>
