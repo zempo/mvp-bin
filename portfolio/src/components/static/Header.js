@@ -11,6 +11,7 @@ import {
 import "../../styles/Static.scss";
 
 export const Header = () => {
+  // eslint-disable-next-line no-unused-vars
   const [navRef, navSize] = useDimensions();
 
   return (

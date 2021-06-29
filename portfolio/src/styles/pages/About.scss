@@ -3,6 +3,10 @@
 
 .about-pg {
   margin-bottom: 7rem;
+  canvas {
+    // width: 100%;
+    height: 50vh;
+  }
   .about-stats {
     width: 90%;
     max-width: 60rem;

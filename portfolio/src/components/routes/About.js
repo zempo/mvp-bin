@@ -3,6 +3,7 @@ import { CountUpAnimation } from "./layout/utils/AnimationUtils";
 import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
 import "../../styles/pages/About.scss";
+import { AboutCanvas } from "./layout/views/AboutCanvas";
 
 const initialStats = {
   avatar_url: "https://avatars.githubusercontent.com/u/39205476?v=4",
@@ -173,11 +174,11 @@ export const About = () => {
         </p>
         <p>
           I also happen to be an avid adventurer, baker, and voiceover artist.
-          When not experiencing a global pandemic, you can catch me going on
-          weekend road trips, trying new recipes, and keeping a healthy
-          lifestyle.
+          During pandemic-free times, you can catch me exploring LA, trying new
+          recipes, and keeping a healthy lifestyle.
         </p>
       </article>
+      <AboutCanvas />
     </section>
   );
 };
