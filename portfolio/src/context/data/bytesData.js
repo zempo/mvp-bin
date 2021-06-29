@@ -40,7 +40,7 @@ export const bytes = [
          `,
     link: `https://gist.github.com/zempo/c082636dd05f166ffb5316e2670f7cf8`,
     github_repo: `https://gist.github.com/zempo/c082636dd05f166ffb5316e2670f7cf8`,
-    preview_img: `https://morgancodes.s3.amazonaws.com/christmas_desktop_light_mode.jpg`,
+    preview_img: `https://i.ibb.co/xHC25pB/snippet1.png`,
     code_embed: true,
   },
   {
@@ -54,7 +54,7 @@ export const bytes = [
          `,
     link: `https://gist.github.com/zempo/5bf70f96b5f40ff5349980cee47c4ae7`,
     github_repo: `https://gist.github.com/zempo/5bf70f96b5f40ff5349980cee47c4ae7`,
-    preview_img: `https://morgancodes.s3.amazonaws.com/desktop_light_mode.jpg`,
+    preview_img: `https://i.ibb.co/xHC25pB/snippet1.png`,
     code_embed: true,
   },
   {
@@ -68,7 +68,7 @@ export const bytes = [
          `,
     link: false,
     github_repo: `https://gist.github.com/zempo/a9a71f2a6d395b0a70d94b55bd1ab1aa`,
-    preview_img: `https://morgancodes.s3.amazonaws.com/christmas_desktop_light_mode.jpg`,
+    preview_img: `https://i.ibb.co/xHC25pB/snippet1.png`,
     code_embed: true,
   },
   {
@@ -156,7 +156,7 @@ export const bytes = [
   //   link: `https://gist.github.com/zempo/a9a71f2a6d395b0a70d94b55bd1ab1aa`,
   //   github_repo: `https://gist.github.com/zempo/a9a71f2a6d395b0a70d94b55bd1ab1aa`,
   //
-  //   preview_img: `https://morgancodes.s3.amazonaws.com/christmas_desktop_light_mode.jpg`,
+  //   preview_img: `https://i.ibb.co/xHC25pB/snippet1.png`,
   //   code_embed: true
   // },
 ];

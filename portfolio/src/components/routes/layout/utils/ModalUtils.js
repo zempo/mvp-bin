@@ -386,6 +386,7 @@ export const ByteModal = ({ item, modalType, hide }) => {
               </p>
             </div>
             <hr />
+            <ModalNav item={id} modalType={modalType} />
             <img
               className='modal-preview'
               src={preview_img}
