@@ -49,6 +49,7 @@
       text-indent: 0.5rem;
       text-align: justify;
       word-wrap: break-word;
+      color: map-get($colors, app-dark);
       @include mq("phablet") {
         text-indent: 3rem;
       }
@@ -59,8 +60,10 @@
         font-weight: normal;
       }
       a {
+        color: black;
         span {
           font-weight: normal;
+          color: black;
         }
       }
     }

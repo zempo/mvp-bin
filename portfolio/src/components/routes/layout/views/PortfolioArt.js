@@ -2,6 +2,18 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, softShadows } from "@react-three/drei";
 
+/**
+ * TO DO
+ *
+ * MAKE DECORATIVE COMPONENT
+ * --------------------------
+ *
+ * On separate route to make things easier!
+ *
+ * User clicks button to load such component
+ *
+ */
+
 softShadows();
 
 const cube1 = {
@@ -66,7 +78,7 @@ const FloorGeo = (props) => {
   );
 };
 
-export const AboutCanvas = () => {
+export const PortfolioArt = () => {
   return (
     <>
       <Canvas
@@ -98,11 +110,11 @@ export const AboutCanvas = () => {
           <SpinningGeo obj={cube3} />
           <FloorGeo obj={floorObj} />
         </group>
-        {/* <OrbitControls
+        <OrbitControls
           enablePan={Boolean("Pan", true)}
           enableZoom={Boolean("Zoom", true)}
           enableRotate={Boolean("Rotate", true)}
-        /> */}
+        />
       </Canvas>
     </>
   );

@@ -3,7 +3,7 @@ import { CountUpAnimation } from "./layout/utils/AnimationUtils";
 import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
 import "../../styles/pages/About.scss";
-import { AboutCanvas } from "./layout/views/AboutCanvas";
+import { PortfolioArt } from "./layout/views/PortfolioArt";
 
 const initialStats = {
   avatar_url: "https://avatars.githubusercontent.com/u/39205476?v=4",
@@ -110,8 +110,8 @@ export const About = () => {
         />
         <h3>Hi, there! 👋</h3>
         <p>
-          I am a tech enthusiast and generalist living in Los Angeles, CA.
-          Today, I work with&nbsp;
+          I am a web developer living in Los Angeles, CA. Today, I work
+          with&nbsp;
           <a
             href='https://www.aleks.com/'
             target='_blank'
@@ -129,7 +129,7 @@ export const About = () => {
             <span>Wyzant</span>
           </a>
           . In addition, I hone my skills by working with others, freelance
-          clients, or myself to build web experiences. I write Semantic HTML,
+          clients, or by myself to build web experiences. I write Semantic HTML,
           compile Sassy CSS, and use JavaScript &amp;&amp; Frameworks to build
           22<sup>nd</sup> century apps.
         </p>
@@ -174,11 +174,11 @@ export const About = () => {
         </p>
         <p>
           I also happen to be an avid adventurer, baker, and voiceover artist.
-          During pandemic-free times, you can catch me exploring LA, trying new
-          recipes, and keeping a healthy lifestyle.
+          Since receiving the Pfizer vaccine, you can catch me exploring LA,
+          trying new recipes, and living a healthy lifestyle.
         </p>
       </article>
-      <AboutCanvas />
+      {/* <AboutCanvas /> */}
     </section>
   );
 };
