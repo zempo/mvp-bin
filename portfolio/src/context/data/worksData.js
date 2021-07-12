@@ -176,15 +176,7 @@ export const projects = [
   {
     id: `w005`,
     title: `My Portfolio`,
-    tags: [
-      `show all`,
-      `solo`,
-      `sass`,
-      `front end`,
-      `reactjs`,
-      `deployed`,
-      `threejs`,
-    ],
+    tags: [`show all`, `solo`, `sass`, `front end`, `reactjs`, `deployed`],
     type: `solo`,
     role: `Developer 💻`,
     status: `Deployed 🚀`,

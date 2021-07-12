@@ -14,7 +14,7 @@ export const bytes = [
   },
   {
     id: `b002`,
-    title: `The Blue Witness: Can we map Police Misconduct?`,
+    title: `The Blue Witness`,
     tags: [`show all`, `article`, `teamwork`],
     type: `article`,
     desc: `

@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router";
+import ScrollToTop from "./hooks/ScrollToTop";
 // Static
 import { Header } from "./components/static/Header";
 import { Footer } from "./components/static/Footer";
@@ -13,7 +14,6 @@ import { Works } from "./components/routes/Works";
 import { Error } from "./components/routes/Error";
 import "./styles/Animations.scss";
 import "./styles/Global.scss";
-import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (

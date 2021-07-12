@@ -3,7 +3,6 @@ import { CountUpAnimation } from "./layout/utils/AnimationUtils";
 import { fetchRepos } from "../../services/endpointsService";
 import { gitApi } from "../../config";
 import "../../styles/pages/About.scss";
-import { PortfolioArt } from "./layout/views/PortfolioArt";
 
 const initialStats = {
   avatar_url: "https://avatars.githubusercontent.com/u/39205476?v=4",
@@ -33,8 +32,6 @@ export const About = () => {
         // const resContributions = await fetchRepos(
         //   `/users/zempo/events/public?per_page=100&${API}`
         // );
-
-        console.log(resStats.data);
 
         setStats({
           avatar_url: resStats.data.avatar_url,
@@ -178,7 +175,6 @@ export const About = () => {
           trying new recipes, and living a healthy lifestyle.
         </p>
       </article>
-      {/* <AboutCanvas /> */}
     </section>
   );
 };
